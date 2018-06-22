@@ -1,0 +1,89 @@
+#+SETUPFILE: https://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.setup
+
+#+ATTR_LATEX: :mode table :environment longtable :caption Emoticons Block
+| Character | Name                                       | Codepoint |
+|-----------+--------------------------------------------+-----------|
+| {{{utf2xtx(😀)}}}     | "Grinning Face"                            | ~#x1F600~   |
+| {{{utf2xtx(😁)}}}     | "Grinning Face with Smiling Eyes"          | ~#x1F601~   |
+| {{{utf2xtx(😂)}}}     | "Face with Tears of Joy"                   | ~#x1F602~   |
+| {{{utf2xtx(😃)}}}     | "Smiling Face with Open Mouth"             | ~#x1F603~   |
+| {{{utf2xtx(😄)}}}     | "and Smiling Eyes"                         | ~#x1F604~   |
+| {{{utf2xtx(😅)}}}     | "and Cold Sweat"                           | ~#x1F605~   |
+| {{{utf2xtx(😆)}}}     | "and Tightly-Closed Eyes"                  | ~#x1F606~   |
+| {{{utf2xtx(😇)}}}     | "Smiling Face with Halo"                   | ~#x1F607~   |
+| {{{utf2xtx(😈)}}}     | "Smiling Face with Horns"                  | ~#x1F608~   |
+| {{{utf2xtx(😉)}}}     | "Winking Face"                             | ~#x1F609~   |
+| {{{utf2xtx(😊)}}}     | "Smiling Face with Smiling Eyes"           | ~#x1F60A~   |
+| {{{utf2xtx(😋)}}}     | "Face Savouring Delicious Food"            | ~#x1F60B~   |
+| {{{utf2xtx(😌)}}}     | "Relieved Face"                            | ~#x1F60C~   |
+| {{{utf2xtx(😍)}}}     | "Smiling Face with Heart-Shaped Eyes"      | ~#x1F60D~   |
+| {{{utf2xtx(😎)}}}     | "Smiling Face with Sunglasses"             | ~#x1F60E~   |
+| {{{utf2xtx(😏)}}}     | "Smirking Face"                            | ~#x1F60F~   |
+|-----------+--------------------------------------------+-----------|
+| {{{utf2xtx(😐)}}}     | "Neutral Face"                             | ~#x1F610~   |
+| {{{utf2xtx(😑)}}}     | "Expressionless Face"                      | ~#x1F611~   |
+| {{{utf2xtx(😒)}}}     | "Unamused Face"                            | ~#x1F612~   |
+| {{{utf2xtx(😓)}}}     | "Face with Cold Sweat"                     | ~#x1F613~   |
+| {{{utf2xtx(😔)}}}     | "Pensive Face"                             | ~#x1F614~   |
+| {{{utf2xtx(😕)}}}     | "Confused Face"                            | ~#x1F615~   |
+| {{{utf2xtx(😖)}}}     | "Confounded Face"                          | ~#x1F616~   |
+| {{{utf2xtx(😗)}}}     | "Kissing Face"                             | ~#x1F617~   |
+| {{{utf2xtx(😘)}}}     | "Face Throwing A Kiss"                     | ~#x1F618~   |
+| {{{utf2xtx(😙)}}}     | "Kissing Face with Smiling Eyes"           | ~#x1F619~   |
+| {{{utf2xtx(😚)}}}     | "Kissing Face with Closed Eyes"            | ~#x1F61A~   |
+| {{{utf2xtx(😛)}}}     | "Face with Stuck-Out Tongue"               | ~#x1F61B~   |
+| {{{utf2xtx(😜)}}}     | "and Winking Eye"                          | ~#x1F61C~   |
+| {{{utf2xtx(😝)}}}     | "and Tightly-Closed Eyes"                  | ~#x1F61D~   |
+| {{{utf2xtx(😞)}}}     | "Disappointed Face"                        | ~#x1F61E~   |
+| {{{utf2xtx(😟)}}}     | "Worried Face"                             | ~#x1F61F~   |
+|-----------+--------------------------------------------+-----------|
+| {{{utf2xtx(😠)}}}     | "Angry Face"                               | ~#x1F620~   |
+| {{{utf2xtx(😡)}}}     | "Pouting Face"                             | ~#x1F621~   |
+| {{{utf2xtx(😢)}}}     | "Crying Face"                              | ~#x1F622~   |
+| {{{utf2xtx(😣)}}}     | "Persevering Face"                         | ~#x1F623~   |
+| {{{utf2xtx(😤)}}}     | "Face with Look of Triumph"                | ~#x1F624~   |
+| {{{utf2xtx(😥)}}}     | "Disappointed But Relieved Face"           | ~#x1F625~   |
+| {{{utf2xtx(😦)}}}     | "Frowning Face with Open Mouth"            | ~#x1F626~   |
+| {{{utf2xtx(😧)}}}     | "Anguished Face"                           | ~#x1F627~   |
+| {{{utf2xtx(😨)}}}     | "Fearful Face"                             | ~#x1F628~   |
+| {{{utf2xtx(😩)}}}     | "Weary Face"                               | ~#x1F629~   |
+| {{{utf2xtx(😪)}}}     | "Sleepy Face"                              | ~#x1F62A~   |
+| {{{utf2xtx(😫)}}}     | "Tired Face"                               | ~#x1F62B~   |
+| {{{utf2xtx(😬)}}}     | "Grimacing Face"                           | ~#x1F62C~   |
+| {{{utf2xtx(😭)}}}     | "Loudly Crying Face"                       | ~#x1F62D~   |
+| {{{utf2xtx(😮)}}}     | "Face with Open Mouth"                     | ~#x1F62E~   |
+| {{{utf2xtx(😯)}}}     | "Hushed Face"                              | ~#x1F62F~   |
+|-----------+--------------------------------------------+-----------|
+| {{{utf2xtx(😰)}}}     | "Face with Open Mouth and Cold Sweat"      | ~#x1F630~   |
+| {{{utf2xtx(😱)}}}     | "Face Screaming in Fear"                   | ~#x1F631~   |
+| {{{utf2xtx(😲)}}}     | "Astonished Face"                          | ~#x1F632~   |
+| {{{utf2xtx(😳)}}}     | "Flushed Face"                             | ~#x1F633~   |
+| {{{utf2xtx(😴)}}}     | "Sleeping Face"                            | ~#x1F634~   |
+| {{{utf2xtx(😵)}}}     | "Dizzy Face"                               | ~#x1F635~   |
+| {{{utf2xtx(😶)}}}     | "Face Without Mouth"                       | ~#x1F636~   |
+| {{{utf2xtx(😷)}}}     | "Face with Medical Mask"                   | ~#x1F637~   |
+| {{{utf2xtx(😸)}}}     | "Grinning Cat Face with Smiling Eyes"      | ~#x1F638~   |
+| {{{utf2xtx(😹)}}}     | "Cat Face with Tears of Joy"               | ~#x1F639~   |
+| {{{utf2xtx(😺)}}}     | "Smiling Cat Face with Open Mouth"         | ~#x1F63A~   |
+| {{{utf2xtx(😻)}}}     | "Smiling Cat Face with Heart-Shaped Eyes"  | ~#x1F63B~   |
+| {{{utf2xtx(😼)}}}     | "Cat Face with Wry Smile"                  | ~#x1F63C~   |
+| {{{utf2xtx(😽)}}}     | "Kissing Cat Face with Closed Eyes"        | ~#x1F63D~   |
+| {{{utf2xtx(😾)}}}     | "Pouting Cat Face"                         | ~#x1F63E~   |
+| {{{utf2xtx(😿)}}}     | "Crying Cat Face"                          | ~#x1F63F~   |
+|-----------+--------------------------------------------+-----------|
+| {{{utf2xtx(🙀)}}}     | "Weary Cat Face"                           | ~#x1F640~   |
+| {{{utf2xtx(🙁)}}}     | "Slightly Frowning Face"                   | ~#x1F641~   |
+| {{{utf2xtx(🙂)}}}     | "Slightly Smiling Face"                    | ~#x1F642~   |
+| {{{utf2xtx(🙃)}}}     | "Upside-Down Face"                         | ~#x1F643~   |
+| {{{utf2xtx(🙄)}}}     | "Face with Rolling Eyes"                   | ~#x1F644~   |
+| {{{utf2xtx(🙅)}}}     | "Face with No Good Gesture"                | ~#x1F645~   |
+| {{{utf2xtx(🙆)}}}     | "Face with Ok Gesture"                     | ~#x1F646~   |
+| {{{utf2xtx(🙇)}}}     | "Person Bowing Deeply"                     | ~#x1F647~   |
+| {{{utf2xtx(🙈)}}}     | "See-No-Evil Monkey"                       | ~#x1F648~   |
+| {{{utf2xtx(🙉)}}}     | "Hear-No-Evil Monkey"                      | ~#x1F649~   |
+| {{{utf2xtx(🙊)}}}     | "Speak-No-Evil Monkey"                     | ~#x1F64A~   |
+| {{{utf2xtx(🙋)}}}     | "Happy Person Raising One Hand"            | ~#x1F64B~   |
+| {{{utf2xtx(🙌)}}}     | "Person Raising Both Hands in Celebration" | ~#x1F64C~   |
+| {{{utf2xtx(🙍)}}}     | "Person Frowning"                          | ~#x1F64D~   |
+| {{{utf2xtx(🙎)}}}     | "Person with Pouting Face"                 | ~#x1F64E~   |
+| {{{utf2xtx(🙏)}}}     | "Person with Folded Hands"                 | ~#x1F64F~   |
