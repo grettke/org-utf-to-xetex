@@ -169,6 +169,7 @@ A LaTeX Distribution And Compiler
         and it is great)
 
 * Version
+
       * You've got two considerations here: the version of the compiler
         and the version of the packages. When I setup this package, I used the
         2016 distribution and the packages that came with it. I haven't updated
