@@ -192,10 +192,7 @@ Emacs
 
 * `GNU Emacs version 26.1: unknown`
 * `GNU Emacs version 25.x: yes`
-* `GNU Emacs version 24.x: unknown`
-* `GNU Emacs version 23.x: unknown`
-* `GNU Emacs version 22.x: unknown`
-* `GNU Emacs version 21.x and lower: unknown`
+* `GNU Emacs version 25.x and lower: no`
 
 ## Installation
 
