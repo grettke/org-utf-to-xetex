@@ -1,0 +1,11 @@
+#+SETUPFILE: https://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.setup
+
+#+ATTR_LATEX: :mode table :environment longtable :caption Emoticons Block
+| Language                      | Example         |
+|-------------------------------+-----------------|
+|                               |                 |
+| Amharic {{{utf2xtx((አማርኛ))}}}             | {{{utf2xtx(ሠላም)}}}             |
+| Chinese {{{utf2xtx((中文,普通话,汉语))}}} | {{{utf2xtx(你好)}}}            |
+| Hebrew {{{utf2xtx((עברית))}}}             | {{{utf2xtx(שלום)}}}            |
+| Hindi {{{utf2xtx((हिंदी))}}}               | {{{utf2xtx(नमस्ते / नमस्कार ।)}}} |
+| Emoticons                     | {{{utf2xtx(🙋)}}}           |

@@ -134,11 +134,10 @@ this
   </tr>
 </table>
 
-Here are some examples of using this package for other languages, copied from the `view-hello-file` buffer
+## Examples
 
-<img src="./images/languages.png" alt="Example Of Other Languages" width="40%" height="40%">
-
-Here is the entire Emoticon block [as a PDF](http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/Emoticons.pdf) along with [the source Org-Mode file](http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/Emoticons.org)
+* 5 examples from `view-hello-file` [as a PDF](http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/view-hello-file-five.pdf) along with [the source Org-Mode file](http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/view-hello-file-five.org)
+* Entire Emoticon block [as a PDF](http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/Emoticons.pdf) along with [the source Org-Mode file](http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/Emoticons.org)
 
 ## Alternatives
 
