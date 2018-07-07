@@ -1,4 +1,4 @@
-# org-utf-to-xetex - Teach Org-Mode And XeTeX How To Handle Non-Latin Unicode Characters
+# org-utf-to-xetex - Org-Mode Print Unicode Characters Directly To PDF
 
 *Author:* Grant Rettke <gcr@wisdomandwonder.com><br>
 *Version:* 0.9<br>
