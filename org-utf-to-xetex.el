@@ -224,7 +224,7 @@
 ;;
 ;; Emacs
 ;;
-;; * `GNU Emacs version 26.1: unknown'
+;; * `GNU Emacs version 26.1: yes'
 ;;
 ;; * `GNU Emacs version 25.x: yes'
 ;;
