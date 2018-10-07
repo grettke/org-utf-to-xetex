@@ -123,7 +123,7 @@
 ;; That clearly isn't what you expected.
 ;;
 ;; When your LaTeX compiler created the PDF, it used your mainfont. But that font
-;; doesn't handle the Unicode character you wrote. Your wants you to that
+;; doesn't handle the Unicode character you wrote. Your PDF wants you to that
 ;; _it tried_ to show you something for that character but could not. It tells
 ;;  you by showing you an empty white box.
 ;;
