@@ -175,7 +175,7 @@ A LaTeX Distribution And Compiler
         either the compiler or packages since then. My experience is that once
         you've got it working, don't upgrade anything until you absolutely need
         to. If you do need to update something then take a backup of your system
-        first because things can unexpectedly change leaving you with
+        first because things can unexpectedly change leaving you without
         a working system. Yes this is totally obvious, but you don't want
         to break your system when you are in the middle of writing and
         publishing. Instead break it later when you are willing to cleans
