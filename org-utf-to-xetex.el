@@ -324,8 +324,7 @@
 ;; If you are reading this then it is safe to say that you are an Org-Mode
 ;; user. Org-Mode makes it _so_ easy to create documents that you inevitably
 ;; want to use some Unicode characters directly instead of using
-;; [Symbols](https://orgmode.org/worg/org-symbols.html). And that is how you
-;; ran into this problem. You probably fit into one of the following profiles:
+;; [Symbols](https://orgmode.org/worg/org-symbols.html). And that is how you ran into this problem. You probably fit into one of the following profiles:
 ;;
 ;; * You are not a LaTeX and XeTeX user but you are willing to set up
 ;;   Org-Mode for both and get very comfortable with them
@@ -343,8 +342,7 @@
 ;; Once you get comfortable with the tools then workflow for this package will
 ;; feel simple to you. Until you reach that point please take your time and
 ;; learn at your ownpace. You can see how my system works
-;; [here](https://github.com/grettke/help/blob/master/.emacs.el) and you'll
-;; find that it is pretty easy to follow. Don't hesitate to contact me with
+;; [here](https://github.com/grettke/help/blob/master/.emacs.el) and you'll find that it is pretty easy to follow. Don't hesitate to contact me with
 ;; any questions or concerns.
 
 ;; Public API Features:
