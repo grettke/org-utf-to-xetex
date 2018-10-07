@@ -330,7 +330,7 @@
 ;;   Org-Mode for both and get very comfortable with them
 ;;
 ;; * You are already a LaTeX and XeTeX user and have already set up Org-Mode
-;;   for both. You _very_ comfortable with both.
+;;   for both. You are _very_ comfortable with both.
 ;;
 ;; This guide is written for experienced Org-Mode, LaTeX, and XeTeX users. If
 ;; you aren't yet then please know that:
