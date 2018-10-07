@@ -450,7 +450,7 @@
 ;; * Tell XeTeX what font to use for characters in this Unicode block. This
 ;;   package creates XeTeX commands to help you configure new fontcommands with
 ;;   the name of the Unicode block. They follow a standard format like you see
-;;   in the example below. You can a buffer with commands for _every_ block
+;;   in the example below. You can create a buffer with commands for _every_ block
 ;;   name by calling _M-x_ `org-utf-to-xetex-command-for-every-block'.
 ;;   Find the Unicode block for your character and copy the _newfontfamily_ and
 ;;   _DeclareTextFontCommand_ commands.
@@ -459,17 +459,16 @@
 ;;       % \DeclareTextFontCommand{\textEmoticons}{\Emoticons}
 ;;
 ;; * You need a custom package in which to place these commands. At least,
-;;   that is I did. Add these to your custom package and specify what font you
+;;   that is what I did. Add these to your custom package and specify what font you
 ;;   decided to use. Here is an example from my configuration for the Emoticon block:
 ;;
 ;;       \newfontfamily\Emoticons{Symbola}
 ;;       \DeclareTextFontCommand{\textEmoticons}{\Emoticons}
 ;;
 ;; * At this point XeTeX should render your characters using the correct font.
-;;   Verify this by exporting your document to a buffer calling
-;;   _C-c C-e_ `l' RET _L_. Open that buffer and verify that your characters
-;;   are wrapped with the correct font, it should like the sample below.
-;;   Now export to a PDF and it should now render the characters correctly
+;;   Open that buffer and verify that your characters are wrapped with the
+;;   correct font, it should like the sample below. Verify this by exporting your document to a buffer calling
+;;   _C-c C-e_ _l_ _L_. The should now render the characters correctly
 ;;   instead of using white boxes.
 ;;
 ;;       \textEmoticons{😄} (Joy)
