@@ -341,7 +341,7 @@
 ;;
 ;; Once you get comfortable with the tools then workflow for this package will
 ;; feel simple to you. Until you reach that point please take your time and
-;; learn at your own pace. You can see how my system works
+;; learn at your own pace. You can see how my system is setup
 ;; [here](https://github.com/grettke/help/blob/master/.emacs.el) and you'll find that it is pretty easy to follow. Don't hesitate to contact me with
 ;; any questions or concerns.
 
