@@ -313,7 +313,7 @@
 ;;   default configuration chooses good defaults so your job is only to
 ;;   install the fonts themselves. After you have found fonts that you like,
 ;;   you can use _this_ package to specify the same font for XeTeX, resulting in a
-;;   "What You See Is What You Get" experience from IDE to PDF.
+;;   "What You See Is What You Get" experience from Emacs to PDF.
 ;;
 ;; * Call the `view-hello-file' function to "Display the HELLO file, which
 ;;   lists languages and characters." This is a fun way to learn more about
