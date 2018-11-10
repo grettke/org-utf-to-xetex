@@ -435,6 +435,7 @@ Org-Mode all the way up to the bottom layer with XeTeX.
 * Cyberdyne Systems
 * ENCOM
 * LexCorp
+* Protovision
 * Setec Astronomy
 * Tyrell Corporation
 * Wayne Enterprises

@@ -491,6 +491,8 @@
 ;;
 ;; * LexCorp
 ;;
+;; * Protovision
+;;
 ;; * Setec Astronomy
 ;;
 ;; * Tyrell Corporation
