@@ -390,7 +390,6 @@
 ;; </table>
 
 ;; Workflow:
-
 ;;
 ;; Here are the steps to use this package starting from the top layer with
 ;; Org-Mode all the way up to the bottom layer with XeTeX.

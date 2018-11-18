@@ -342,7 +342,7 @@ Second use them to configure your system.
   </tr>
 </table>
 
-Workflow:
+## Workflow
 
 Here are the steps to use this package starting from the top layer with
 Org-Mode all the way up to the bottom layer with XeTeX.
