@@ -340,6 +340,11 @@ Second use them to configure your system.
     <td>`org-utf-to-xetex-command-for-every-block`</td>
     <td>Pop up a window with commands necessary for <i>every</i> Unicode block</td>
   </tr>
+  <tr>
+    <td>Tell your Org-Mode document to load this package's macro. </td>
+    <td>`org-utf-to-xetex-insert-setup-file-line`</td>
+    <td>See goal.</td>
+  </tr>
 </table>
 
 ## Workflow
