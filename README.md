@@ -374,12 +374,10 @@ Org-Mode all the way up to the bottom layer with XeTeX.
   use the LaTeX exporter with the XeTeX engine so it won't affect any of
   your other exporters.
 
-* Install the macro from this package using the `setupfile` line below.
-  Paste it into your document. Position the cursor on that line and hit _C-c C-c_ so
-  that Org-Mode will refresh it's setup. Now it can use the macro.
-
-      #+SETUPFILE: https://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.setup
-
+* Install the macro from this package using the `org-utf-to-xetex-insert-setup-file-line` function
+  Position the cursor anywhere at the top of the document.  Call
+  `org-utf-to-xetex-insert-setup-file-line`. With the cursor on that line and hit _C-c C-c_ so
+  that Org-Mode will refresh it's setup. Now it can use the macro
 * Identify the Unicode block for the character by again placing the cursor
   calling `org-utf-to-xetex-get-unicode-block-for-string-char-after`. The
   name of the Unicode block will appear in the Minibuffer and also

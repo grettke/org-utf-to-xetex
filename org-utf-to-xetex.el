@@ -426,11 +426,10 @@
 ;;
 ;;       {{{utf2xtx(😄 (Joy))}}}
 ;;
-;; * Install the macro from this package using the `setupfile' line below.
-;;   Paste it into your document. Position the cursor on that line and hit _C-c C-c_ so
-;;   that Org-Mode will refresh it's setup. Now it can use the macro.
-;;
-;;       #+SETUPFILE: https://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.setup
+;; * Install the macro from this package using the `org-utf-to-xetex-insert-setup-file-line' function
+;;   Position the cursor anywhere at the top of the document.  Call
+;;   `org-utf-to-xetex-insert-setup-file-line'. With the cursor on that line and hit _C-c C-c_ so
+;;   that Org-Mode will refresh it's setup. Now it can use the macro
 ;;
 ;; * Identify the Unicode block for the character by again placing the cursor
 ;;   calling `org-utf-to-xetex-get-unicode-block-for-string-char-after'. The
@@ -802,7 +801,12 @@
     ("Supplementary Private Use Area-A" #xF0000 #xFFFFF)
     ("Supplementary Private Use Area-B" #x100000 #x10FFFF)
     )
-  "Alist of Unicode 11.0 blocks. See charts here URL `https://www.unicode.org/charts/'.")
+  "Alist of Unicode 11.0 blocks. See charts here URL
+  `https://www.unicode.org/charts/'.")
+
+(defconst org-utf-to-xetex-setup-file
+  "#+SETUPFILE: https://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.setup"
+  "The org-utf-to-xetex export macro.")
 
 ;; Variables
 
@@ -974,6 +978,11 @@ greater than one character, exiting.")
       (org-utf-to-xetex-get-unicode-block-for-string
        (format "%c" (char-after)))
     (message "First place the cursor on a char to inspect it.")))
+
+(defun org-utf-to-xetex-insert-setup-file-line ()
+  "Insert the org-utf-to-xetex export macro SETUPFILE line."
+  (interactive)
+  (insert org-utf-to-xetex-setup-file))
 
 (provide 'org-utf-to-xetex)
 
