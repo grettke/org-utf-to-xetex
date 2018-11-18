@@ -61,15 +61,15 @@ exporter. The critical functionality though is provided by your LaTeX
 compiler, as you will see in the [workflow steps below](#workflow). Read on
 to see the empty white box problem and how this package resolves it.
 
-You probably set up XeTeX with three font settings like this
+You likely set up LaTeX with three font settings like this
 
 * `\setmainfont{DejaVu Serif}`
 * `\setsansfont{DejaVu Sans}[Scale=MatchLowercase]`
 * `\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]`
 
-That probably makes most of your PDF documents look great because 99% of
+That makes most of your PDF documents look great because 99% of
 the characters that you use are [Latin](https://en.wikipedia.org/wiki/List_of_languages_by_writing_system#Latin_script) and your `mainfont` supports all of them.
-The problem is the 1% that it doesn't, which are probably Non-Latin characters.
+The problem is the 1% that it doesn't, which are most likely Non-Latin characters.
 Instead of your Unicode character that you expected to see, you see a white box. Here is an
 example of the Org-Mode document, the intermediate LaTeX,  and resulting PDF
 
@@ -209,7 +209,7 @@ Add the following to your init file to
 
 ## Verification
 
-This package is probably working correctly when:
+This package is working correctly when:
 
 * All of the tests pass
 * You've configured enough font blocks to cover the characters in your
@@ -223,8 +223,7 @@ Here is how to run the tests:
 
 The test report should say that all of the rests ran as expected.
 
-For example, if there are eight tests then all eight should pass as
-expected. That number will probably change over time.
+For example
 
 `Ran 8 tests, 8 results as expected (2018-06-26 21:16:34-0500)`
 
@@ -279,7 +278,7 @@ package. Here are some fun ways to explore Unicode.
 If you are reading this then it is safe to say that you are an Org-Mode
 user. Org-Mode makes it _so_ easy to create documents that you inevitably
 want to use some Unicode characters directly instead of using
-[Symbols](https://orgmode.org/worg/org-symbols.html). And that is how you ran into this problem. You probably fit into one of the following profiles:
+[Symbols](https://orgmode.org/worg/org-symbols.html). And that is how you ran into this problem. You doubtless fit into one of the following profiles:
 
 * You are not a LaTeX and XeTeX user but you are willing to set up
   Org-Mode for both and get very comfortable with them
@@ -343,7 +342,7 @@ Second use them to configure your system.
   </tr>
 </table>
 
-## Workflow
+Workflow:
 
 Here are the steps to use this package starting from the top layer with
 Org-Mode all the way up to the bottom layer with XeTeX.
@@ -353,9 +352,9 @@ Org-Mode all the way up to the bottom layer with XeTeX.
   article](https://tex.stackexchange.com/questions/2984/frequently-loaded-packages-differences-between-pdflatex-and-xelatex)
   explains, XeTeX uses the `fontspec` package instead of `inputenc` or
   `fontenc` so add `("" "fontspec")` to `org-latex-packages-alist`. Now
-  choose an existing document to use as your "test file". Compile it. It
-  will probably compile just fine and if they don't it shouldn't take much
-  effort to get things working right. Here are the settings that I used.
+  choose an existing document to use as your test file. Compile it. It
+  will compile just fine and if it doesn't then it won't take much
+  effort to get things working correctly. Here are the settings that I used.
 
           (setq org-latex-compiler "xelatex")
           (setq org-latex-pdf-process '("latexmk -xelatex -quiet -shell-escape -f %f"))

@@ -86,7 +86,7 @@
 ;; compiler, as you will see in the [workflow steps below](#workflow). Read on
 ;; to see the empty white box problem and how this package resolves it.
 ;;
-;; You probably set up XeTeX with three font settings like this
+;; You likely set up LaTeX with three font settings like this
 ;;
 ;; * `\setmainfont{DejaVu Serif}'
 ;;
@@ -94,9 +94,9 @@
 ;;
 ;; * `\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]'
 ;;
-;; That probably makes most of your PDF documents look great because 99% of
+;; That makes most of your PDF documents look great because 99% of
 ;; the characters that you use are [Latin](https://en.wikipedia.org/wiki/List_of_languages_by_writing_system#Latin_script) and your `mainfont' supports all of them.
-;; The problem is the 1% that it doesn't, which are probably Non-Latin characters.
+;; The problem is the 1% that it doesn't, which are most likely Non-Latin characters.
 ;; Instead of your Unicode character that you expected to see, you see a white box. Here is an
 ;; example of the Org-Mode document, the intermediate LaTeX,  and resulting PDF
 ;;
@@ -248,7 +248,7 @@
 
 ;; Verification:
 ;;
-;; This package is probably working correctly when:
+;; This package is working correctly when:
 ;;
 ;; * All of the tests pass
 ;;
@@ -265,8 +265,7 @@
 ;;
 ;; The test report should say that all of the rests ran as expected.
 ;;
-;; For example, if there are eight tests then all eight should pass as
-;; expected. That number will probably change over time.
+;; For example
 ;;
 ;; `Ran 8 tests, 8 results as expected (2018-06-26 21:16:34-0500)'
 
@@ -324,7 +323,7 @@
 ;; If you are reading this then it is safe to say that you are an Org-Mode
 ;; user. Org-Mode makes it _so_ easy to create documents that you inevitably
 ;; want to use some Unicode characters directly instead of using
-;; [Symbols](https://orgmode.org/worg/org-symbols.html). And that is how you ran into this problem. You probably fit into one of the following profiles:
+;; [Symbols](https://orgmode.org/worg/org-symbols.html). And that is how you ran into this problem. You doubtless fit into one of the following profiles:
 ;;
 ;; * You are not a LaTeX and XeTeX user but you are willing to set up
 ;;   Org-Mode for both and get very comfortable with them
@@ -391,6 +390,7 @@
 ;; </table>
 
 ;; Workflow:
+
 ;;
 ;; Here are the steps to use this package starting from the top layer with
 ;; Org-Mode all the way up to the bottom layer with XeTeX.
@@ -400,9 +400,9 @@
 ;;   article](https://tex.stackexchange.com/questions/2984/frequently-loaded-packages-differences-between-pdflatex-and-xelatex)
 ;;   explains, XeTeX uses the `fontspec' package instead of `inputenc' or
 ;;   `fontenc' so add `("" "fontspec")' to `org-latex-packages-alist'. Now
-;;   choose an existing document to use as your "test file". Compile it. It
-;;   will probably compile just fine and if they don't it shouldn't take much
-;;   effort to get things working right. Here are the settings that I used.
+;;   choose an existing document to use as your test file. Compile it. It
+;;   will compile just fine and if it doesn't then it won't take much
+;;   effort to get things working correctly. Here are the settings that I used.
 ;;
 ;;       (setq org-latex-compiler "xelatex")
 ;;       (setq org-latex-pdf-process '("latexmk -xelatex -quiet -shell-escape -f %f"))
@@ -510,12 +510,12 @@
 
 (defconst org-utf-to-xetex-blocks
   '(
-    ;; ("Basic Latin" #x0000 #x007F) ; probably covered by your mainfont
-    ;; ("Latin-1 Supplement" #x0080 #x00FF) ; probably covered by your mainfont
-    ;; ("Latin Extended-A" #x0100 #x017F) ; probably covered by your mainfont
-    ;; ("Latin Extended-B" #x0180 #x024F) ; probably covered by your mainfont
+    ;; ("Basic Latin" #x0000 #x007F) ;; Ignore: presumably covered by your main font
+    ;; ("Latin-1 Supplement" #x0080 #x00FF) ;; Ignore: presumably covered by your main font
+    ;; ("Latin Extended-A" #x0100 #x017F) ;; Ignore: presumably covered by your main font
+    ;; ("Latin Extended-B" #x0180 #x024F) ;; Ignore: presumably covered by your main font
     ("IPA Extensions" #x0250 #x02AF)
-    ;; ("Spacing Modifier Letters" #x02B0 #x02FF) ; probably covered by your mainfont
+    ;; ("Spacing Modifier Letters" #x02B0 #x02FF) ;; Ignore: presumably covered by your main font
     ("Combining Diacritical Marks" #x0300 #x036F)
     ("Greek and Coptic" #x0370 #x03FF)
     ("Cyrillic" #x0400 #x04FF)
@@ -579,7 +579,7 @@
     ("Phonetic Extensions" #x1D00 #x1D7F)
     ("Phonetic Extensions Supplement" #x1D80 #x1DBF)
     ("Combining Diacritical Marks Supplement" #x1DC0 #x1DFF)
-    ;; ("Latin Extended Additional" #x1E00 #x1EFF) ; probably covered by your mainfont
+    ;; ("Latin Extended Additional" #x1E00 #x1EFF) ;; Ignore: presumably covered by your main font
     ("Greek Extended" #x1F00 #x1FFF)
     ("General Punctuation" #x2000 #x206F)
     ("Superscripts and Subscripts" #x2070 #x209F)
@@ -923,7 +923,7 @@ greater than one character, exiting.")
       (when (not (equal lines (* 2 blocks)))
         (display-warning
          :error
-         (format "org-utf-to-xetex-command-for-every-block expected to create %s commands, but only created %s. This is probably a bug so report it." blocks
+         (format "org-utf-to-xetex-command-for-every-block expected to create %s commands, but only created %s. Please report this." blocks
                  lines))))))
 
 (defun org-utf-to-xetex-string-to-xetex (str)
@@ -964,7 +964,7 @@ greater than one character, exiting.")
   "In what Unicode block does STR live in? Answered here."
   (let* ((block (org-utf-to-xetex--char-to-block-def str))
          (msg (if block (cl-first block)
-                "This package doesn't handle this block. It is probably one of the Latin blocks that this package ignores. If it isn't then please submit an issue.")))
+                "This package doesn't handle this block. If it isn't one of the ignored Latin blocks then please report it. ")))
     (message "Unicode Block Name For '%s': %s" str msg)))
 
 (defun org-utf-to-xetex-get-unicode-block-for-string-char-after ()
