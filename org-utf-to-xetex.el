@@ -328,8 +328,7 @@
     ("Supplementary Private Use Area-A" #xF0000 #xFFFFF)
     ("Supplementary Private Use Area-B" #x100000 #x10FFFF)
     )
-  "Alist of Unicode 11.0 blocks. See charts here URL
-  `https://www.unicode.org/charts/'.")
+  "Alist of Unicode 11.0 blocks. See charts here URL `https://www.unicode.org/charts/'.")
 
 (defconst org-utf-to-xetex-setup-file
   "#+SETUPFILE: https://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.setup"
@@ -377,7 +376,7 @@
     result))
 
 (defun org-utf-to-xetex--valid-char (str)
-  "Return true if STR is a single character string."
+  "Return non-nil if STR is a single character string."
   (and str (= (length str) 1)))
 
 (defun org-utf-to-xetex--char-to-block-def (str)
