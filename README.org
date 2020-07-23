@@ -76,33 +76,12 @@ You likely set up LaTeX with three font settings like this
 
 That makes most of your PDF documents look great because 99% of the characters that you use are [[https://en.wikipedia.org/wiki/List_of_languages_by_writing_system#Latin_script][Latin]] and your =mainfont= supports all of them. The problem is the 1% that it doesn't, which are most likely Non-Latin characters. Instead of your Unicode character that you expected to see, you see a white box. Here is an example of the Org-Mode document, the intermediate LaTeX, and resulting PDF
 
-
-| A | B |
-|---+---|
-| C | D |
-
-
-#+BEGIN_EXPORT html
-<table border="1">
-  <caption>Workflow <i>Without</i> This Package</caption>
-  <tr>
-    <th>File In Workflow</th>
-    <th>Screenshot</th>
-  </tr>
-  <tr>
-    <td>Org-Mode Source</td>
-    <td><img src="./images/orgfile.png" alt="Org-Mode Source File"></td>
-  </tr>
-  <tr>
-    <td>LaTeX Source</td>
-    <td><img src="./images/latexfile.png" alt="LaTeX Source File"></td>
-  </tr>
-  <tr>
-    <td>Generated PDF</td>
-    <td><img src="./images/pdffile.png" alt="PDF Without Using Package" width="62%" height="62%"></td>
-  </tr>
-</table>
-#+END_EXPORT
+Workflow Without This Package:
+| File In Workflow | Screenshot                                                                                |
+|------------------+-------------------------------------------------------------------------------------------|
+| Org-Mode Source  | <img src="./images/orgfile.png" alt="Org-Mode Source File">                               |
+| LaTeX Source     | <img src="./images/latexfile.png" alt="LaTeX Source File">                                |
+| Generated PDF    | <img src="./images/pdffile.png" alt="PDF Without Using Package" width="62%" height="62%"> |
 
 That clearly isn't what you expected.
 
