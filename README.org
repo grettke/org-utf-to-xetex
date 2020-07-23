@@ -1,3 +1,4 @@
+
 * org-utf-to-xetex - Org-Mode Print Unicode Characters Directly To PDF
 :PROPERTIES:
 :CUSTOM_ID: org-utf-to-xetex---org-mode-print-unicode-characters-directly-to-pdf
@@ -46,129 +47,27 @@ You likely set up LaTeX with three font settings like this
 
 That makes most of your PDF documents look great because 99% of the characters that you use are [[https://en.wikipedia.org/wiki/List_of_languages_by_writing_system#Latin_script][Latin]] and your =mainfont= supports all of them. The problem is the 1% that it doesn't, which are most likely Non-Latin characters. Instead of your Unicode character that you expected to see, you see a white box. Here is an example of the Org-Mode document, the intermediate LaTeX, and resulting PDF
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <table border="1">
-#+END_HTML
-
-#+BEGIN_HTML
-<caption>
-#+END_HTML
-
-Workflow Without This Package
-
-#+BEGIN_HTML
-</caption>
-#+END_HTML
-
-#+BEGIN_HTML
-<tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<th>
-#+END_HTML
-
-File In Workflow
-
-#+BEGIN_HTML
-</th>
-#+END_HTML
-
-#+BEGIN_HTML
-<th>
-#+END_HTML
-
-Screenshot
-
-#+BEGIN_HTML
-</th>
-#+END_HTML
-
-#+BEGIN_HTML
-</tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-Org-Mode Source
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-</tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-LaTeX Source
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-</tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-Generated PDF
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-</tr>
-#+END_HTML
-
-#+BEGIN_HTML
+  <caption>Workflow <i>Without</i> This Package</caption>
+  <tr>
+    <th>File In Workflow</th>
+    <th>Screenshot</th>
+  </tr>
+  <tr>
+    <td>Org-Mode Source</td>
+    <td><img src="./images/orgfile.png" alt="Org-Mode Source File"></td>
+  </tr>
+  <tr>
+    <td>LaTeX Source</td>
+    <td><img src="./images/latexfile.png" alt="LaTeX Source File"></td>
+  </tr>
+  <tr>
+    <td>Generated PDF</td>
+    <td><img src="./images/pdffile.png" alt="PDF Without Using Package" width="62%" height="62%"></td>
+  </tr>
 </table>
-#+END_HTML
+#+END_EXPORT
 
 That clearly isn't what you expected.
 
@@ -180,157 +79,31 @@ This package teaches Org-Mode how to ask XeTeX to use a different font for some 
 
 Now your Org-Mode document and generated PDF should look something like this
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <table border="1">
-#+END_HTML
-
-#+BEGIN_HTML
-<caption>
-#+END_HTML
-
-Workflow With This Package
-
-#+BEGIN_HTML
-</caption>
-#+END_HTML
-
-#+BEGIN_HTML
-<tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<th>
-#+END_HTML
-
-File In Workflow
-
-#+BEGIN_HTML
-</th>
-#+END_HTML
-
-#+BEGIN_HTML
-<th>
-#+END_HTML
-
-#+BEGIN_HTML
-<Screenshot>
-#+END_HTML
-
-#+BEGIN_HTML
-</th>
-#+END_HTML
-
-#+BEGIN_HTML
-</tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-Org-Mode Source Without Prettification
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-</tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-Org-Mode Source With Prettification
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-</tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-LaTeX Source With Font Commands
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-</tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<tr>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-PDF With Correct Fonts
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-<td>
-#+END_HTML
-
-#+BEGIN_HTML
-</td>
-#+END_HTML
-
-#+BEGIN_HTML
-</tr>
-#+END_HTML
-
-#+BEGIN_HTML
+  <caption>Workflow <i>With</i> This Package</caption>
+  <tr>
+    <th>File In Workflow</th>
+    <th><Screenshot></th>
+  </tr>
+  <tr>
+    <td>Org-Mode Source <i>Without</i> Prettification</td>
+    <td><img src="./images/orgfiledonenotpretty.png" alt="Org-Mode Source File Without Any  Prettification"></td>
+  </tr>
+  <tr>
+    <td>Org-Mode Source <i>With</i> Prettification</td>
+    <td><img src="./images/orgfiledonepretty.png" alt="Org-Mode Source File With Prettification"></td>
+  </tr>
+  <tr>
+    <td>LaTeX Source With Font Commands</td>
+    <td><img src="./images/latexfiledone.png" alt="LaTeX Source With Font Commands"></td>
+  </tr>
+  <tr>
+    <td>PDF With Correct Fonts</td>
+    <td><img src="./images/pdffiledone.png" alt="PDF Using This Package" width="62%" height="62%"></td>
+  </tr>
 </table>
-#+END_HTML
+#+END_EXPORT
 
 ** Examples
 :PROPERTIES:
@@ -499,328 +272,328 @@ First play around with them. See what you can do with them.
 
 Second use them to configure your system.
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <table border="1">
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <caption>
-#+END_HTML
+#+END_EXPORT
 
 API
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </caption>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <th>
-#+END_HTML
+#+END_EXPORT
 
 Goal
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </th>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <th>
-#+END_HTML
+#+END_EXPORT
 
 Function
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </th>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <th>
-#+END_HTML
+#+END_EXPORT
 
 Documentation
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </th>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 What Unicode block does the character after the cursor live in?
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 =org-utf-to-xetex-get-unicode-block-for-string-char-after=
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 This is Unicode block name for this character.
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 What Unicode block does this character live in?
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 =org-utf-to-xetex-get-unicode-block-for-string=, =str=
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 This Unicode block name is used for the LaTeX fontcommands.
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 Tell XeTeX about the Unicode block for some characters (so this package
 knows what font to use)
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 =org-utf-to-xetex-string-to-xetex=, =str=
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 Provides a LaTeX string with the font environment you want
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 Wrap some text with the package macro, or just insert it
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 =org-utf-to-xetex-insert-or-wrap-with-macro=
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 See goal
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 Make the Org-Mode markup for this package easier to read
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 =org-utf-to-xetex-prettify=
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 Use =prettify-symbols-mode= and =org-hide-macro-markers= to hide parentheses. Add to =org-mode-hook=.
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 Tell what fonts to use for what kinds of characters.
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 =org-utf-to-xetex-command-for-every-block=
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 Pop up a window with commands necessary for every Unicode block
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 Tell your Org-Mode document to load this package's macro.
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 =org-utf-to-xetex-insert-setup-file-line=
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 <td>
-#+END_HTML
+#+END_EXPORT
 
 See goal.
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </td>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </tr>
-#+END_HTML
+#+END_EXPORT
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
 </table>
-#+END_HTML
+#+END_EXPORT
 
 ** Workflow
 :PROPERTIES:
