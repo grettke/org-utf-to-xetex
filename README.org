@@ -177,9 +177,9 @@ Add the following to your init file to
 - Add it to your Org-Mode hook
 
 #+BEGIN_SRC emacs-lisp
-      (add-to-list 'load-path "~/src/org-utf-to-xetex")
-      (require 'org-utf-to-xetex)
-      (add-hook 'org-mode-hook #'org-utf-to-xetex-prettify)
+(add-to-list 'load-path "~/src/org-utf-to-xetex")
+(require 'org-utf-to-xetex)
+(add-hook 'org-mode-hook #'org-utf-to-xetex-prettify)
 #+END_SRC
 
 ** Verification
