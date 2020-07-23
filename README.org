@@ -1,16 +1,16 @@
 * org-utf-to-xetex - Org-Mode Print Unicode Characters Directly To PDF
-  :PROPERTIES:
-  :CUSTOM_ID: org-utf-to-xetex---org-mode-print-unicode-characters-directly-to-pdf
-  :END:
+:PROPERTIES:
+:CUSTOM_ID: org-utf-to-xetex---org-mode-print-unicode-characters-directly-to-pdf
+:END:
 
 /Author:/ Grant Rettke
 [[mailto:gcr@wisdomandwonder.com][gcr@wisdomandwonder.com]] /Version:/
 0.9
 
 ** Read Me First
-   :PROPERTIES:
-   :CUSTOM_ID: read-me-first
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: read-me-first
+:END:
 
 You wrote =Have a great day 😄= in your Org-Mode file. Then you export it
 to PDF. Instead of seeing nice smiling face, you see a white box
@@ -62,9 +62,9 @@ the same characters as your text files. If you are interested in that
 workflow then you might be interested in this package.
 
 ** Overview
-   :PROPERTIES:
-   :CUSTOM_ID: overview
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: overview
+:END:
 
 =org-utf-to-xetex= is a little package that teaches
 [[https://orgmode.org/][Org-Mode]] and
@@ -94,127 +94,127 @@ an example of the Org-Mode document, the intermediate LaTeX, and
 resulting PDF
 
 #+BEGIN_HTML
-  <table border="1">
+<table border="1">
 #+END_HTML
 
 #+BEGIN_HTML
-  <caption>
+<caption>
 #+END_HTML
 
 Workflow Without This Package
 
 #+BEGIN_HTML
-  </caption>
+</caption>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <th>
+<th>
 #+END_HTML
 
 File In Workflow
 
 #+BEGIN_HTML
-  </th>
+</th>
 #+END_HTML
 
 #+BEGIN_HTML
-  <th>
+<th>
 #+END_HTML
 
 Screenshot
 
 #+BEGIN_HTML
-  </th>
+</th>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 Org-Mode Source
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 LaTeX Source
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 Generated PDF
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  </table>
+</table>
 #+END_HTML
 
 That clearly isn't what you expected.
@@ -236,161 +236,161 @@ Now your Org-Mode document and generated PDF should look something like
 this
 
 #+BEGIN_HTML
-  <table border="1">
+<table border="1">
 #+END_HTML
 
 #+BEGIN_HTML
-  <caption>
+<caption>
 #+END_HTML
 
 Workflow With This Package
 
 #+BEGIN_HTML
-  </caption>
+</caption>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <th>
+<th>
 #+END_HTML
 
 File In Workflow
 
 #+BEGIN_HTML
-  </th>
+</th>
 #+END_HTML
 
 #+BEGIN_HTML
-  <th>
+<th>
 #+END_HTML
 
 #+BEGIN_HTML
-  <Screenshot>
+<Screenshot>
 #+END_HTML
 
 #+BEGIN_HTML
-  </th>
+</th>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 Org-Mode Source Without Prettification
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 Org-Mode Source With Prettification
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 LaTeX Source With Font Commands
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 PDF With Correct Fonts
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  </table>
+</table>
 #+END_HTML
 
 ** Examples
-   :PROPERTIES:
-   :CUSTOM_ID: examples
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: examples
+:END:
 
 - 5 examples from =view-hello-file=
   [[http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/view-hello-file-five.pdf][as
@@ -404,9 +404,9 @@ PDF With Correct Fonts
   source Org-Mode file]]
 
 ** Alternatives
-   :PROPERTIES:
-   :CUSTOM_ID: alternatives
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: alternatives
+:END:
 
 *Before* you go any further with this package, *please* read about the
 alternatives listed on
@@ -425,9 +425,9 @@ I couldn't get it working. It is also unmaintained. So I figured I would
 write something to do the same thing using Org-Mode and Elisp.
 
 ** Requirements And Compatibility
-   :PROPERTIES:
-   :CUSTOM_ID: requirements-and-compatibility
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: requirements-and-compatibility
+:END:
 
 A LaTeX Distribution And Compiler
 
@@ -474,9 +474,9 @@ Emacs
 - =GNU Emacs version 25.x and lower: no=
 
 ** Installation
-   :PROPERTIES:
-   :CUSTOM_ID: installation
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: installation
+:END:
 
 Download it to /~/src/.
 
@@ -495,9 +495,9 @@ Add the following to your init file to
   #+END_EXAMPLE
 
 ** Verification
-   :PROPERTIES:
-   :CUSTOM_ID: verification
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: verification
+:END:
 
 This package is working correctly when:
 
@@ -519,14 +519,14 @@ For example
 =Ran 8 tests, 8 results as expected (2018-06-26 21:16:34-0500)=
 
 ** Usage Notes
-   :PROPERTIES:
-   :CUSTOM_ID: usage-notes
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: usage-notes
+:END:
 
 *** Character Support
-    :PROPERTIES:
-    :CUSTOM_ID: character-support
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: character-support
+:END:
 
 This package assumes that 99% of your document uses
 [[https://en.wikipedia.org/wiki/List_of_languages_by_writing_system#Latin_script][Latin
@@ -539,9 +539,9 @@ If you need to handle switching fonts for large blocks of text then read
 about the [[#alternatives][alternatives]].
 
 *** Performance
-    :PROPERTIES:
-    :CUSTOM_ID: performance
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: performance
+:END:
 
 Compiling the entire Emoticon block
 ([[http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/Emoticons.pdf][as
@@ -555,9 +555,9 @@ Since only plan to use this for documents that are mostly Latin
 characters I have not researched this any further.
 
 *** Unicode And You
-    :PROPERTIES:
-    :CUSTOM_ID: unicode-and-you
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: unicode-and-you
+:END:
 
 Learning more about Unicode will serve you well beyond using this
 package. Here are some fun ways to explore Unicode.
@@ -586,9 +586,9 @@ package. Here are some fun ways to explore Unicode.
   =org-utf-to-xetex-get-unicode-block-for-string-char-after=.
 
 *** Intended Users
-    :PROPERTIES:
-    :CUSTOM_ID: intended-users
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: intended-users
+:END:
 
 If you are reading this then it is safe to say that you are an Org-Mode
 user. Org-Mode makes it /so/ easy to create documents that you
@@ -617,342 +617,342 @@ you'll find that it is pretty easy to follow. Don't hesitate to contact
 me with any questions or concerns.
 
 ** Public API Features
-   :PROPERTIES:
-   :CUSTOM_ID: public-api-features
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: public-api-features
+:END:
 
 First play around with them. See what you can do with them.
 
 Second use them to configure your system.
 
 #+BEGIN_HTML
-  <table border="1">
+<table border="1">
 #+END_HTML
 
 #+BEGIN_HTML
-  <caption>
+<caption>
 #+END_HTML
 
 API
 
 #+BEGIN_HTML
-  </caption>
+</caption>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <th>
+<th>
 #+END_HTML
 
 Goal
 
 #+BEGIN_HTML
-  </th>
+</th>
 #+END_HTML
 
 #+BEGIN_HTML
-  <th>
+<th>
 #+END_HTML
 
 Function
 
 #+BEGIN_HTML
-  </th>
+</th>
 #+END_HTML
 
 #+BEGIN_HTML
-  <th>
+<th>
 #+END_HTML
 
 Documentation
 
 #+BEGIN_HTML
-  </th>
+</th>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 What Unicode block does the character after the cursor live in?
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 =org-utf-to-xetex-get-unicode-block-for-string-char-after=
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 This is Unicode block name for this character.
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 What Unicode block does this character live in?
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 =org-utf-to-xetex-get-unicode-block-for-string=, =str=
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 This Unicode block name is used for the LaTeX fontcommands.
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 Tell XeTeX about the Unicode block for some characters (so this package
 knows what font to use)
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 =org-utf-to-xetex-string-to-xetex=, =str=
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 Provides a LaTeX string with the font environment you want
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 Wrap some text with the package macro, or just insert it
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 =org-utf-to-xetex-insert-or-wrap-with-macro=
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 See goal
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 Make the Org-Mode markup for this package easier to read
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 =org-utf-to-xetex-prettify=
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 Use =prettify-symbols-mode= and =org-hide-macro-markers= to hide
 parentheses. Add to =org-mode-hook=.
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 Tell what fonts to use for what kinds of characters.
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 =org-utf-to-xetex-command-for-every-block=
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 Pop up a window with commands necessary for every Unicode block
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <tr>
+<tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 Tell your Org-Mode document to load this package's macro.
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 =org-utf-to-xetex-insert-setup-file-line=
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  <td>
+<td>
 #+END_HTML
 
 See goal.
 
 #+BEGIN_HTML
-  </td>
+</td>
 #+END_HTML
 
 #+BEGIN_HTML
-  </tr>
+</tr>
 #+END_HTML
 
 #+BEGIN_HTML
-  </table>
+</table>
 #+END_HTML
 
 ** Workflow
-   :PROPERTIES:
-   :CUSTOM_ID: workflow
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: workflow
+:END:
 
 Here are the steps to use this package starting from the top layer with
 Org-Mode all the way up to the bottom layer with XeTeX.
@@ -1054,9 +1054,9 @@ Org-Mode all the way up to the bottom layer with XeTeX.
   me what I can do better under this entire section.
 
 ** Credits
-   :PROPERTIES:
-   :CUSTOM_ID: credits
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: credits
+:END:
 
 - rolandwalker's
   [[https://github.com/rolandwalker/unicode-fonts][unicode-fonts]]
@@ -1064,9 +1064,9 @@ Org-Mode all the way up to the bottom layer with XeTeX.
   font blocks to ignore. Educational. Sweet. One of a kind package!
 
 ** org-utf-to-xetex In Production
-   :PROPERTIES:
-   :CUSTOM_ID: org-utf-to-xetex-in-production
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: org-utf-to-xetex-in-production
+:END:
 
 - Cyberdyne Systems
 - ENCOM
