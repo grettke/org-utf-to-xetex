@@ -6,7 +6,7 @@
 ;; Maintainer: Grant Rettke <grant@wisdomandwonder.com>
 ;; Homepage: https://github.com/grettke/org-utf-to-xetex
 ;; URL: http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.el
-;; Version: 0.9
+;; Version: 0.90
 ;; Package-Requires: ((emacs "25.1"))
 ;; Keywords: convenience, extensions, i18n, languages, tex, tools
 
