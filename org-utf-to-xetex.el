@@ -2,7 +2,8 @@
 
 ;; Copyright (C) 2018  Grant Rettke
 
-;; Author: Grant Rettke <gcr@wisdomandwonder.com>
+;; Author: Grant Rettke <grant@wisdomandwonder.com>
+;; Maintainer: Grant Rettke <grant@wisdomandwonder.com>
 ;; Homepage: https://github.com/grettke/org-utf-to-xetex
 ;; URL: http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.el
 ;; Version: 0.9
