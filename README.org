@@ -1,13 +1,41 @@
 #+OPTIONS: prop:nil
 
-* org-utf-to-xetex - Org-Mode Print Unicode Characters Directly To PDF
+#+TITLE: org-utf-to-xetex
+
+* About
 :PROPERTIES:
 :CUSTOM_ID: org-utf-to-xetex---org-mode-print-unicode-characters-directly-to-pdf
 :END:
 
-/Author:/ Grant Rettke
-[[mailto:gcr@wisdomandwonder.com][gcr@wisdomandwonder.com]]
-/Version:/ 0.9
+Org-Mode Print Unicode Characters Directly To PDF
+
+* Table of Contents
+:PROPERTIES:
+:TOC:      :include all
+:END:
+
+:CONTENTS:
+- [[#about][About]]
+- [[#table-of-contents][Table of Contents]]
+- [[#read-me-first][Read Me First]]
+- [[#overview][Overview]]
+- [[#examples][Examples]]
+- [[#alternatives][Alternatives]]
+- [[#requirements-and-compatibility][Requirements And Compatibility]]
+- [[#installation][Installation]]
+- [[#verification][Verification]]
+- [[#usage-notes][Usage Notes]]
+  - [[#character-support][Character Support]]
+  - [[#performance][Performance]]
+  - [[#unicode-and-you][Unicode And You]]
+  - [[#intended-users][Intended Users]]
+- [[#public-api-features][Public API Features]]
+- [[#workflow][Workflow]]
+- [[#credits][Credits]]
+- [[#development][Development]]
+- [[#license][License]]
+- [[#use-in-production][Use In Production]]
+:END:
 
 * Read Me First
 :PROPERTIES:
@@ -366,7 +394,38 @@ Here are the steps to use this package starting from the top layer with Org-Mode
 
 - rolandwalker's [[https://github.com/rolandwalker/unicode-fonts][unicode-fonts]] Package showed how to utilize Unicode fonts in Emacs. Code showed what font blocks to ignore. Educational. Sweet. One of a kind package!
 
-* org-utf-to-xetex In Production
+* Development
+
+- Contributing
+  - Read the [[./docs/CONTRIBUTING.org][contributing]] guidelines.
+  - Before your commit make sure that ~byte-compile-file~, ~checkdoc~, and
+    ~package-lint-current-buffer~ don't report any errors. The first two are
+    included with Emacs. ~package-lint~ you can either install using MELPA or
+    you can also install it by hand like you did the other
+    packages, like this:
+    #+BEGIN_SRC sh
+cd ~/src
+git clone https://github.com/purcell/package-lint.git
+    #+END_SRC
+    Use this code to load it:
+    #+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/src/package-lint")
+(require 'package-lint)
+    #+END_SRC
+- Testing
+  - Emacs Lisp Regression Testing
+    - This package uses [[https://www.gnu.org/software/emacs/manual/html_node/ert/index.html][Emacs Lisp Regression Testing (ERT)]]. See ~Verification~ above for details about usage. Read ~org-utf-to-xetex-test.el~ to see how it works.
+  - Manual System Testing
+    - See ~Examples~ above. Export them and compare the export to the sample files.
+- Rules
+  - [[https://alphapapa.github.io/dont-tread-on-emacs/][Don't Tread On Emacs]].
+  - [[./.github/CODE_OF_CONDUCT.org][Code of Conduct]].
+
+* License
+
+- [[./LICENSE.txt][GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007]].
+
+* Use In Production
 :PROPERTIES:
 :CUSTOM_ID: org-utf-to-xetex-in-production
 :END:
@@ -379,5 +438,3 @@ Here are the steps to use this package starting from the top layer with Org-Mode
 - Tyrell Corporation
 - Wayne Enterprises
 - Yoyodyne Propulsion Systems
-
---------------
