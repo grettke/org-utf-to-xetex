@@ -166,7 +166,7 @@ Emacs
 :CUSTOM_ID: installation
 :END:
 
-Download it to /~/src/.
+Download it to ~~/src/~.
 
 Add the following to your init file to
 
