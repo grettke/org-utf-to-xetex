@@ -336,9 +336,6 @@ Here are the steps to use this package starting from the top layer with Org-Mode
 #+BEGIN_SRC emacs-lisp
 (setq org-latex-compiler "xelatex")
 (setq org-latex-pdf-process '("latexmk -xelatex -quiet -shell-escape -f %f"))
-(setq-default TeX-engine 'xetex)
-(setq-default TeX-PDF-mode t)
-(add-to-list 'org-latex-packages-alist '("" "fontspec"))
 #+END_SRC
 
 - Install this package
