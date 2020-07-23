@@ -125,10 +125,10 @@ Now your Org-Mode document and generated PDF should look something like this
 *Before* you go any further with this package, *please* read about the
 alternatives listed on [[https://tex.stackexchange.com/questions/21046/change-xetex-fonts-automatically-depending-on-unicode-blocks][this post]]
 
-- [[https://www.ctan.org/pkg/xecjk][xecjk -- Support for CJK documents in XeLaTeX]]
-- [[https://www.ctan.org/pkg/fontwrap][fontwrap -- Bind fonts to specific unicode blocks]]
-- [[https://www.ctan.org/pkg/polyglossia][polyglossia -- An alternative to babel for XeLaTeX and LuaLaTeX]]
-- [[https://www.ctan.org/tex-archive/macros/xetex/latex/ucharclasses][ucharclasses -- sets up XeTeX character classes based on which unicode block a character is found in]]
+- [[https://www.ctan.org/pkg/xecjk][xecjk]] :: Support for CJK documents in XeLaTeX.
+- [[https://www.ctan.org/pkg/fontwrap][fontwrap]] :: Bind fonts to specific unicode blocks.
+- [[https://www.ctan.org/pkg/polyglossia][polyglossia]] :: An alternative to babel for XeLaTeX and LuaLaTeX
+- [[https://www.ctan.org/tex-archive/macros/xetex/latex/ucharclasses][ucharclasses]] :: Sets up XeTeX character classes based on which unicode block a character is found in
 
 This package duplicates =ucharclasses=. It was exactly what I wanted but I couldn't get it working. It is also unmaintained. So I figured I would write something to do the same thing using Org-Mode and Elisp.
 
