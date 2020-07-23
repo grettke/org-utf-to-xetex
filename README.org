@@ -275,324 +275,47 @@ Second use them to configure your system.
 
 #+BEGIN_EXPORT html
 <table border="1">
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<caption>
-#+END_EXPORT
-
-API
-
-#+BEGIN_EXPORT html
-</caption>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<th>
-#+END_EXPORT
-
-Goal
-
-#+BEGIN_EXPORT html
-</th>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<th>
-#+END_EXPORT
-
-Function
-
-#+BEGIN_EXPORT html
-</th>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<th>
-#+END_EXPORT
-
-Documentation
-
-#+BEGIN_EXPORT html
-</th>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-</tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-What Unicode block does the character after the cursor live in?
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-=org-utf-to-xetex-get-unicode-block-for-string-char-after=
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-This is Unicode block name for this character.
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-</tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-What Unicode block does this character live in?
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-=org-utf-to-xetex-get-unicode-block-for-string=, =str=
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-This Unicode block name is used for the LaTeX fontcommands.
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-</tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-Tell XeTeX about the Unicode block for some characters (so this package
-knows what font to use)
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-=org-utf-to-xetex-string-to-xetex=, =str=
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-Provides a LaTeX string with the font environment you want
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-</tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-Wrap some text with the package macro, or just insert it
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-=org-utf-to-xetex-insert-or-wrap-with-macro=
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-See goal
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-</tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-Make the Org-Mode markup for this package easier to read
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-=org-utf-to-xetex-prettify=
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-Use =prettify-symbols-mode= and =org-hide-macro-markers= to hide parentheses. Add to =org-mode-hook=.
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-</tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-Tell what fonts to use for what kinds of characters.
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-=org-utf-to-xetex-command-for-every-block=
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-Pop up a window with commands necessary for every Unicode block
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-</tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-Tell your Org-Mode document to load this package's macro.
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-=org-utf-to-xetex-insert-setup-file-line=
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<td>
-#+END_EXPORT
-
-See goal.
-
-#+BEGIN_EXPORT html
-</td>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-</tr>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
+  <caption>API</caption>
+  <tr>
+    <th>Goal</th>
+    <th>Function</th>
+    <th>Documentation</th>
+  </tr>
+  <tr>
+    <td>What Unicode block does the character after the cursor live in?</td>
+    <td>`org-utf-to-xetex-get-unicode-block-for-string-char-after'</td>
+    <td>This is Unicode block name for this character.</td>
+  </tr>
+  <tr>
+    <td>What Unicode block does this character live in?</td>
+    <td>`org-utf-to-xetex-get-unicode-block-for-string', `str'</td>
+    <td>This Unicode block name is used for the LaTeX fontcommands.</td>
+  </tr>
+  <tr>
+    <td>Tell XeTeX about the Unicode block for some characters (so this package knows what font to use)</td>
+    <td>`org-utf-to-xetex-string-to-xetex', `str'</td>
+    <td>Provides a LaTeX string with the font environment you want</td>
+  </tr>
+  <tr>
+    <td>Wrap some text with the package macro, or just insert it</td>
+    <td>`org-utf-to-xetex-insert-or-wrap-with-macro'</td>
+    <td>See goal</td>
+  </tr>
+  <tr>
+    <td>Make the Org-Mode markup for this package easier to read</td>
+    <td>`org-utf-to-xetex-prettify'</td>
+    <td>Use `prettify-symbols-mode' and `org-hide-macro-markers' to hide parentheses. Add to `org-mode-hook'.</td>
+  </tr>
+  <tr>
+    <td>Tell what fonts to use for what kinds of characters.</td>
+    <td>`org-utf-to-xetex-command-for-every-block'</td>
+    <td>Pop up a window with commands necessary for <i>every</i> Unicode block</td>
+  </tr>
+  <tr>
+    <td>Tell your Org-Mode document to load this package's macro. </td>
+    <td>`org-utf-to-xetex-insert-setup-file-line'</td>
+    <td>See goal.</td>
+  </tr>
 </table>
 #+END_EXPORT
 
