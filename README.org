@@ -143,7 +143,7 @@ A LaTeX Distribution And Compiler
 - Compiler: XeTeX
 
 - Distribution: An OS Specific TeX Distribution
-  - Windows Uses [MiKTeX](https://miktex.org/) (I've used it and it is great) or [TeXLive on Windows](https://www.tug.org/texlive/windows.html)
+  - Windows: [MiKTeX](https://miktex.org/) (I've used it and it is great) or [TeXLive on Windows](https://www.tug.org/texlive/windows.html)
   - Linux: [TeXLive](https://www.tug.org/texlive/)
   - macOS: [MacTeX](https://www.tug.org/mactex/) (I've used it and it is great)
 - Version
