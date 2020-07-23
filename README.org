@@ -93,31 +93,13 @@ This package teaches Org-Mode how to ask XeTeX to use a different font for some 
 
 Now your Org-Mode document and generated PDF should look something like this
 
-#+BEGIN_EXPORT html
-<table border="1">
-  <caption>Workflow <i>With</i> This Package</caption>
-  <tr>
-    <th>File In Workflow</th>
-    <th><Screenshot></th>
-  </tr>
-  <tr>
-    <td>Org-Mode Source <i>Without</i> Prettification</td>
-    <td><img src="./images/orgfiledonenotpretty.png" alt="Org-Mode Source File Without Any  Prettification"></td>
-  </tr>
-  <tr>
-    <td>Org-Mode Source <i>With</i> Prettification</td>
-    <td><img src="./images/orgfiledonepretty.png" alt="Org-Mode Source File With Prettification"></td>
-  </tr>
-  <tr>
-    <td>LaTeX Source With Font Commands</td>
-    <td><img src="./images/latexfiledone.png" alt="LaTeX Source With Font Commands"></td>
-  </tr>
-  <tr>
-    <td>PDF With Correct Fonts</td>
-    <td><img src="./images/pdffiledone.png" alt="PDF Using This Package" width="62%" height="62%"></td>
-  </tr>
-</table>
-#+END_EXPORT
+Workflow _With_ This Package:
+| File In Workflow                       | Screenshot                            |
+|----------------------------------------+---------------------------------------|
+| Org-Mode Source _Without_ Prettification | [[file:/images/orgfiledonenotpretty.png]] |
+| Org-Mode Source _With_ Prettification    | [[file:/images/orgfiledonepretty.png]]    |
+| LaTeX Source With Font Commands        | [[file:/images/latexfiledone.png]]        |
+| PDF With Correct Fonts                 | [[file:/images/pdffiledone.png]]          |
 
 * Examples
 :PROPERTIES:
