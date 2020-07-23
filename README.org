@@ -9,7 +9,7 @@
 [[mailto:gcr@wisdomandwonder.com][gcr@wisdomandwonder.com]]
 /Version:/ 0.9
 
-** Read Me First
+* Read Me First
 :PROPERTIES:
 :CUSTOM_ID: read-me-first
 :END:
@@ -33,7 +33,7 @@ List of characters supported is simple: you can use any Unicode character. Once 
 
 *Org-Mode makes it easy to use the same "Unicode Everywhere"* workflow by switching from the PDFLaTeX compiler to the XeTeX compiler. In order to use this package you must have already switched over to XeTeX. Most of us are switching here /from/ PDFLaTeX. *Once you make the switch to XeTeX*, /and/ configure your system using this package, your PDFs print the same characters as your text files. If you are interested in that workflow then you might be interested in this package.
 
-** Overview
+* Overview
 :PROPERTIES:
 :CUSTOM_ID: overview
 :END:
@@ -106,7 +106,7 @@ Now your Org-Mode document and generated PDF should look something like this
 </table>
 #+END_EXPORT
 
-** Examples
+* Examples
 :PROPERTIES:
 :CUSTOM_ID: examples
 :END:
@@ -118,7 +118,7 @@ Now your Org-Mode document and generated PDF should look something like this
   [[http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/Emoticons.pdf][as a PDF]] along with
   [[http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/Emoticons.org][the source Org-Mode file]]
 
-** Alternatives
+* Alternatives
 :PROPERTIES:
 :CUSTOM_ID: alternatives
 :END:
@@ -133,7 +133,7 @@ alternatives listed on [[https://tex.stackexchange.com/questions/21046/change-xe
 
 This package duplicates =ucharclasses=. It was exactly what I wanted but I couldn't get it working. It is also unmaintained. So I figured I would write something to do the same thing using Org-Mode and Elisp.
 
-** Requirements And Compatibility
+* Requirements And Compatibility
 :PROPERTIES:
 :CUSTOM_ID: requirements-and-compatibility
 :END:
@@ -161,7 +161,7 @@ Emacs
 - =GNU Emacs version 25.x: yes=
 - =GNU Emacs version 25.x and lower: no=
 
-** Installation
+* Installation
 :PROPERTIES:
 :CUSTOM_ID: installation
 :END:
@@ -180,7 +180,7 @@ Add the following to your init file to
 (add-hook 'org-mode-hook #'org-utf-to-xetex-prettify)
 #+END_SRC
 
-** Verification
+* Verification
 :PROPERTIES:
 :CUSTOM_ID: verification
 :END:
@@ -209,12 +209,12 @@ For example
 
 =Ran 8 tests, 8 results as expected (2018-06-26 21:16:34-0500)=
 
-** Usage Notes
+* Usage Notes
 :PROPERTIES:
 :CUSTOM_ID: usage-notes
 :END:
 
-*** Character Support
+** Character Support
 :PROPERTIES:
 :CUSTOM_ID: character-support
 :END:
@@ -224,7 +224,7 @@ This package assumes that 99% of your document uses [[https://en.wikipedia.org/w
 If you need to handle switching fonts for large blocks of text then read
 about the [[#alternatives][alternatives]].
 
-*** Performance
+** Performance
 :PROPERTIES:
 :CUSTOM_ID: performance
 :END:
@@ -233,7 +233,7 @@ Compiling the entire Emoticon block ([[http://raw.githubusercontent.com/grettke/
 
 Since only plan to use this for documents that are mostly Latin characters I have not researched this any further.
 
-*** Unicode And You
+** Unicode And You
 :PROPERTIES:
 :CUSTOM_ID: unicode-and-you
 :END:
@@ -245,7 +245,7 @@ Learning more about Unicode will serve you well beyond using this package. Here 
 - The [[https://github.com/rolandwalker/unicode-fonts][unicode-fonts]] package configures Emacs with the font to use for each Unicode block. Its default configuration chooses good defaults so your job is only to install the fonts themselves. After you have found fonts that you like, you can use /this/ package to specify the same font for XeTeX, resulting in a "What You See Is What You Get" experience from Emacs to PDF.
 - Call the =view-hello-file= function to "Display the HELLO file, which lists languages and characters." This is a fun way to learn more about characters using =describe-char= and =org-utf-to-xetex-get-unicode-block-for-string-char-after=.
 
-*** Intended Users
+** Intended Users
 :PROPERTIES:
 :CUSTOM_ID: intended-users
 :END:
@@ -262,7 +262,7 @@ This guide is written for experienced Org-Mode, LaTeX, and XeTeX users. If you a
 
 Once you get comfortable with the tools then the workflow for this package will feel simple to you. Until you reach that point please take your time and learn at your own pace. You can see how my system is setup [[https://github.com/grettke/help/blob/master/.emacs.el][here]] and you'll find that it is pretty easy to follow. Don't hesitate to contact me with any questions or concerns.
 
-** Public API Features
+* Public API Features
 :PROPERTIES:
 :CUSTOM_ID: public-api-features
 :END:
@@ -317,7 +317,7 @@ Second use them to configure your system.
 </table>
 #+END_EXPORT
 
-** Workflow
+* Workflow
 :PROPERTIES:
 :CUSTOM_ID: workflow
 :END:
@@ -359,14 +359,14 @@ Here are the steps to use this package starting from the top layer with Org-Mode
   #+END_SRC
 - This is what it takes to teach Org-Mode and XeTeX to use the correct font for your Unicode characters. If you got this far then please tell me what I can do better under this entire section.
 
-** Credits
+* Credits
 :PROPERTIES:
 :CUSTOM_ID: credits
 :END:
 
 - rolandwalker's [[https://github.com/rolandwalker/unicode-fonts][unicode-fonts]] Package showed how to utilize Unicode fonts in Emacs. Code showed what font blocks to ignore. Educational. Sweet. One of a kind package!
 
-** org-utf-to-xetex In Production
+* org-utf-to-xetex In Production
 :PROPERTIES:
 :CUSTOM_ID: org-utf-to-xetex-in-production
 :END:
