@@ -76,7 +76,7 @@ You likely set up LaTeX with three font settings like this
 
 That makes most of your PDF documents look great because 99% of the characters that you use are [[https://en.wikipedia.org/wiki/List_of_languages_by_writing_system#Latin_script][Latin]] and your =mainfont= supports all of them. The problem is the 1% that it doesn't, which are most likely Non-Latin characters. Instead of your Unicode character that you expected to see, you see a white box. Here is an example of the Org-Mode document, the intermediate LaTeX, and resulting PDF
 
-Workflow Without This Package:
+Workflow _Without_ This Package:
 | File In Workflow | Screenshot                 |
 |------------------+----------------------------|
 | Org-Mode Source  | [[file:/images/orgfile.png]]   |
