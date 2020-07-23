@@ -1,4 +1,4 @@
-#+OPTIONS: title:nil prop:nil
+#+OPTIONS: prop:nil
 
 * org-utf-to-xetex - Org-Mode Print Unicode Characters Directly To PDF
 :PROPERTIES:
