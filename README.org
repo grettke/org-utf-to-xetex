@@ -143,6 +143,7 @@ A LaTeX Distribution And Compiler
   - macOS: [MacTeX](https://www.tug.org/mactex/) (I've used it and it is great)
 - Version
   - You've got two considerations here: the version of the compiler and the version of the packages. When I setup this package, I used the 2016 distribution and the packages that came with it. I haven't updated either the compiler or packages since then. My experience is that once you've got it working, don't upgrade anything until you absolutely need to. If you do need to update something then take a backup of your system first because things can unexpectedly change leaving you without a working system. Yes this is totally obvious, but you don't want to break your system when you are in the middle of writing and publishing. Instead break it later when you are willing to cleans things at ease.
+  - 2020-07-23 Update: Upgraded to 2019 on a peaceful rainy day and it went fine.
 
 Org-Mode Compatiblity
 
