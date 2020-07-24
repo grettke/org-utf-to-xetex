@@ -1,6 +1,8 @@
 * Issue Created
 
--
+- #1 Handle characters inside of source blocks
+- #2 Provide a sample TEXMF to build the sample documents #2
+- #3 Demonstrate how other editors handle font handling from Org-Mode and Pandoc to not PDF targets
 
 * No Issue Created
 
