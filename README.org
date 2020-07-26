@@ -362,7 +362,7 @@ Here are the steps to use this package starting from the top layer with Org-Mode
 \newfontfamily\Emoticons{Symbola}
 \DeclareTextFontCommand{\textEmoticons}{\Emoticons}
   #+END_SRC
-- At this point XeTeX should render your characters using the correct font. Open that buffer and verify that your characters are wrapped with the correct font, it should like the sample below. Verify this by exporting your document to a buffer calling /C-c C-e/ /l/ /L/. The should now render the characters correctly instead of using white boxes.
+- At this point XeTeX should render your characters using the correct font. Open that buffer and verify that your characters are wrapped with the correct font, it should look like the sample below. Verify this by exporting your document to a buffer calling /C-c C-e/ /l/ /L/. The should now render the characters correctly instead of using white boxes.
   #+BEGIN_SRC latex
 \textEmoticons{😄} (Joy)
   #+END_SRC
