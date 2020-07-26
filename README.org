@@ -20,7 +20,7 @@ Org XeTeX Automate Font Specification By Unicode Block.
 - [[#read-me-first][Read Me First]]
 - [[#overview][Overview]]
 - [[#examples][Examples]]
-- [[#alternatives][Alternatives]]
+- [[#alternatives--justification][Alternatives & Justification]]
 - [[#requirements-and-compatibility][Requirements And Compatibility]]
 - [[#installation][Installation]]
 - [[#verification][Verification]]
