@@ -113,7 +113,7 @@ Workflow _With_ This Package:
   [[http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/Emoticons.pdf][as a PDF]] along with
   [[http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/Emoticons.org][the source Org-Mode file]]
 
-* Alternatives
+* Alternatives & Justification
 :PROPERTIES:
 :CUSTOM_ID: alternatives
 :END:
@@ -123,10 +123,24 @@ alternatives listed on [[https://tex.stackexchange.com/questions/21046/change-xe
 
 - [[https://www.ctan.org/pkg/xecjk][xecjk]] :: Support for CJK documents in XeLaTeX.
 - [[https://www.ctan.org/pkg/fontwrap][fontwrap]] :: Bind fonts to specific unicode blocks.
-- [[https://www.ctan.org/pkg/polyglossia][polyglossia]] :: An alternative to babel for XeLaTeX and LuaLaTeX
-- [[https://www.ctan.org/tex-archive/macros/xetex/latex/ucharclasses][ucharclasses]] :: Sets up XeTeX character classes based on which unicode block a character is found in
+- [[https://www.ctan.org/pkg/polyglossia][polyglossia]] :: An alternative to ~babel~ for XeLaTeX and LuaLaTeX
+- [[https://www.ctan.org/tex-archive/macros/xetex/latex/ucharclasses][ucharclasses]] :: Automatic font specification by unicode block.
 
-This package duplicates =ucharclasses=. It was exactly what I wanted but I couldn't get it working. It is also unmaintained. Being unmtainained isn't an issue in and of itself but it was /so easy/ to implement this functionality that I figured I would write something to do the same thing using Org-Mode and Elisp.
+~org-utf-to-xetex~ duplicates ~ucharclasses~. It was exactly what I needed. So why not use it?
+
+I wanted to use it but ran into the following problems:
+
+1. I couldn't get it working.
+1. It is unmaintained. /Note/: Being unmaintained isn't an issue in and of itself
+1. Although I was willing to take it over I was not willing to learn TeX.
+
+So why write yet another solution from scratch in Org and Emacs?
+
+1. I couldn't find an /existing/ solution in Org and Emacs. All of them seem to be in TeX packages.
+1. It is /very easy/ to handle specifying fonts per Unicode block by hand in LaTeX. This is critical because it is easy to understand and makes it easy to convert to an Org solution.
+1. It is /very easy/ to perform the same steps within the Org exporter framework using Emacs Lisp. Long term a lot more people can maintain this.
+
+Those are the alternative and justification for this package. That is my story and I'm sticking to it.
 
 * Requirements And Compatibility
 :PROPERTIES:
