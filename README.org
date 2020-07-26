@@ -7,7 +7,7 @@
 :CUSTOM_ID: org-utf-to-xetex---org-mode-print-unicode-characters-directly-to-pdf
 :END:
 
-Org-Mode Print Unicode Characters Directly To PDF
+Org XeTeX Automate Font Specification By Unicode Block.
 
 * Table of Contents
 :PROPERTIES:

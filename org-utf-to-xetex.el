@@ -1,4 +1,4 @@
-;;; org-utf-to-xetex.el --- Org-Mode Print Unicode Characters Directly To PDF -*- lexical-binding: t; -*-
+;;; org-utf-to-xetex.el --- Org XeTeX Automate Font Specification By Unicode Block -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2018  Grant Rettke
 
