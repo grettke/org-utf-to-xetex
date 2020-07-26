@@ -126,7 +126,7 @@ alternatives listed on [[https://tex.stackexchange.com/questions/21046/change-xe
 - [[https://www.ctan.org/pkg/polyglossia][polyglossia]] :: An alternative to babel for XeLaTeX and LuaLaTeX
 - [[https://www.ctan.org/tex-archive/macros/xetex/latex/ucharclasses][ucharclasses]] :: Sets up XeTeX character classes based on which unicode block a character is found in
 
-This package duplicates =ucharclasses=. It was exactly what I wanted but I couldn't get it working. It is also unmaintained. So I figured I would write something to do the same thing using Org-Mode and Elisp.
+This package duplicates =ucharclasses=. It was exactly what I wanted but I couldn't get it working. It is also unmaintained. Being unmtainained isn't an issue in and of itself but it was /so easy/ to implement this functionality that I figured I would write something to do the same thing using Org-Mode and Elisp.
 
 * Requirements And Compatibility
 :PROPERTIES:
