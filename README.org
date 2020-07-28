@@ -479,7 +479,7 @@ From here forward only work with =new.org=. Leave =new.ltx= open in another wind
 
 For every white box that you want replaced with a real character you'll need to go through the following steps. For sake of this example it will use the character =🙋=.
 
-Wrap =🙋= in the macro from this package by highlightig it and calling =org-utf-to-xetex-insert-or-wrap-with-macro=.
+Wrap =🙋= in the macro from this package by highlighting it and calling =org-utf-to-xetex-insert-or-wrap-with-macro=.
 
 /Note:/
 #+BEGIN_COMMENT
