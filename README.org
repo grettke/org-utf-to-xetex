@@ -37,7 +37,7 @@ If you want to completely replace a Unicode-friendly [[https://en.wikipedia.org/
 - [[#credits][Credits]]
 - [[#development][Development]]
 - [[#license][License]]
-- [[#use-in-production][Use In Production]]
+- [[#user-list][User List]]
 :END:
 
 * Read Me First
