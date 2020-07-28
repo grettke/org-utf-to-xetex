@@ -173,6 +173,10 @@ Add the following to your init file to
 :CUSTOM_ID: workflow
 :END:
 
+#+BEGIN_QUOTE
+Initially setting up this workflow  might feel intimidating but remember that #1 if /I/ can set it up than *anybody* can set it up and #2 learning this technology will completely empower you to use Org mode with *any* Unicode characters here forward. This technology completely frees you from WYSIWIG editors and lets you truly "Organize Your Life In Plain [Unicode] Text" for the rest of your life. 
+#+END_QUOTE
+
 Here are the steps to use this package starting from bottom layer with XeTeX all the way up to the top layer with Org Mode.
 
 ** TeX
@@ -338,9 +342,12 @@ Open that buffer and verify that your characters are =🙋= is specified with wi
 \textEmoticons{😄} (Joy)
 #+END_SRC
 
-Verify this by exporting your document to a buffer calling ~C-c C-e l O~. The document should now render the characters =🙋= correctly instead of using a white boxe.
+Verify this by exporting your document to a buffer calling ~C-c C-e l o~. The document should now render the characters =🙋= correctly instead of using a white boxe.
 
-This is what it takes to teach Org-Mode and XeTeX to use the correct font for your Unicode characters. If you got this far then please tell me what I can do better under this entire section.
+This is what it takes to teach Org-Mode and XeTeX to use the correct font for your Unicode characters.
+
+If you got this far then please tell me what I can do better here.
+
 * Public API Features
 :PROPERTIES:
 :CUSTOM_ID: public-api-features
