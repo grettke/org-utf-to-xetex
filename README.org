@@ -175,7 +175,7 @@ Add the following to your init file to
 
 *First stop here, take a few breaths, then seriously consider this:*
 #+BEGIN_QUOTE
-Initially setting up this workflow  might feel intimidating but remember that #1 if /I/ can set it up than *anybody* can set it up and #2 learning this technology will completely empower you to use Org mode with *any* Unicode characters here forward. This technology completely frees you from WYSIWIG editors and lets you truly "Organize Your Life In Plain [Unicode] Text" for the rest of your life.
+Initially setting up this workflow  might feel intimidating but remember that #1 if /I/ can set it up than *anybody* can set it up and #2 learning this technology will completely empower you to use Org mode with *any* Unicode characters here forward. This technology completely frees you from WYSIWIG editors and lets you truly "Organize Your Life In Plain [Unicode] Text" for the rest of your life. You can do it!
 #+END_QUOTE
 
 Here are the steps to use this package starting from bottom layer with XeTeX all the way up to the top layer with Org Mode.
