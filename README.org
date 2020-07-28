@@ -7,7 +7,7 @@
 :CUSTOM_ID: org-utf-to-xetex---org-mode-print-unicode-characters-directly-to-pdf
 :END:
 
-Org XeTeX Automate Font Specification By Unicode Block.
+If you want to completely replace a Unicode-friendly [[https://en.wikipedia.org/wiki/WYSIWYG][WYSIWYG]] text editor like [[https://en.wikipedia.org/wiki/Microsoft_Word][Microsoft Word]] or [[https://en.wikipedia.org/wiki/OpenOffice.org][OpenOffice]] with Org Mode then this package will help you do it.
 
 * Table of Contents
 :PROPERTIES:
@@ -17,7 +17,7 @@ Org XeTeX Automate Font Specification By Unicode Block.
 :CONTENTS:
 - [[#about][About]]
 - [[#table-of-contents][Table of Contents]]
-- [[#read-me-first][Read Me First]]
+- [[#read-me-second][Read Me Second]]
 - [[#overview][Overview]]
 - [[#examples][Examples]]
 - [[#alternatives--justification][Alternatives & Justification]]
@@ -40,7 +40,7 @@ Org XeTeX Automate Font Specification By Unicode Block.
 - [[#use-in-production][Use In Production]]
 :END:
 
-* Read Me First
+* Read Me Second
 :PROPERTIES:
 :CUSTOM_ID: read-me-first
 :END:
@@ -62,7 +62,7 @@ On my computer I am pretty lazy in that I want to write a document once and have
 
 List of characters supported is simple: you can use any Unicode character. Once you find a good font, then it looks good as a text file just how you would expect it. When you export to HTML, it just works. On my box though it didn't just work for PDF. The solution is to switch to a different LaTeX compiler, and it lets you generate PDFs just as easily as with every other Org-Mode export: all of your characters show up correctly.
 
-*Org-Mode makes it easy to use the same "Unicode Everywhere"* workflow by switching from the PDFLaTeX compiler to the XeTeX compiler. In order to use this package you must have already switched over to XeTeX. Most of us are switching here /from/ PDFLaTeX. *Once you make the switch to XeTeX*, /and/ configure your system using this package, your PDFs print the same characters as your text files. If you are interested in that workflow then you might be interested in this package.
+Org-Mode makes it easy to use the same "Unicode Everywhere" workflow by switching from the PDFLaTeX compiler to the XeTeX compiler. In order to use this package you must use XeTeX. Most of us are switching here /from/ PDFLaTeX. Once you make the switch to XeTeX, /and/ configure your system using this package, your PDFs print the same characters as your text files. If you are interested in that workflow then you might be interested in this package.
 
 * Overview
 :PROPERTIES:
