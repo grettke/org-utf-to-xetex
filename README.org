@@ -45,11 +45,11 @@ If you want to completely replace a Unicode-friendly [[https://en.wikipedia.org/
 :CUSTOM_ID: read-me-first
 :END:
 
-You wrote =Have a great day 😄= in your Org-Mode file. Then you export it to PDF. Instead of seeing nice smiling face, you see a white box instead: =Have a great day □=. If you are in this situation then you /might/ be interested in reading on.
+You wrote =Have a great day =😄= in your Org-Mode file. Then you export it to PDF. Instead of seeing a cute smiling face, you see a white box instead: =Have a great day □=. If you are in this situation, then you /might/ be interested in reading on.
 
-Org-Mode exports to many formats. Each format has different strengths. When Org-Mode exports your document it needs to leverage the strengths of the destination format by abstracting away the difference so that you can specify the /intended/ character in Org-Mode's markup and let Org-Mode choose the right one for your destination format. Org-Mode facilitates this abstraction using it's [[https://orgmode.org/worg/org-symbols.html][Symbols]] mechanism. A great example here is the smiley face.
+Org-Mode exports to many formats. Each format has different strengths. When Org-Mode exports your document, it needs to leverage the advantages of the destination format by abstracting the difference so that you can specify the /intended/ character in Org-Mode's markup and let Org-Mode choose the right one for your destination format. Org-Mode facilitates this abstraction using it's [[https://orgmode.org/worg/org-symbols.html][Symbols]] mechanism. A great example here is the smiley face.
 
-In Org-Mode the smiley face is represented by the string =\smiley=. When your document is exported it gets converted to the correct representation for it's destination. Here are some example conversions (language, output):
+In Org-Mode, the smiley face is represented by the string =\smiley=. When your document is exported, it gets converted to the correct representation for its destination. Here are some example conversions (language, output):
 
 - LaTeX: =\smiley{}=
 - HTML: =&#9786;=
@@ -58,20 +58,20 @@ In Org-Mode the smiley face is represented by the string =\smiley=. When your do
 
 You will get a smiley face in every export. This mechanism /should/ get you what you want. For my computer, this wasn't enough.
 
-On my computer I am pretty lazy in that I want to write a document once and have it look pretty close to it's final version. I don't want to have to use a Symbol for every Non-Latin character, and there aren't enough symbols anyway. Using UTF-8 files makes it easy to use whatever character you want so that is the right place to start.
+On my computer, I am pretty lazy because I want to write a document once and have it look pretty close to its final version. I don't want to have to use a Symbol for every Non-Latin character, and there aren't enough symbols anyway. Using UTF-8 files makes it easy to use whatever character you want, so that is the right place to start.
 
-List of characters supported is simple: you can use any Unicode character. Once you find a good font, then it looks good as a text file just how you would expect it. When you export to HTML, it just works. On my box though it didn't just work for PDF. The solution is to switch to a different LaTeX compiler, and it lets you generate PDFs just as easily as with every other Org-Mode export: all of your characters show up correctly.
+List of characters supported is simple: you can use any Unicode character. Once you find the right font,  it looks good as a text file, just how you would expect it. When you export to HTML, it "just works." On my box, though, it didn't just work for PDF. The solution is to switch to a different LaTeX compiler, and it lets you generate PDFs just as easily as with every other Org-Mode export: all of your characters show up correctly.
 
-Org-Mode makes it easy to use the same "Unicode Everywhere" workflow by switching from the PDFLaTeX compiler to the XeTeX compiler. In order to use this package you must use XeTeX. Most of us are switching here /from/ PDFLaTeX. Once you make the switch to XeTeX, /and/ configure your system using this package, your PDFs print the same characters as your text files. If you are interested in that workflow then you might be interested in this package.
+Org-Mode makes it easy to use the same "Unicode Everywhere" workflow by switching from the PDFLaTeX compiler to the XeTeX compiler. To use this package, you must use XeTeX. Most of us are switching here /from/ PDFLaTeX. Once you make the switch to XeTeX, /and/ configure your system using this package, your PDFs print the same characters as your text files. If you are interested in that workflow, then you might be interested in this package.
 
 * Overview
 :PROPERTIES:
 :CUSTOM_ID: overview
 :END:
 
-=org-utf-to-xetex= is a little package that teach [[https://orgmode.org/][Org-Mode]] and [[http://xetex.sourceforge.net/][XeTeX]] what fonts to use for a few of the Unicode characters in your document. This is a /little/ package because most of the steps happen in your LaTeX configuration. This package provides helpful functionality for setting up your LaTeX compiler and most importantly integrating it with your Org LaTeX exporter. The critical functionality though is provided by your LaTeX compiler, as you will see in the [[#workflow][workflow steps below]]. Read on to see the empty white box problem and how this package resolves it.
+=org-utf-to-xetex= is a little package that teach [[https://orgmode.org/][Org-Mode]] and [[http://xetex.sourceforge.net/][XeTeX]] what fonts to use for a few of the Unicode characters in your document. This is a /little/ package because most of the steps happen in your LaTeX configuration. This package provides helpful functionality for setting up your LaTeX compiler and, most importantly, integrating it with your Org LaTeX exporter. The critical functionality, though, is provided by your LaTeX compiler, as you will see in the [[#workflow][workflow steps below]]. Read on to see the empty white box problem and how this package resolves it.
 
-You likely set up LaTeX with three font settings like this
+You likely set up LaTeX with three font settings like this.
 
 - =\setmainfont{DejaVu Serif}=
 - =\setsansfont{DejaVu Sans}[Scale=MatchLowercase]=
@@ -88,13 +88,13 @@ Workflow _Without_ This Package:
 
 That clearly isn't what you expected.
 
-When your LaTeX compiler created the PDF, it used your mainfont. But that font doesn't handle the Unicode character you wrote. Your PDF wants you to that /it tried/ to show you something for that character but could not. It tells you by showing you an empty white box.
+When your LaTeX compiler created the PDF, it used your ~mainfont~. But that font doesn't handle the Unicode character you wrote. Your PDF wants you to that /it tried/ to show you something for that character but could not. It tells you by showing you an empty white box.
 
-This is pretty common because fonts don't and /cannot/ cover all of the Unicode symbols out there (there are too many). The solution is to specify a different font to handle the characters that your main font doesn't know about.
+This is pretty common because fonts don't and /cannot/ cover all of the Unicode symbols out there (there are too many). The solution is to specify a different font to handle the characters that your main font doesn't know.
 
 This package teaches Org-Mode how to ask XeTeX to use a different font for some characters.
 
-Now your Org-Mode document and generated PDF should look something like this
+Now your Org-Mode document and generated PDF should look something like this.
 
 Workflow _With_ This Package:
 | File In Workflow                       | Screenshot                            |
@@ -128,12 +128,12 @@ A LaTeX Distribution And Compiler
 - Distribution: An OS Specific TeX Distribution
   - Windows: [MiKTeX](https://miktex.org/) (I've used it and it is great) or [TeXLive on Windows](https://www.tug.org/texlive/windows.html)
   - Linux: [TeXLive](https://www.tug.org/texlive/)
-  - macOS: [MacTeX](https://www.tug.org/mactex/) (I've used it and it is great)
+  - macOS: [MacTeX](https://www.tug.org/mactex/) (I've used it, and it is excellent)
 - Version
-  - You've got two considerations here: the version of the compiler and the version of the packages. When I setup this package, I used the 2016 distribution and the packages that came with it. I haven't updated either the compiler or packages since then. My experience is that once you've got it working, don't upgrade anything until you absolutely need to. If you do need to update something then take a backup of your system first because things can unexpectedly change leaving you without a working system. Yes this is totally obvious, but you don't want to break your system when you are in the middle of writing and publishing. Instead break it later when you are willing to cleans things at ease.
-  - 2020-07-23 Update: Upgraded to 2019 on a peaceful rainy day and it went fine.
+  - You've got two considerations here: the release of the compiler and the version of the packages. When I set up this package, I used the 2016 distribution and the packages that came with it. I haven't updated either the compiler or packages since then. My experience is that once you've got it working, don't upgrade anything until you absolutely need to. If you need to update something, then take a backup of your system first because things can unexpectedly change, leaving you without a working system. This is totally obvious, but you don't want to break your system when you are in the middle of writing and publishing. Instead, break it later when you are willing to clean things at ease.
+  - 2020-07-23 Update: Upgraded to 2019 on a peaceful rainy day, and it went fine.
 
-Org-Mode Compatiblity
+Org-Mode Compatibility
 
 |   Version | Compatible?                                                                          |
 |-----------+--------------------------------------------------------------------------------------|
@@ -175,20 +175,20 @@ Add the following to your init file to
 
 *First stop here, take a few breaths, then seriously consider this:*
 #+BEGIN_QUOTE
-Initially setting up this workflow  might feel intimidating but remember that #1 if /I/ can set it up than *anybody* can set it up and #2 learning this technology will completely empower you to use Org mode with *any* Unicode characters here forward. This technology completely frees you from WYSIWIG editors and lets you truly "Organize Your Life In Plain [Unicode] Text" for the rest of your life. You can do it!
+Initially setting up this workflow might feel intimidating, but remember that #1 if /I/ can set it up, then *anybody* can set it up, and #2 learning this technology will ultimately empower you to use Org-mode with *any* Unicode characters here forward. This technology completely frees you from WYSIWIG editors and lets you indeed "Organize Your Life In Plain [Unicode] Text" for the rest of your life. You can do it!
 #+END_QUOTE
 
-Here are the steps to use this package starting from bottom layer with XeTeX all the way up to the top layer with Org Mode.
+Here are the steps to use this package, starting from the bottom layer with XeTeX all the way up to the top layer with Org-Mode.
 
 ** TeX
 
-If you followed along above then you've already installed a TeX distribution. Otherwise read above and install the TeX distribution for your operating system.
+If you followed along above, then you've already installed a TeX distribution. Otherwise, read above and install the TeX distribution for your operating system.
 
-Start the update utility and update /everything/. On macOS it is called TeX Live Utility.
+Start the update utility and update /everything/. On macOS, it is called TeX Live Utility.
 
 Be sure to read the "Introduction To [MacTeX|MikTeX|...]".
 
-Create your TeX configuration resources. The following are for MacTeX and you can adapt them to your local distribution. Whether you are new to TeX or not it is always a good idea to back up the original configuration and also store your configuration resources in Git.
+Create your TeX configuration resources. The following are for MacTeX, and you can adapt them to your local distribution. Whether you are new to TeX or not, it is always good to back up the original configuration and store your configuration resources in Git.
 
 #+begin_src sh
 cd /usr/local/texlive/2019
@@ -206,13 +206,13 @@ sudo tlmgr conf texmf TEXMFhome ~/src/texmf
 sudo mktexlsr
 #+end_src
 
-Now configure your default fonts for your PDF documents. Out of the box you can configure the following fonts:
+Now configure your default fonts for your PDF documents. Out of the box, you can configure the following fonts:
 
 - Main Font :: Default or all text
 - Sans Font :: Characters [[https://en.wikipedia.org/wiki/Sans-serif][without serifs]].
-- Mono Font :: Monospaced characters like code for example.
+- Mono Font :: Monospaced characters like code, for example.
 
-You probably already have a preferred font for these kinds of characters. If you don't you can find plenty of options online. When you are ready to configure your default fonts you can specify them easily by name like this:
+You probably already have a preferred font for these kinds of characters. If you don't, you can find plenty of options online. When you are ready to configure your default fonts you can specify them easily by name like this:
 
 #+BEGIN_SRC latex
 \setmainfont{DejaVu Serif}
@@ -237,15 +237,15 @@ It should look something like this:
 
 [[file:/images/typesettingcheck.png]]
 
-Now you have enough configured that when you create your PDF it should look right. In fact it is required. Make sure that everything looks right before moving forward: it is the only way to know that your system is working correctly before configuring additional fonts.
+Now you have enough configured that when you create your PDF, it should look right. In fact, it is required. Ensure that everything looks right before moving forward: it is the only way to know that your system is working correctly before configuring additional fonts.
 
 You'll use this document throughout the rest of the configuration.
 
 Configure your LaTeX editor until you feel good about it because getting comfortable here will make the whole process pleasant and even fun.
 
-** Org mode
+** Org-mode
 
-In Org-Mode change the LaTeX compiler and engine to XeTeX. Force Org-Mode to produce PDFs. Use =latexmk= because it is easier.
+In Org-Mode, change the LaTeX compiler and engine to XeTeX. Force Org-Mode to produce PDFs. Use =latexmk= because it is easier.
 
 #+BEGIN_SRC emacs-lisp
 (setq org-latex-compiler "xelatex")
@@ -258,13 +258,13 @@ Like [[https://tex.stackexchange.com/questions/2984/frequently-loaded-packages-d
 (add-to-list 'org-latex-packages-alist '("" "fontspec"))
 #+END_SRC
 
-Use your personal LaTeX configuration packate (the STY file you created up above) by adding it to your default Org mode package list:
+Use your personal LaTeX configuration package (the STY file you created up above) by adding it to your default Org-mode package list:
 
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'org-latex-packages-alist '("" "yourname"))
 #+end_src
 
-Now recreate the test document above using Org mode instead.
+Now recreate the test document above using Org-mode instead.
 
 Create a new file =new.org= with the following LaTeX code:
 
@@ -274,7 +274,7 @@ Hello, world.
 ~code goes here~.
 #+END_SRC
 
-Hit ~C-c C-e l L~ to look at the generated LaTeX code in the newly created buffer named =*Org LATEX Export*=. It will contain a lot of code but look for the code that is identical to the sample file you created above.
+Hit ~C-c C-e l L~ to look at the generated LaTeX code in the newly created buffer named =*Org LATEX Export*=. It will contain a lot of code, but look for the code that is identical to the sample file you created above.
 
 Now try exporting the Org file to a PDF and immediately opening by hitting ~C-c C-e l o~.
 
@@ -282,44 +282,44 @@ The document should be identical to the LaTeX file that you compiled above:
 
 [[file:/images/typesettingcheck.png]]
 
-Now you have enough configured that when you create your PDF it should look right. In fact it is required. Make sure that everything looks right before moving forward: it is the only way to know that your system is working correctly before configuring additional fonts.
+Now you have enough configured that when you create your PDF, it should look right. In fact, it is required. Make sure that everything looks right before moving forward: it is the only way to know that your system is working correctly before configuring additional fonts.
 
 You'll use this document throughout the rest of the configuration.
 
 Configure Emacs until you feel good about using Org because getting comfortable here will make the whole process pleasant and even fun.
 
-Now that both your LaTeX and Org toolchain are working correctly you can move forward and configure this packge.
+Now that both your LaTeX and Org toolchain are working correctly, you can move forward and configure this package.
 
 /An Aside:/
 
 #+BEGIN_QUOTE
-Depending on your Org Mode use you might want to start using Latex in [[https://orgmode.org/manual/Structure-of-Code-Blocks.html][Code Blocks]] immediately. Org supports [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-LaTeX.html][LaTeX]] well. You can enable it when you call ~org-babel-do-load-languages~ with the expected ~(latex . t)~. It can be useful when you are reading this document inside of Emacs.
+Depending on your Org Mode use, you might want to start using Latex in [[https://orgmode.org/manual/Structure-of-Code-Blocks.html][Code Blocks]] immediately. Org supports [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-LaTeX.html][LaTeX]] well. You can enable it when you call ~org-babel-do-load-languages~ with the expected ~(latex . t)~. It can be useful when you are reading this document inside of Emacs.
 #+END_QUOTE
 
 ** org-utf-to-xetex
 
 Start by installing this package using the directions above.
 
-Add some Unicode characters to the both =new.ltx= and =new.org=. For example =A 我-⍋+☀APPLE🙋ZEBRA=. Compile them. White boxes will appear for some of the characters you entered. This is how you know that XeTeX doesn't know what fonts to use for all of the Unicode blocks right now.
+Add some Unicode characters to the both =new.ltx= and =new.org=. For example, =A 我-⍋+☀APPLE🙋ZEBRA=. Compile them. White boxes will appear for some of the characters you entered. This is how you know that XeTeX doesn't know what fonts to use for all of the Unicode blocks right now.
 
-From here forward only work with =new.org=. Leave =new.ltx= open in another window though.
+From here forward, only work with =new.org=. Leave =new.ltx= open in another window, though.
 
-For every white box that you want replaced with a real character you'll need to go through the following steps. For sake of this example it will go through the entire process for the character =🙋=.
+For every white box that you want to be replaced with a real character, you'll need to go through the following steps. For the sake of this example, it will go through the entire process for the character =🙋=.
 
 Wrap =🙋= in the macro from this package by highlighting it and calling =org-utf-to-xetex-insert-or-wrap-with-macro=.
 
 /Note:/
 #+BEGIN_QUOTE
-It is fine to leave spaces and Latin characters inside of the macro call, they will be ignored. This makes your text easier to read instead of breaking it up character by character. This macro only runs when you use the LaTeX exporter with the XeTeX engine so it won't affect any of your other exporters.
+It is fine to leave spaces and Latin characters inside of the macro call, they will be ignored. This makes your text easier to read instead of breaking it up character by character. This macro only runs when you use the LaTeX exporter with the XeTeX engine, so it won't affect any of your other exporters.
 #+END_QUOTE
 
-Move your cursor to the top of the document. Install the macro from this package using the =org-utf-to-xetex-insert-setup-file-line= function. Call =org-utf-to-xetex-insert-setup-file-line=. With the cursor on that line and hit /C-c C-c/ so that Org-Mode will refresh it's setup. Now your document can use the macro
+Move your cursor to the top of the document. Install the macro from this package using the =org-utf-to-xetex-insert-setup-file-line= function. Call =org-utf-to-xetex-insert-setup-file-line=. With the cursor on that line and hit /C-c C-c/ so that Org-Mode will refresh its setup. Now your document can use the macro.
 
-Look back at the test document and PDF it created. =🙋= Each one of those characters that areis rendered as an empty square box that needs to have a font configured for its Unicode block. In order to configure the Unicode block you need to know the block name. Identify the Unicode block for the character =🙋= by again placing the cursor next to it and calling =org-utf-to-xetex-get-unicode-block-for-string-char-after=. The name of the Unicode block will appear in the Minibuffer and also =*Messages*=. This package ignores most Latin characters. So if you inspect a Latin character you will getting message explaining that this package ignores Latin characters. That means you have nothing more to do here. There is nothing that you need to do to configure a font for this character. However if this package cares about that character, then it will tell you its Unicode block name. Take note of it because you will use it later.
+Look back at the test document and PDF it created. =🙋= Each one of those characters that are rendered as an empty square box that needs to have a font configured for its Unicode block. In order to configure the Unicode block, you need to know the block name. Identify the Unicode block for the character =🙋= by again placing the cursor next to it and calling =org-utf-to-xetex-get-unicode-block-for-string-char-after=. The name of the Unicode block will appear in the Minibuffer and also =*Messages*=. This package ignores most Latin characters. So if you inspect a Latin character, you will see a message explaining that this package ignores Latin characters. That means you have nothing more to do here. There is nothing that you need to do to configure the font for this character. However, if this package cares about that character, then it will tell you its Unicode block name. Take note of it because you will use it later.
 
 Find a font that XeTeX should use for rendering this character =🙋=. An easy way to find one is to ask Emacs what font that /it is using/ for that character: Place your cursor on that character and /C-x/ =describe-char=. Take note of it because you will use it later.
 
-Tell XeTeX what font to use for characters in this Unicode block. This package creates XeTeX commands to help you configure new fontcommands for the character's Unicode block. They follow a standard format like you see in the example below. You can create a buffer with commands for /every/ block name by calling /M-x/ =org-utf-to-xetex-command-for-every-block= for convenience and reference but you won't need them all, only the one for =🙋's= block. Here is the code you will need:
+Tell XeTeX what font to use for characters in this Unicode block. This package creates XeTeX commands to help you configure new ~fontcommands~ for the character's Unicode block. They follow a standard format like you see in the example below. You can create a buffer with commands for /every/ block name by calling /M-x/ =org-utf-to-xetex-command-for-every-block= for convenience and reference, but you won't need them all, only the one for =🙋's= block. Here is the code you will need:
 
 #+BEGIN_SRC latex
 % \newfontfamily\Emoticons{font}
@@ -337,26 +337,26 @@ Specify what font you decided to use for this block. Here is an example from my 
 
 Compile the document again and view its code with ~C-c C-e l L~.
 
-Open that buffer and verify that your characters are =🙋= is specified with with the correct font, it should look like the sample below.
+Open that buffer and verify that your characters are =🙋= is specified with the correct font, it should look like the sample below.
 
 #+BEGIN_SRC latex
 \textEmoticons{😄} (Joy)
 #+END_SRC
 
-Verify this by exporting your document to a buffer calling ~C-c C-e l o~. The document should now render the characters =🙋= correctly instead of using a white boxe.
+Verify this by exporting your document to a buffer calling ~C-c C-e l o~. The document should now render the characters =🙋= correctly instead of using a white box.
 
 This is what it takes to teach Org-Mode and XeTeX to use the correct font for your Unicode characters.
 
-If you got this far then please tell me what I can do better here.
+If you got this far, then please tell me what I can do better here.
 
 * Public API Features
 :PROPERTIES:
 :CUSTOM_ID: public-api-features
 :END:
 
-First play around with them. See what you can do with them.
+First, play around with them. See what you can do with them.
 
-Second use them to configure your system.
+Second, use them to configure your system.
 
 API:
 | Goal                                                                                             | Function                                                 | Documentation                                                                                   |   |
@@ -424,7 +424,7 @@ API:
 This package is working correctly when:
 
 - All of the tests pass
-- You've configured enough font blocks to cover the characters in your source document and they appear correctly in the PDF
+- You've configured enough font blocks to cover the characters in your source document, and they appear correctly in the PDF
 
 Here is how to run the tests:
 
@@ -456,7 +456,7 @@ For example
 
 This package assumes that 99% of your document uses [[https://en.wikipedia.org/wiki/List_of_languages_by_writing_system#Latin_script][Latin Characters]] so this package doesn't specify a font for them---it totally ignores them. The LaTeX compiler will use the =mainfont= that you specified, there is no need to look up a font for their Unicode block.
 
-If you need to handle switching fonts for large blocks of text then read
+If you need to handle switching fonts for large blocks of text, then read
 about the [[#alternatives][alternatives]].
 
 ** Performance
@@ -464,9 +464,9 @@ about the [[#alternatives][alternatives]].
 :CUSTOM_ID: performance
 :END:
 
-Compiling the entire Emoticon block ([[http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/Emoticons.pdf][as a PDF]] along with [[http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/Emoticons.org][the source Org-Mode file]]) with or without this macro takes virtually the same amount of time. However when I add characters that require nine other fonts compiles takes ten times as long.
+Compiling the entire Emoticon block ([[http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/Emoticons.pdf][as a PDF]] along with [[http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/samples/Emoticons.org][the source Org-Mode file]]) with or without this macro takes virtually the same amount of time. However, when I add characters that require nine other fonts, compilation takes ten times as long.
 
-Since only plan to use this for documents that are mostly Latin characters I have not researched this any further.
+Since I only plan to use this for documents that are mostly Latin characters, I have not researched this any further.
 
 ** Unicode And You
 :PROPERTIES:
@@ -475,9 +475,9 @@ Since only plan to use this for documents that are mostly Latin characters I hav
 
 Learning more about Unicode will serve you well beyond using this package. Here are some fun ways to explore Unicode.
 
-- [[https://www.unicode.org/charts/][Code Charts]]: Click on a code block and see the characters that live there. This is useful when you find the block for characters that you are not familiar with an you want to see what other characters are in there. Remember that you can use =org-utf-to-xetex-get-unicode-block-for-string= to get the block for any Non-Latin character. It was fun to see the APL Symbols in the [[https://www.unicode.org/charts/PDF/U2300.pdf][Miscellaneous Technical Block]].
-- [[https://unicode.org/emoji/slides.html][The Story Of A Unicode Emoji]] is ostensibly only about about Unicode Emoji but serves as a great introduction to just about every interesting aspect of Unicode.
-- The [[https://github.com/rolandwalker/unicode-fonts][unicode-fonts]] package configures Emacs with the font to use for each Unicode block. Its default configuration chooses good defaults so your job is only to install the fonts themselves. After you have found fonts that you like, you can use /this/ package to specify the same font for XeTeX, resulting in a "What You See Is What You Get" experience from Emacs to PDF.
+- [[https://www.unicode.org/charts/][Code Charts]]: Click on a code block and see the characters that live there. This is useful when you find the block for characters that you are not familiar with, and you want to see what other characters are in there. Remember that you can use =org-utf-to-xetex-get-unicode-block-for-string= to get the block for any Non-Latin character. It was fun to see the APL Symbols in the [[https://www.unicode.org/charts/PDF/U2300.pdf][Miscellaneous Technical Block]].
+- [[https://unicode.org/emoji/slides.html][The Story Of A Unicode Emoji]] is ostensibly only about Unicode Emoji but serves as a great introduction to just about every interesting aspect of Unicode.
+- The [[https://github.com/rolandwalker/unicode-fonts][unicode-fonts]] package configures Emacs with the font to use for each Unicode block. Its default configuration chooses good defaults, so your job is only to install the fonts themselves. After you have found fonts that you like, you can use /this/ package to specify the same font for XeTeX, resulting in a "What You See Is What You Get" experience from Emacs to PDF.
 - Call the =view-hello-file= function to "Display the HELLO file, which lists languages and characters." This is a fun way to learn more about characters using =describe-char= and =org-utf-to-xetex-get-unicode-block-for-string-char-after=.
 
 ** Intended Users
@@ -485,17 +485,17 @@ Learning more about Unicode will serve you well beyond using this package. Here 
 :CUSTOM_ID: intended-users
 :END:
 
-If you are reading this then it is safe to say that you are an Org-Mode user. Org-Mode makes it /so/ easy to create documents that you inevitably want to use some Unicode characters directly instead of using [[https://orgmode.org/worg/org-symbols.html][Symbols]]. And that is how you ran into this problem. You doubtless fit into one of the following profiles:
+If you are reading this, then it is safe to say that you are an Org-Mode user. Org-Mode makes it /so/ easy to create documents that you inevitably want to use some Unicode characters directly instead of using [[https://orgmode.org/worg/org-symbols.html][Symbols]]. And that is how you ran into this problem. You doubtless fit into one of the following profiles:
 
-- You are not a LaTeX and XeTeX user but you are willing to set up Org-Mode for both and get very comfortable with them
+- You are not a LaTeX and XeTeX user, but you are willing to set up Org-Mode for both and get very comfortable with them
 - You are already a LaTeX and XeTeX user and have already set up Org-Mode for both. You are /very/ comfortable with both.
 
-This guide is written for experienced Org-Mode, LaTeX, and XeTeX users. If you aren't yet then please know that:
+This guide is written for experienced Org-Mode, LaTeX, and XeTeX users. If you aren't yet, then please know that:
 
 - It is worth learning because you will use it for the rest of your life.
 - It is pretty easy to learn.
 
-Once you get comfortable with the tools then the workflow for this package will feel simple to you. Until you reach that point please take your time and learn at your own pace. You can see how my system is setup [[https://github.com/grettke/help/blob/master/.emacs.el][here]] and you'll find that it is pretty easy to follow. Don't hesitate to contact me with any questions or concerns.
+Once you get comfortable with the tools, then the workflow for this package will feel simple to you. Until you reach that point, please take your time and learn at your own pace. You can see how my system is set up [[https://github.com/grettke/help/blob/master/.emacs.el][here]], and you'll find that it is pretty easy to follow. Don't hesitate to contact me with any questions or concerns.
 
 * Alternatives & Justification
 :PROPERTIES:
@@ -516,22 +516,22 @@ I wanted to use it but ran into the following problems:
 
 1. I couldn't get it working.
 1. It is unmaintained. /Note/: Being unmaintained isn't an issue in and of itself
-1. Although I was willing to take it over I was not willing to learn TeX.
+1. Although I was willing to take it over, I was not willing to learn TeX.
 
 So why write yet another solution from scratch in Org and Emacs?
 
 1. I couldn't find an /existing/ solution in Org and Emacs. All of them seem to be in TeX packages.
 1. It is /very easy/ to handle specifying fonts per Unicode block by hand in LaTeX. This is critical because it is easy to understand and makes it easy to convert to an Org solution.
-1. It is /very easy/ to perform the same steps within the Org exporter framework using Emacs Lisp. Long term a lot more people can maintain this.
+1. It is /very easy/ to perform the same steps within the Org exporter framework using Emacs Lisp. Long term, a lot more people can maintain this.
 
-Those are the alternative and justification for this package. That is my story and I'm sticking to it.
+Those are the alternative and justification for this package. That is my story, and I'm sticking to it.
 
 * Credits
 :PROPERTIES:
 :CUSTOM_ID: credits
 :END:
 
-- rolandwalker's [[https://github.com/rolandwalker/unicode-fonts][unicode-fonts]] Package showed how to utilize Unicode fonts in Emacs. Code showed what font blocks to ignore. Educational. Sweet. One of a kind package!
+- rolandwalker's [[https://github.com/rolandwalker/unicode-fonts][unicode-fonts]] Package showed how to utilize Unicode fonts in Emacs. The code showed what font blocks to ignore. Educational. Sweet. One of a kind package!
 
 * Development
 
