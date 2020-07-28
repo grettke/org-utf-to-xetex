@@ -311,7 +311,7 @@ Wrap =🙋= in the macro from this package by highlighting it and calling =org-u
 | Prettified-Mode | Org Hide Macros | Screenshot                 |
 |-----------------+-----------------+----------------------------|
 | True            | True            | [[file:/images/workflow-wrap-pretty-hide.png]]   |
-| False Source    | True            | [[file:/images/workflow-wrap-nopretty-hide.png]] |
+| False           | True            | [[file:/images/workflow-nowrap-nopretty-hide.png]] |
 | False           | False           | [[file:/images/workflow-wrap-nopretty-nohide.png]]   |
 
 
