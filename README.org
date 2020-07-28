@@ -319,6 +319,8 @@ Look back at the test document and PDF it created. Each one of those characters 
 
 Find a font that XeTeX should use for rendering this character =🙋=. An easy way to find one is to ask Emacs what font that /it is using/ for that character: Place your cursor on that character and /C-x/ =describe-char=. Take note of it because you will use it later.
 
+[[file:/images/workflow-describe-char.png]]
+
 Tell XeTeX what font to use for characters in this Unicode block. This package creates XeTeX commands to help you configure new ~fontcommands~ for the character's Unicode block. They follow a standard format like you see in the example below. You can create a buffer with commands for /every/ block name by calling /M-x/ =org-utf-to-xetex-command-for-every-block= for convenience and reference, but you won't need them all, only the one for =🙋's= block. Here is the code you will need:
 
 #+BEGIN_SRC latex
