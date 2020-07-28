@@ -306,16 +306,24 @@ From here forward, only work with =new.org=. Leave =new.ltx= open in another win
 
 For every white box that you want to be replaced with a real character, you'll need to go through the following steps. For the sake of this example, it will go through the entire process for the character =🙋=.
 
-Wrap =🙋= in the macro from this package by highlighting it and calling =org-utf-to-xetex-insert-or-wrap-with-macro=.
+Wrap =🙋= in the macro from this package by highlighting it and calling =org-utf-to-xetex-insert-or-wrap-with-macro=. The following images show how your buffer should look with the visualization options configured for:
 
-/Note:/
-#+BEGIN_QUOTE
-It is fine to leave spaces and Latin characters inside of the macro call, they will be ignored. This makes your text easier to read instead of breaking it up character by character. This macro only runs when you use the LaTeX exporter with the XeTeX engine, so it won't affect any of your other exporters.
-#+END_QUOTE
+| Prettified-Mode | Org Hide Macros | Screenshot                 |
+|-----------------+-----------------+----------------------------|
+| True            | True            | [[file:/images/workflow-wrap-pretty-hide.png]]   |
+| False Source    | True            | [[file:/images/workflow-wrap-nopretty-hide.png]] |
+| False           | False           | [[file:/images/workflow-wrap-nopretty-nohide.png]]   |
 
-Move your cursor to the top of the document. Install the macro from this package using the =org-utf-to-xetex-insert-setup-file-line= function. Call =org-utf-to-xetex-insert-setup-file-line=. With the cursor on that line and hit /C-c C-c/ so that Org-Mode will refresh its setup. Now your document can use the macro.
 
-Look back at the test document and PDF it created. Each one of those characters that are rendered as an empty square box that needs to have a font configured for its Unicode block. In order to configure the Unicode block, you need to know the block name. Identify the Unicode block for the character =🙋= by again placing the cursor next to it and calling =org-utf-to-xetex-get-unicode-block-for-string-char-after=. The name of the Unicode block will appear in the Minibuffer and also =*Messages*=. This package ignores most Latin characters. So if you inspect a Latin character, you will see a message explaining that this package ignores Latin characters. That means you have nothing more to do here. There is nothing that you need to do to configure the font for this character. However, if this package cares about that character, then it will tell you its Unicode block name. Take note of it because you will use it later.
+Move your cursor to the top of the document. Install the macro from this package using the =org-utf-to-xetex-insert-setup-file-line= function. Call =org-utf-to-xetex-insert-setup-file-line=. With the cursor on that line and hit ~C-c C-c~ so that Org-Mode will refresh its setup. Now your document can use the macro.
+
+[[file:/images/workflow-macro-install.png]]
+
+Look back at the test document and PDF it created. Each one of those characters that are rendered as an empty square box that needs to have a font configured for its Unicode block. In order to configure the Unicode block, you need to know the block name. Identify the Unicode block for the character =🙋= by again placing the cursor next to it and calling =org-utf-to-xetex-get-unicode-block-for-string-char-after=.
+
+[[file:/images/workflow-get-unicode-block.png]]
+
+The name of the Unicode block will appear in the Minibuffer and also =*Messages*=. This package ignores most Latin characters. So if you inspect a Latin character, you will see a message explaining that this package ignores Latin characters. That means you have nothing more to do here. There is nothing that you need to do to configure the font for this character. However, if this package cares about that character, then it will tell you its Unicode block name. Take note of it because you will use it later.
 
 Find a font that XeTeX should use for rendering this character =🙋=. An easy way to find one is to ask Emacs what font that /it is using/ for that character: Place your cursor on that character and /C-x/ =describe-char=. Take note of it because you will use it later.
 
