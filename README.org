@@ -345,7 +345,9 @@ Specify what font you decided to use for this block. Here is an example from my 
 \DeclareTextFontCommand{\textEmoticons}{\Emoticons}
 #+END_SRC
 
-Compile the document again and view its code with ~C-c C-e l L~.
+Add these to your custom package, the file yourname.sty.
+
+Compile =new.org= again and view its code with ~C-c C-e l L~.
 
 Open that buffer and verify that your characters are =🙋= is specified with the correct ~fontcommand~, it should look like the sample below.
 
