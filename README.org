@@ -31,6 +31,9 @@ Org XeTeX Automate Font Specification By Unicode Block.
   - [[#intended-users][Intended Users]]
 - [[#public-api-features][Public API Features]]
 - [[#workflow][Workflow]]
+  - [[#tex][TeX]]
+  - [[#org-mode][Org mode]]
+  - [[#org-utf-to-xetex][org-utf-to-xetex]]
 - [[#credits][Credits]]
 - [[#development][Development]]
 - [[#license][License]]
@@ -348,39 +351,174 @@ API:
 :CUSTOM_ID: workflow
 :END:
 
-Here are the steps to use this package starting from the top layer with Org-Mode all the way up to the bottom layer with XeTeX.
+Here are the steps to use this package starting from bottom layer with XeTeX all the way up to the top layer with Org Mode.
 
-- In Org-Mode change the LaTeX compiler and engine to XeTeX. Force Org-Mode to produce PDFs. Use =latexmk= because it is easier. Like [[https://tex.stackexchange.com/questions/2984/frequently-loaded-packages-differences-between-pdflatex-and-xelatex][this article]] explains, XeTeX uses the =fontspec= package instead of =inputenc= or =fontenc= so add =("" "fontspec")= to =org-latex-packages-alist=. Now choose an existing document to use as your test file. Compile it. It will compile just fine and if it doesn't then it won't take much effort to get things working correctly. Here are the settings that I used.
+** TeX
+
+If you followed along above then you've already installed a TeX distribution. Otherwise read above and install the TeX distribution for your operating system.
+
+Start the update utility and update /everything/. On macOS it is called TeX Live Utility.
+
+Be sure to read the "Introduction To [MacTeX|MikTeX|...]".
+
+Create your TeX configuration resources. The following are for MacTeX and you can adapt them to your local distribution. Whether you are new to TeX or not it is always a good idea to back up the original configuration and also store your configuration resources in Git.
+
+#+begin_src sh
+cd /usr/local/texlive/2019
+ls
+sudo cp texmf.cnf texmf.cnf-`date '+%Y_%m_%d__%H_%M_%S'`
+ls
+cd ~/src
+rm -rf ./texmf
+git clone glb:grettke/texmf.git
+cd ~/src/texmf
+# this mkdir requires Bash
+mkdir -p tex/latex/yourname
+touch tex/latex/yourname/yourname.sty
+sudo tlmgr conf texmf TEXMFhome ~/src/texmf
+sudo mktexlsr
+#+end_src
+
+Now configure your default fonts for your PDF documents. Out of the box you can configure the following fonts:
+
+- Main Font :: Default or all text
+- Sans Font :: Characters [[https://en.wikipedia.org/wiki/Sans-serif][without serifs]].
+- Mono Font :: Monospaced characters like code for example.
+
+You probably already have a preferred font for these kinds of characters. If you don't you can find plenty of options online. When you are ready to configure your default fonts you can specify them easily by name like this:
+
+#+BEGIN_SRC latex
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}[Scale=MatchLowercase]
+\setmonofont{Hack}[Scale=MatchLowercase]
+#+END_SRC
+
+Create a new file =new.ltx= with the following LaTeX code:
+
+#+BEGIN_SRC latex
+\documentclass{article}
+\begin{document}
+Hello World
+
+\texttt{code goes here}.
+\end{document}
+#+END_SRC
+
+Play with it in the LaTeX editor included with your distribution until you are comfortable creating a PDF using XeTeX. Open the PDF.
+
+It should look something like this:
+
+[[file:/images/typesettingcheck.png]]
+
+Now you have enough configured that when you create your PDF it should look right. In fact it is required. Make sure that everything looks right before moving forward: it is the only way to know that your system is working correctly before configuring additional fonts.
+
+You'll use this document throughout the rest of the configuration.
+
+Configure your LaTeX editor until you feel good about it because getting comfortable here will make the whole process pleasant and even fun.
+
+** Org mode
+
+In Org-Mode change the LaTeX compiler and engine to XeTeX. Force Org-Mode to produce PDFs. Use =latexmk= because it is easier.
 
 #+BEGIN_SRC emacs-lisp
 (setq org-latex-compiler "xelatex")
 (setq org-latex-pdf-process '("latexmk -xelatex -quiet -shell-escape -f %f"))
 #+END_SRC
 
-- Install this package
-- Add Unicode to the test document. For example =A 我-⍋+☀APPLE🙋ZEBRA= Compile it. White boxes will appear for some of the characters you entered.
-- For every character rendered as a white box, wrap it in the macro from this package by select it and calling =org-utf-to-xetex-insert-or-wrap-with-macro=. It is fine to leave spaces and Latin characters inside of the macro call, they will be ignored by this package. This makes your text easier to read instead of breaking it character by character. This macro only runs when you use the LaTeX exporter with the XeTeX engine so it won't affect any of your other exporters.
-- Install the macro from this package using the =org-utf-to-xetex-insert-setup-file-line= function Position the cursor anywhere at the top of the document. Call =org-utf-to-xetex-insert-setup-file-line=. With the cursor on that line and hit /C-c C-c/ so that Org-Mode will refresh it's setup. Now it can use the macro
-- Identify the Unicode block for the character by again placing the cursor calling =org-utf-to-xetex-get-unicode-block-for-string-char-after=. The name of the Unicode block will appear in the Minibuffer and also =*Messages*=. This package ignores most Latin characters. So if you inspect a Latin character you will getting message explaining that this package ignores Latin characters. That means you have nothing more to do here. There is nothing that you need to do to configure a font for this character. However if this package cares about that character, then it will tell you its Unicode block name. Take note of it because you will use it later.
-- Find a font that XeTeX should use for rendering this character. An easy way to find one is to ask Emacs what font that /it is using/ for that character: Place your cursor on that character and /C-x/ =describe-char=.
-- Tell XeTeX what font to use for characters in this Unicode block. This package creates XeTeX commands to help you configure new fontcommands with the name of the Unicode block. They follow a standard format like you see in the example below. You can create a buffer with commands for /every/ block name by calling /M-x/ =org-utf-to-xetex-command-for-every-block=. Find the Unicode block for your character and copy the /newfontfamily/ and /DeclareTextFontCommand/ commands.
-  #+BEGIN_SRC latex
+Like [[https://tex.stackexchange.com/questions/2984/frequently-loaded-packages-differences-between-pdflatex-and-xelatex][this article]] explains, XeTeX uses the =fontspec= package instead of =inputenc= or =fontenc= so add =("" "fontspec")= to =org-latex-packages-alist= like this:
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'org-latex-packages-alist '("" "fontspec"))
+#+END_SRC
+
+Use your personal LaTeX configuration packate (the STY file you created up above) by adding it to your default Org mode package list:
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'org-latex-packages-alist '("" "yourname"))
+#+end_src
+
+Now recreate the test document above using Org mode instead.
+
+Create a new file =new.org= with the following LaTeX code:
+
+#+BEGIN_SRC org
+Hello, world.
+
+~code goes here~.
+#+END_SRC
+
+Hit ~C-c C-e l L~ to look at the generated LaTeX code in the newly created buffer named =*Org LATEX Export*=. It will contain a lot of code but look for the code that is identical to the sample file you created above.
+
+Now try exporting the Org file to a PDF and immediately opening by hitting ~C-c C-e l o~.
+
+The document should be identical to the LaTeX file that you compiled above:
+
+[[file:/images/typesettingcheck.png]]
+
+Now you have enough configured that when you create your PDF it should look right. In fact it is required. Make sure that everything looks right before moving forward: it is the only way to know that your system is working correctly before configuring additional fonts.
+
+You'll use this document throughout the rest of the configuration.
+
+Configure Emacs until you feel good about using Org because getting comfortable here will make the whole process pleasant and even fun.
+
+Now that both your LaTeX and Org toolchain are working correctly you can move forward and configure this packge.
+
+/An Aside:/
+
+#+BEGIN_COMMENT
+Depending on your Org Mode use you might want to start using Latex in [[https://orgmode.org/manual/Structure-of-Code-Blocks.html][Code Blocks]] immediately. Org supports [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-LaTeX.html][LaTeX]] well. You can enable it when you call ~org-babel-do-load-languages~ with the expected ~(latex . t)~. It can be useful when you are reading this document inside of Emacs.
+#+END_COMMENT
+
+** org-utf-to-xetex
+
+Start by installing this package using the directions above.
+
+Add some Unicode characters to the both =new.ltx and =new.orgtest document. For example =A 我-⍋+☀APPLE🙋ZEBRA=. Compile them. White boxes will appear for some of the characters you entered. This is how you know that XeTeX doesn't know what fonts to use for all of the Unicode blocks right now.
+
+From here forward only work with =new.org=. Leave =new.ltx= open in another window though.
+
+For every white box that you want replaced with a real character you'll need to go through the following steps. For sake of this example it will use the character =🙋=.
+
+Wrap =🙋 in the macro from this package by highlightig it and calling =org-utf-to-xetex-insert-or-wrap-with-macro=.
+
+/Note:/
+#+BEGIN_COMMENT
+It is fine to leave spaces and Latin characters inside of the macro call, they will be ignored. This makes your text easier to read instead of breaking it up character by character. This macro only runs when you use the LaTeX exporter with the XeTeX engine so it won't affect any of your other exporters.
+#+END_COMMENT
+
+Move your cursor to the top of the document. Install the macro from this package using the =org-utf-to-xetex-insert-setup-file-line= function. Call =org-utf-to-xetex-insert-setup-file-line=. With the cursor on that line and hit /C-c C-c/ so that Org-Mode will refresh it's setup. Now your document can use the macro
+
+Look back at the test document and PDF it created. =🙋= Each one of those characters that areis rendered as an empty square box that needs to have a font configured for its Unicode block. In order to configure the Unicode block you need to know the block name. Identify the Unicode block for the character =🙋= by again placing the cursor next to it and calling =org-utf-to-xetex-get-unicode-block-for-string-char-after=. The name of the Unicode block will appear in the Minibuffer and also =*Messages*=. This package ignores most Latin characters. So if you inspect a Latin character you will getting message explaining that this package ignores Latin characters. That means you have nothing more to do here. There is nothing that you need to do to configure a font for this character. However if this package cares about that character, then it will tell you its Unicode block name. Take note of it because you will use it later.
+
+Find a font that XeTeX should use for rendering this character =🙋=. An easy way to find one is to ask Emacs what font that /it is using/ for that character: Place your cursor on that character and /C-x/ =describe-char=. Take note of it because you will use it later.
+
+Tell XeTeX what font to use for characters in this Unicode block. This package creates XeTeX commands to help you configure new fontcommands for the character's Unicode block. They follow a standard format like you see in the example below. You can create a buffer with commands for /every/ block name by calling /M-x/ =org-utf-to-xetex-command-for-every-block= for convenience and reference but you won't need them all, only the one for =🙋's= block. Here is the code you will need:
+
+#+BEGIN_SRC latex
 % \newfontfamily\Emoticons{font}
 % \DeclareTextFontCommand{\textEmoticons}{\Emoticons}
-  #+END_SRC
-- You need a custom package in which to place these commands. At least,
-  that is what I did. Add these to your custom package and specify what
-  font you decided to use. Here is an example from my configuration for
-  the Emoticon block:
-  #+BEGIN_SRC latex
+#+END_SRC
+
+You need a custom package in which to place these commands. At least, that is what I did. Add these to your custom package, the file =yourname.sty.
+
+Specify what font you decided to use for this block. Here is an example from my configuration for the Emoticon block using [[https://fontlibrary.org/en/font/symbola][Symbola]] which includes a lot of characters:
+
+#+BEGIN_SRC latex
 \newfontfamily\Emoticons{Symbola}
 \DeclareTextFontCommand{\textEmoticons}{\Emoticons}
-  #+END_SRC
-- At this point XeTeX should render your characters using the correct font. Open that buffer and verify that your characters are wrapped with the correct font, it should look like the sample below. Verify this by exporting your document to a buffer calling /C-c C-e/ /l/ /L/. The should now render the characters correctly instead of using white boxes.
-  #+BEGIN_SRC latex
+#+END_SRC
+
+Compile the document again and view its code with ~C-c C-e l L~.
+
+Open that buffer and verify that your characters are =🙋= is specified with with the correct font, it should look like the sample below.
+
+#+BEGIN_SRC latex
 \textEmoticons{😄} (Joy)
-  #+END_SRC
-- This is what it takes to teach Org-Mode and XeTeX to use the correct font for your Unicode characters. If you got this far then please tell me what I can do better under this entire section.
+#+END_SRC
+
+Verify this by exporting your document to a buffer calling ~C-c C-e /l/ O~. The document should now render the characters =🙋= correctly instead of using a white boxe.
+
+This is what it takes to teach Org-Mode and XeTeX to use the correct font for your Unicode characters. If you got this far then please tell me what I can do better under this entire section.
 
 * Credits
 :PROPERTIES:
