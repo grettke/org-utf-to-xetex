@@ -361,10 +361,6 @@ After setting up XeTeX to handle all of the Unicode blocks that you typically us
 
 Have fun and be well!
 
-#+BEGIN_QUOTE
-If you got this far, then please help improve this tutorial.
-#+END_QUOTE
-
 * Public API Features
 :PROPERTIES:
 :CUSTOM_ID: public-api-features
