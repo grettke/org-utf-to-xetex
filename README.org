@@ -465,9 +465,9 @@ Now that both your LaTeX and Org toolchain are working correctly you can move fo
 
 /An Aside:/
 
-#+BEGIN_COMMENT
+#+BEGIN_QUOTE
 Depending on your Org Mode use you might want to start using Latex in [[https://orgmode.org/manual/Structure-of-Code-Blocks.html][Code Blocks]] immediately. Org supports [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-LaTeX.html][LaTeX]] well. You can enable it when you call ~org-babel-do-load-languages~ with the expected ~(latex . t)~. It can be useful when you are reading this document inside of Emacs.
-#+END_COMMENT
+#+END_QUOTE
 
 ** org-utf-to-xetex
 
@@ -482,9 +482,9 @@ For every white box that you want replaced with a real character you'll need to 
 Wrap =🙋= in the macro from this package by highlighting it and calling =org-utf-to-xetex-insert-or-wrap-with-macro=.
 
 /Note:/
-#+BEGIN_COMMENT
+#+BEGIN_QUOTE
 It is fine to leave spaces and Latin characters inside of the macro call, they will be ignored. This makes your text easier to read instead of breaking it up character by character. This macro only runs when you use the LaTeX exporter with the XeTeX engine so it won't affect any of your other exporters.
-#+END_COMMENT
+#+END_QUOTE
 
 Move your cursor to the top of the document. Install the macro from this package using the =org-utf-to-xetex-insert-setup-file-line= function. Call =org-utf-to-xetex-insert-setup-file-line=. With the cursor on that line and hit /C-c C-c/ so that Org-Mode will refresh it's setup. Now your document can use the macro
 
