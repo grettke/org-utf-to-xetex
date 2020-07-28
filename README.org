@@ -479,7 +479,7 @@ From here forward only work with =new.org=. Leave =new.ltx= open in another wind
 
 For every white box that you want replaced with a real character you'll need to go through the following steps. For sake of this example it will use the character =🙋=.
 
-Wrap =🙋 in the macro from this package by highlightig it and calling =org-utf-to-xetex-insert-or-wrap-with-macro=.
+Wrap =🙋= in the macro from this package by highlightig it and calling =org-utf-to-xetex-insert-or-wrap-with-macro=.
 
 /Note:/
 #+BEGIN_COMMENT
@@ -516,7 +516,7 @@ Open that buffer and verify that your characters are =🙋= is specified with wi
 \textEmoticons{😄} (Joy)
 #+END_SRC
 
-Verify this by exporting your document to a buffer calling ~C-c C-e /l/ O~. The document should now render the characters =🙋= correctly instead of using a white boxe.
+Verify this by exporting your document to a buffer calling ~C-c C-e l O~. The document should now render the characters =🙋= correctly instead of using a white boxe.
 
 This is what it takes to teach Org-Mode and XeTeX to use the correct font for your Unicode characters. If you got this far then please tell me what I can do better under this entire section.
 
