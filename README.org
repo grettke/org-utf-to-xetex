@@ -355,9 +355,16 @@ Open that buffer and verify that your characters are =🙋= is specified with th
 
 Verify this by exporting =new.org= to a buffer calling ~C-c C-e l o~. A PDF is created and opened. It should now render the character =🙋= correctly instead of using a white box.
 
-This is what it takes to teach Org-Mode and XeTeX to use the correct font for your Unicode characters.
+This is what it takes to teach Org-Mode and XeTeX to use the correct font for a Unicode character in a single Unicode block.
 
-If you got this far, then please tell me what I can do better here.
+After setting up XeTeX to handle all of the Unicode blocks that you typically use you'll be converting all of your documents to Org-Mode in no time.
+
+Have fun an be well!
+
+/Please:/
+#+BEGIN_QUOTE
+If you got this far, then please help improve this tutorial.
+#+END_QUOTE
 
 * Public API Features
 :PROPERTIES:
