@@ -69,7 +69,7 @@ Org-Mode makes it easy to use the same "Unicode Everywhere" workflow by switchin
 :CUSTOM_ID: overview
 :END:
 
-=org-utf-to-xetex= is a little package that teach [[Me Second]] es [[https://orgmode.org/][Org-Mode]] and [[http://xetex.sourceforge.net/][XeTeX]] what fonts to use for a few of the Unicode characters in your document. This is a /little/ package because most of the steps happen in your LaTeX configuration. This package provides helpful functionality for setting up your LaTeX compiler and most importantly integrating it with your Org LaTeX exporter. The critical functionality though is provided by your LaTeX compiler, as you will see in the [[#workflow][workflow steps below]]. Read on to see the empty white box problem and how this package resolves it.
+=org-utf-to-xetex= is a little package that teach [[https://orgmode.org/][Org-Mode]] and [[http://xetex.sourceforge.net/][XeTeX]] what fonts to use for a few of the Unicode characters in your document. This is a /little/ package because most of the steps happen in your LaTeX configuration. This package provides helpful functionality for setting up your LaTeX compiler and most importantly integrating it with your Org LaTeX exporter. The critical functionality though is provided by your LaTeX compiler, as you will see in the [[#workflow][workflow steps below]]. Read on to see the empty white box problem and how this package resolves it.
 
 You likely set up LaTeX with three font settings like this
 
