@@ -361,7 +361,6 @@ After setting up XeTeX to handle all of the Unicode blocks that you typically us
 
 Have fun an be well!
 
-/Please:/
 #+BEGIN_QUOTE
 If you got this far, then please help improve this tutorial.
 #+END_QUOTE
