@@ -359,7 +359,7 @@ This is what it takes to teach Org-Mode and XeTeX to use the correct font for a 
 
 After setting up XeTeX to handle all of the Unicode blocks that you typically use you'll be converting all of your documents to Org-Mode in no time.
 
-Have fun an be well!
+Have fun and be well!
 
 #+BEGIN_QUOTE
 If you got this far, then please help improve this tutorial.
