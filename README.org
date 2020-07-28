@@ -336,7 +336,7 @@ Tell XeTeX what font to use for characters in this Unicode block. This package c
 % \DeclareTextFontCommand{\textEmoticons}{\Emoticons}
 #+END_SRC
 
-You need a custom package in which to place these commands. At least, that is what I did. Add these to your custom package, the file =yourname.sty=.
+Add these to your custom package, the file =yourname.sty=.
 
 Specify what font you decided to use for this block. Here is an example from my configuration for the Emoticon block using [[https://fontlibrary.org/en/font/symbola][Symbola]] which includes a lot of characters:
 
