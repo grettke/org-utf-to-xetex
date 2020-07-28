@@ -473,7 +473,7 @@ Depending on your Org Mode use you might want to start using Latex in [[https://
 
 Start by installing this package using the directions above.
 
-Add some Unicode characters to the both =new.ltx and =new.orgtest document. For example =A 我-⍋+☀APPLE🙋ZEBRA=. Compile them. White boxes will appear for some of the characters you entered. This is how you know that XeTeX doesn't know what fonts to use for all of the Unicode blocks right now.
+Add some Unicode characters to the both =new.ltx= and =new.org=. For example =A 我-⍋+☀APPLE🙋ZEBRA=. Compile them. White boxes will appear for some of the characters you entered. This is how you know that XeTeX doesn't know what fonts to use for all of the Unicode blocks right now.
 
 From here forward only work with =new.org=. Leave =new.ltx= open in another window though.
 
