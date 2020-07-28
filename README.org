@@ -353,7 +353,7 @@ Open that buffer and verify that your characters are =🙋= is specified with th
 \textEmoticons{😄} (Joy)
 #+END_SRC
 
-Verify this by exporting your document to a buffer calling ~C-c C-e l o~. The document should now render the characters =🙋= correctly instead of using a white box.
+Verify this by exporting =new.org= to a buffer calling ~C-c C-e l o~. A PDF is created and opened. It should now render the character =🙋= correctly instead of using a white box.
 
 This is what it takes to teach Org-Mode and XeTeX to use the correct font for your Unicode characters.
 
