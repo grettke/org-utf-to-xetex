@@ -508,7 +508,10 @@ greater than one character, exiting.")
 (defun org-utf-to-xetex-insert-setup-file-line ()
   "Insert the org-utf-to-xetex export macro SETUPFILE line."
   (interactive)
-  (insert org-utf-to-xetex-setup-file))
+  (save-excursion
+    (goto-char (point-min))
+    (insert org-utf-to-xetex-setup-file)
+    (save-buffer)))
 
 (provide 'org-utf-to-xetex)
 
