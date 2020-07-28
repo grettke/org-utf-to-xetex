@@ -299,7 +299,7 @@ Add some Unicode characters to the both =new.ltx= and =new.org=. For example =A 
 
 From here forward only work with =new.org=. Leave =new.ltx= open in another window though.
 
-For every white box that you want replaced with a real character you'll need to go through the following steps. For sake of this example it will use the character =🙋=.
+For every white box that you want replaced with a real character you'll need to go through the following steps. For sake of this example it will go through the entire process for the character =🙋=.
 
 Wrap =🙋= in the macro from this package by highlighting it and calling =org-utf-to-xetex-insert-or-wrap-with-macro=.
 
