@@ -130,8 +130,8 @@ A LaTeX Distribution And Compiler
   - Linux: [TeXLive](https://www.tug.org/texlive/)
   - macOS: [MacTeX](https://www.tug.org/mactex/) (I've used it, and it is excellent)
 - Version
-  - You've got two considerations here: the release of the compiler and the version of the packages. When I set up this package, I used the 2016 distribution and the packages that came with it. I haven't updated either the compiler or packages since then. My experience is that once you've got it working, don't upgrade anything until you absolutely need to. If you need to update something, then take a backup of your system first because things can unexpectedly change, leaving you without a working system. This is totally obvious, but you don't want to break your system when you are in the middle of writing and publishing. Instead, break it later when you are willing to clean things at ease.
-  - 2020-07-23 Update: Upgraded to 2019 on a peaceful rainy day, and it went fine.
+  - 2016: Works
+  - 2019: Works
 
 Org-Mode Compatibility
 
