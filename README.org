@@ -564,7 +564,7 @@ git clone https://github.com/purcell/package-lint.git
 
 - [[./LICENSE.txt][GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007]].
 
-* Use In Production
+* User List
 :PROPERTIES:
 :CUSTOM_ID: org-utf-to-xetex-in-production
 :END:
