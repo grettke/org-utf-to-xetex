@@ -331,7 +331,9 @@
   "Alist of Unicode 11.0 blocks. See charts here URL `https://www.unicode.org/charts/'.")
 
 (defconst org-utf-to-xetex-setup-file
-  "#+SETUPFILE: https://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.setup"
+  "#+SETUPFILE: https://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.setup
+
+"
   "The org-utf-to-xetex export macro.")
 
 ;; Variables
