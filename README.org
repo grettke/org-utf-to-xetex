@@ -510,6 +510,57 @@ Until you reach that point, please take your time and learn at your own pace.  D
 
 If you are already an advanced user then you might value reading [[#for-skilled-latex-users][this]] section for skilled LaTeX users.
 
+* For Comfortable Org-Mode Users
+:PROPERTIES:
+:CUSTOM_ID: comf-org
+:END:
+
+This section aims to capture an imagined conversation between another Emacs+Org-Mode user who wants to know more about this package and me.
+
+** Should I Learn LaTeX To Use Org-Mode In General?
+:PROPERTIES:
+:CUSTOM_ID: comf-org-general-should
+:END:
+
+80% of the time, when you are using Org-Mode, you should never have to learn how to use LaTeX. Org-Mode. Org-Mode provides an abstraction away from the publishing format.
+
+For example, text marked as bold is automatically converted to the destination format's markup for bold. Also, consider how the Org-Mode Symbols mechanism is used for abstracting away common symbols: one scenario for them is expanded upon [[#read-me-first][here]]. Org-Mode, of course, abstracts away much more than the two examples listed here.
+
+Given that LaTeX is such a rich, deep, and at times intimidating platform: 80% of the time, you should never need to learn LaTeX when you are using Org-Mode because it would be a poor use of your time. Org-Mode saves you a lot of time.
+
+** When Might I Learn LaTeX To Use Org-Mode In General?
+:PROPERTIES:
+:CUSTOM_ID: comf-org-general-maybe
+:END:
+
+You're never going to learn LaTeX for using Org-Mode /, in general,/: it will only ever be because you want to do something with the [[https://orgmode.org/manual/LaTeX-Export.html#LaTeX-Export][LaTeX Export mechanism]]. For most of us, that means using it to create a PDF.
+
+Typically you reach this point when your generated PDF doesn't look how you want it to look. For example, the document size is Letter instead of A4, the font is wrong, or the table is going off the edge of the page.
+
+Most of the time, everything "Just Works" for most people is the power of Org-Mode. The second that it doesn't "Just Work" for us is when learning some LaTeX changes from being specialized information to general information that we need to know immediately.
+
+Here are some examples that you might encounter relatively quickly:
+
+- [[https://orgmode.org/manual/LaTeX-specific-export-settings.html#LaTeX-specific-export-settings][Where to]] add a package that you found on the Internet.
+- [[https://orgmode.org/manual/Tables-in-LaTeX-export.html#Tables-in-LaTeX-export][How to]] make your tables look right.
+- [[https://orgmode.org/manual/Images-in-LaTeX-export.html#Images-in-LaTeX-export][How to]] make your images look right.
+- [[https://orgmode.org/manual/Horizontal-rules-in-LaTeX-export.html#Horizontal-rules-in-LaTeX-export][How to]] insert a horizontal rule.
+
+Configuring your Org-Mode document and its LaTeX exporter can seem both simple and complicated at the same time.
+
+On the one hand, it is merely because you need some understanding of how to utilize your publishing format. For example, publishing to a format limited to a width of 80 characters, there is no way to ignore that. Org-Mode is an abstraction for its publishing formats, so it is your responsibility as the publisher to understand the destination formats.
+
+On the other hand, it isn't straightforward. You start using Org-Mode so that you can write instead of fiddling around with the underlying publishing mechanisms. Have you looked for the options for how to configure your LaTeX tables? They are not everyone's idea of how to spend the next thirty minutes of learning.
+
+The key point to reflect on here is that /simple/ doesn't mean /simplistic/. /Every/ publishing mechanism is non-trivial and requires effort to utilize, be it LaTeX, MS Word, and even ~HTML~. Based on my experience, I've found that learning and using the most simple LaTeX configurations like the ones given above quickly does two things for you:
+
+- Bolsters your confidence in using LaTeX.
+- Opens the door for you to explore and use much of the rich and powerful LaTeX packages available for your publishing process.
+
+Once you start configuring your LaTeX exporter, you immediately become part of the 20% of "Skilled LaTeX Users." How skilled exactly? That is a matter of opinion. Whatever the case consider that you have broken the taboo that "You should never touch LaTeX when you use Org-Mode" because you did use it, it went well, and you will probably use it again.
+
+In the long run: using LaTeX in Org-Mode make using both Org-Mode /and/ LaTeX easier. Consider it a good investment that will pay great dividends both immediately and in the long run.
+
 * For Skilled LaTeX Users
 :PROPERTIES:
 :CUSTOM_ID: skilled
