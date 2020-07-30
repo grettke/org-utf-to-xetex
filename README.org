@@ -235,7 +235,7 @@ It should look something like this:
 
 [[file:/images/typesettingcheck.png]]
 
-Now you have enough configured that when you create your PDF, it should look right. In fact, it is required. Ensure that everything looks right before moving forward: it is the only way to know that your system is working correctly before configuring additional fonts.
+Now you have enough configured that when you create your PDF, it should look right. In fact, it is required. Ensure that everything looks right before moving forward: it is the only way to know that your system is working correctly before configuring additional fonts. Verifying that the toolchain works correctly step by step is critical for being able to create a minimal, complete and verifiable example (MCVE) should you ever run into any problems (which do happen).
 
 You'll use this document throughout the rest of the configuration.
 
