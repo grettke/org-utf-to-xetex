@@ -197,7 +197,7 @@ cd ~/src
 rm -rf ./texmf
 git clone glb:grettke/texmf.git
 cd ~/src/texmf
-# this mkdir requires Bash
+# this requires GNU mkdir
 mkdir -p tex/latex/yourname
 touch tex/latex/yourname/yourname.sty
 sudo tlmgr conf texmf TEXMFhome ~/src/texmf
