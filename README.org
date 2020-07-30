@@ -35,6 +35,7 @@ For *Skilled LaTeX Users*: Please start [[#for-skilled-latex-users][here]].
   - [[#unicode-and-you][Unicode And You]]
   - [[#kinds-of-users][Kinds Of Users]]
 - [[#for-skilled-latex-users][For Skilled LaTeX Users]]
+  - [[#keep-it-simple-why-does-org-utf-to-xetex-exist][Keep It Simple: Why Does org-utf-to-xetex Exist?]]
   - [[#should-you-use-xelatex-or-some-other-latex][Should You Use XeLaTeX Or Some Other LaTeX?]]
   - [[#should-you-use-org-utf-to-xetex-for-cjk-characters][Should You Use org-utf-to-xetex For CJK Characters?]]
   - [[#should-you-use-latex-libraries-that-already-do-the-same-thing-instead][Should You Use LaTeX Libraries That Already Do The Same Thing Instead?]]
@@ -614,7 +615,7 @@ If you are an Emacs and Org-Mode user looking for something simple, then this is
 
 Your workflow is usually so personal that it is hard to assume anything. ~org-utf-to-xetex~ certainly makes no assumptions about you either.
 
-** Did You Really Need To Write Yet Another Package To Solve This Problem?
+** Did You Really Need To Write Yet Another Package To Solve This *Problem?
 :PROPERTIES:
 :CUSTOM_ID: skilled-why-another-package
 :END:
@@ -674,6 +675,9 @@ The same behavior seems to be present with ~org-utf-to-xetex~.
 - rolandwalker's [[https://github.com/rolandwalker/unicode-fonts][unicode-fonts]] Package showed how to utilize Unicode fonts in Emacs. The code showed what font blocks to ignore. Educational. Sweet. One of a kind package!
 
 * Development
+:PROPERTIES:
+:CUSTOM_ID: development
+:END:
 
 - Contributing
   - Read the [[./docs/CONTRIBUTING.org][contributing]] guidelines.
@@ -697,6 +701,9 @@ git clone https://github.com/purcell/package-lint.git
   - [[./.github/CODE_OF_CONDUCT.org][Code of Conduct]].
 
 * License
+:PROPERTIES:
+:CUSTOM_ID: license
+:END:
 
 - [[./LICENSE.txt][GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007]].
 
