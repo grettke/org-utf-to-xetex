@@ -496,7 +496,7 @@ You can also use it from any markup language that compiled down to LaTeX. For ex
 
 [[https://pandoc.org/index.html][Pandoc]] is a universal document converter. Known for being a super high-quality piece of software: it works well for doing just about anything with document conversion. If you're unfamiliar with it, then now is the time to dig in. Particularly read more about the first-class LaTeX support.
 
-LaTeX markup can be used inside of [[https://pandoc.org/MANUAL.html#pandocs-markdown][Pandoc Markdown]] documents. It simply works just as you would expect. When you use XeLaTeX behind the scenes, it will work identically to how ~org-utf-to-xetex~ compiled PDFs. For example, consider the [[#workflow][example]] used in the workflow section. Here is how you would write it with Pandoc Markdown.
+LaTeX markup can be used inside of [[https://pandoc.org/MANUAL.html#pandocs-markdown][Pandoc Markdown]] documents. It simply works just as you would expect. When you use XeLaTeX behind the scenes, it will work identically to how ~org-utf-to-xetex~ compiled PDFs. For example, consider the [[#workflow][workflow example]] used in the workflow section. Here is how you would write it with Pandoc Markdown.
 
 Create a file ~hi.md~. Paste into it the following.
 
@@ -504,7 +504,7 @@ Create a file ~hi.md~. Paste into it the following.
 Hi 🙋!
 #+END_SRC
 
-Install Pandoc and then try compiling it like this.
+Install Pandoc and then try compiling it like this (assuming you've already got your XeLaTeX setup working).
 
 #+BEGIN_SRC sh
 pandoc --from=markdown test.md --to=latex --pdf-engine=xelatex -o test.pdf
@@ -533,7 +533,13 @@ Recompile the file, and you are presented with a PDF just as you expect.
 
 [[file:/images/pandoc-hi.png]]
 
-Making Pandoc available with XeTeX is genuinely a powerful and exciting toolchain for your publishing workflow. Whether you use Org-Mode or not, it is worth setting up XeLaTeX and Pandoc.
+Aside:
+#+BEGIN_QUOTE
+Pandoc provides command-line abstractions so you don't even need to know the LaTeX markup required to configure the LaTeX feature. For example you can specify the command-line argument to configure the font. You can read more about how Pandoc Markdown works with XeLaTeX here for [[https://pandoc.org/MANUAL.html#creating-a-pdf][Creating a PDF]] and configuring other [[https://pandoc.org/MANUAL.html#variables-for-latex][Variables for LaTeX]].
+#+END_QUOTE
+
+Making Pandoc available with XeTeX is genuinely a powerful and exciting toolchain for your publishing workflow. Whether you use Org-Mode or not, it is worth setting up XeLaTeX and Pandoc. If you ever needed to migrate /off/ of Org-Mode, Pandoc would be a greatp place to go.
+
 
 ** What Languages Use Latin Characters?
 :PROPERTIES:
@@ -651,7 +657,7 @@ The future users (or lack thereof) will guide how this package moves forward bec
 
 Will [[https://en.wikipedia.org/wiki/Troff][troff]] users switch to this? I'm not sure why they would change, their problem is solved, and it has been for a long time.
 
-Will [[https://en.wikipedia.org/wiki/Troff][Pandoc]] users switch to this? Maybe. Whether you use this package or not, you'll need to set up your LaTeX toolchain somehow to handle Unicode. If you already know Emacs, then yes, it is a natural choice. If you don't, it is much less likely.
+Will [[https://en.wikipedia.org/wiki/Pandoc][Pandoc]] users switch to this? Maybe. Whether you use this package or not, you'll need to set up your LaTeX toolchain somehow to handle Unicode. If you already know Emacs, then yes, it is a natural choice. If you don't, it is much less likely.
 
 Will Microsoft Word (Word) users switch to this? You might be surprised. If you work alone, moving off Word is relatively easy, especially if you are a techie who is willing to learn five of the most common LaTeX packages. On the other hand, asking a non-techie who wants to write with Emacs then asking them to set up XeTeX will be a hard pill to swallow.
 
