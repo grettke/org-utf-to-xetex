@@ -31,16 +31,22 @@ For *Skilled LaTeX Users*: Please start [[#for-skilled-latex-users][here]].
 - [[#public-api-features][Public API Features]]
 - [[#verification][Verification]]
 - [[#read-me-later][Read Me Later]]
+  - [[#what-is-the-value-of-setting-up-your-xelatex-toolchain][What Is The Value Of Setting Up Your XeLaTeX Toolchain?]]
+  - [[#leveraging-your-investment-in-xelatex-with-pandoc][Leveraging Your Investment In XeLaTeX With Pandoc]]
   - [[#what-languages-use-latin-characters][What Languages Use Latin Characters?]]
   - [[#unicode-and-you][Unicode And You]]
   - [[#kinds-of-users][Kinds Of Users]]
+- [[#for-comfortable-org-mode-users][For Comfortable Org-Mode Users]]
+  - [[#should-i-learn-latex-to-use-org-mode-in-general][Should I Learn LaTeX To Use Org-Mode In General?]]
+  - [[#when-might-i-learn-latex-to-use-org-mode-in-general][When Might I Learn LaTeX To Use Org-Mode In General?]]
+  - [[#why-does-org-utf-to-xetex-expose-any-latex-to-the-user-at-all][Why Does org-utf-to-xetex Expose ANY LaTeX To The User At All?]]
 - [[#for-skilled-latex-users][For Skilled LaTeX Users]]
   - [[#keep-it-simple-why-does-org-utf-to-xetex-exist][Keep It Simple: Why Does org-utf-to-xetex Exist?]]
   - [[#should-you-use-xelatex-or-some-other-latex][Should You Use XeLaTeX Or Some Other LaTeX?]]
   - [[#should-you-use-org-utf-to-xetex-for-cjk-characters][Should You Use org-utf-to-xetex For CJK Characters?]]
   - [[#should-you-use-latex-libraries-that-already-do-the-same-thing-instead][Should You Use LaTeX Libraries That Already Do The Same Thing Instead?]]
   - [[#should-you-switch-to-org-utf-to-xetex-from-an-existing-solution][Should You Switch To org-utf-to-xetex From An Existing Solution?]]
-  - [[#did-you-really-need-to-write-yet-another-package-to-solve-this-problem][Did You Really Need To Write Yet Another Package To Solve This Problem?]]
+  - [[#did-you-really-need-to-write-yet-another-package-to-solve-this-problem][Did You Really Need To Write Yet Another Package To Solve This *Problem?]]
   - [[#how-does-org-utf-to-xetex-work-and-why][How Does org-utf-to-xetex Work And Why?]]
   - [[#why-does-compilation-get-slow-with-a-lot-of-fonts][Why Does Compilation Get Slow With A Lot Of Fonts?]]
 - [[#credits][Credits]]
@@ -469,6 +475,65 @@ For example
 :PROPERTIES:
 :CUSTOM_ID: read-me-later
 :END:
+
+** What Is The Value Of Setting Up Your XeLaTeX Toolchain?
+:PROPERTIES:
+:CUSTOM_ID: read-me-later-value-of-toolchain
+:END:
+
+Once you've set up your XeLaTeX you can use it for the rest of your life.
+
+You can use it with straight LaTeX.
+
+You can use it from Org-Mode.
+
+You can also use it from any markup language that compiled down to LaTeX. For example you can use it with Pandoc and Markdown. Read more about it [[#read-me-later-value-of-toolchain-pandoc][here]].
+
+** Leveraging Your Investment In XeLaTeX With Pandoc
+:PROPERTIES:
+:CUSTOM_ID: read-me-later-value-of-toolchain-pandoc
+:END:
+
+[[https://pandoc.org/index.html][Pandoc]] is a universal document converter. Known for being a super high-quality piece of software: it works well for doing just about anything with document conversion. If you're unfamiliar with it, then now is the time to dig in. Particularly read more about the first-class LaTeX support.
+
+LaTeX markup can be used inside of [[https://pandoc.org/MANUAL.html#pandocs-markdown][Pandoc Markdown]] documents. It simply works just as you would expect. When you use XeLaTeX behind the scenes, it will work identically to how ~org-utf-to-xetex~ compiled PDFs. For example, consider the [[#workflow][example]] used in the workflow section. Here is how you would write it with Pandoc Markdown.
+
+Create a file ~hi.md~. Paste into it the following.
+
+#+BEGIN_SRC markdown
+Hi 🙋!
+#+END_SRC
+
+Install Pandoc and then try compiling it like this.
+
+#+BEGIN_SRC sh
+pandoc --from=markdown test.md --to=latex --pdf-engine=xelatex -o test.pdf
+#+END_SRC
+
+You'll immediately get an error message telling you what you already know from configuring this package: XeLaTeX can't find the character with the current main font.
+
+#+BEGIN_QUOTE
+[WARNING] Missing character: There is no 🙋 (U+1F64B) in font [lmroman10-regular]:mapping=tex-text;!
+#+END_QUOTE
+
+The solution is to update the test file with the LaTeX information that XeLaTeX needs to choose the correct fonts. You already know how to do this because you made the same configuration change using this package. If you dug a little further into the workflow process's intermediate steps, you'd probably recognize this as the same code that is generated when you compile your Org-Mode file to LaTeX.
+
+#+BEGIN_SRC markdown
+---
+header-includes:
+- \usepackage{polyglossia}
+- \usepackage{listings}
+- \usepackage{grantcrettke}
+---
+
+Hi \textEmoticons{🙋}!
+#+END_SRC
+
+Recompile the file, and you are presented with a PDF just as you expect.
+
+[[file:/images/pandoc-hi.png]]
+
+Making Pandoc available with XeTeX is genuinely a powerful and exciting toolchain for your publishing workflow. Whether you use Org-Mode or not, it is worth setting up XeLaTeX and Pandoc.
 
 ** What Languages Use Latin Characters?
 :PROPERTIES:
