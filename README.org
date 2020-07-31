@@ -540,7 +540,6 @@ Pandoc provides command-line abstractions so you don't even need to know the LaT
 
 Making Pandoc available with XeTeX is genuinely a powerful and exciting toolchain for your publishing workflow. Whether you use Org-Mode or not, it is worth setting up XeLaTeX and Pandoc. If you ever needed to migrate /off/ of Org-Mode, Pandoc would be a greatp place to go.
 
-
 ** What Languages Use Latin Characters?
 :PROPERTIES:
 :CUSTOM_ID: latin-character-languages
