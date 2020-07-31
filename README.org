@@ -361,7 +361,7 @@ Compile =new.org= again and view its code with ~C-c C-e l L~.
 Open that buffer and verify that your character =🙋= is specified with the correct ~fontcommand~, it should look like this.
 
 #+BEGIN_SRC latex
-\textEmoticons{😄} (Joy)
+\textEmoticons{🙋} (Joy)
 #+END_SRC
 
 Viewing this generated LaTeX is meant to continue the gentle introduction to LaTeX. Equally as important, you can use it to verify that things are working correctly so that you can confidently use and rely on this toolchain moving forward.
