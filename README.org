@@ -370,7 +370,7 @@ Return to ~new.org~. Create a PDF for it by hitting ~C-c C-e l o~. A PDF is crea
 
 This is what it takes to teach Org-Mode and XeTeX to use the correct font for a Unicode character in a single Unicode block.
 
-After setting up XeTeX to handle all of the Unicode blocks that you typically use you'll be converting all of your documents to Org-Mode in no time.
+After setting up XeTeX to handle all of the Unicode blocks that you typically use, you'll be converting all of your documents to Org-Mode in no time. Also, consider that now you've got a working XeLaTeX [[#read-me-later-value-of-toolchain][toolchain]] set up that you can use not only from Org-Mode but also [[#read-me-later-value-of-toolchain-pandoc][Pandoc]]: you've got a lot of great ways to publishing now moving forward.
 
 Have fun and be well!
 
