@@ -40,6 +40,7 @@ For *Skilled LaTeX Users*: Please start [[#for-skilled-latex-users][here]].
   - [[#should-i-learn-latex-to-use-org-mode-in-general][Should I Learn LaTeX To Use Org-Mode In General?]]
   - [[#when-might-i-learn-latex-to-use-org-mode-in-general][When Might I Learn LaTeX To Use Org-Mode In General?]]
   - [[#why-does-org-utf-to-xetex-expose-any-latex-to-the-user-at-all][Why Does org-utf-to-xetex Expose ANY LaTeX To The User At All?]]
+  - [[#why-not-put-all-of-that-latex-code-in-the-org-mode-configuration][Why Not Put All Of That LaTeX Code In The Org-Mode Configuration?]]
 - [[#for-skilled-latex-users][For Skilled LaTeX Users]]
   - [[#keep-it-simple-why-does-org-utf-to-xetex-exist][Keep It Simple: Why Does org-utf-to-xetex Exist?]]
   - [[#should-you-use-xelatex-or-some-other-latex][Should You Use XeLaTeX Or Some Other LaTeX?]]
@@ -667,6 +668,23 @@ Will Org-Mode, who are Already LaTeX users, switch to this? Maybe. Read [[#skill
 Will Org-Mode users who have already given up hope that they can use easily use Unicode in their PDFs switch? I have absolutely no idea, I can't even guess. The extremely wide range of Org-Mode users makes it virtually impossible to predict what is the "right thing" for them.
 
 The best way to move forward with any solution is to make it good for yourself, document it well, and if people see things they same way then they will be able to utilize it with the least effort and most joy possible.
+
+** Why Not Put All Of That LaTeX Code In The Org-Mode Configuration?
+:PROPERTIES:
+:CUSTOM_ID: conf-org-why-all-latex-in-org
+:END:
+
+That is an excellent question to pose because it is true that you /can/ put everything in the Org-Mode level.
+
+You can place all of your LaTeX configuration inside of your Org-Mode settings. Having followed this approach for years, I'm confident sharing that it works very well. The generated LaTeX looks /exactly/ the same, and everything works as expected. However, there are three big topics that I had to face, and you will, too, with this approach: they are probably going to be show-stoppers preventing you from using the Org-Mode LaTeX configuration approach.
+
+Problem #1 is that it is very rigid. When you make changes to your Org-Mode/LaTeX configuration, you have mostly made this your global configuration. In the short term, it is somewhat convenient primarily because you don't need to touch the custom package. The second that you start customizing your documents differently for different situations, this rigid approach becomes a big problem. What different situations? Simple: you write papers on a computer for reading on a computer, and you write letters to be printed and mailed to someone. You end up with a lot of different settings for the different use cases. Managing this in Org-Mode is painful, and in LaTeX, it is trivially easy. It is a no-brainer to go with the custom package here.
+
+Problem #2 is that eventually, you will want or need to work directly with the LaTeX that creates your PDF. In theory, some of you will want to learn it just for the sake of learning it. However, that is unlikely. Most of you will have no choice but to work directly with it because you face a configuration problem with a package, and, probably doing so in anger. The context here is that you are using a package, and it "just isn't working right." In cases like this, configuring the package directly from Org-Mode is a useless abstraction that makes it harder to configure the package. When you follow this approach to solving your problem, working directly with the LaTeX, you need to put that code somewhere: the best place to put it is in that custom package. Finally, once you resolve your issue, the resolution "just works" inside the package, so often, there is little to no benefit for moving it /back/ into your Org-Mode configuration.
+
+Problem #3 using your Org-Mode configuration of LaTeX outside Org-Mode ranges from a painful to nearly impossible experience. For an experienced LaTeX user, it is relatively painless. But if you are switching over using ~org-utf-to-xetex~, then you are probably not an expert, and it will be a painful waste of time dealing with the issues that you face. This package strives to balance well between ease of use and flexibility of configuration.
+
+No matter where you put the LaTeX configuration: understanding the configuration will take effort. By judiciously deciding whether to put it in the LaTeX layer or the Org-Mode layer ~org-utf-to-xetex~ makes things easier for you, in the long run, is the best way to start. As your familiarity and expertise with Org-Mode and LaTeX ramp up, it will be naturally the right time to reflect on the approach taken in ~org-utf-to-xetex~ and how you want to move forward from there personally.
 
 * For Skilled LaTeX Users
 :PROPERTIES:
