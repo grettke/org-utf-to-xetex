@@ -355,7 +355,7 @@ Specify what font you decided to use for this block. Here is an example from my 
 \DeclareTextFontCommand{\textEmoticons}{\Emoticons}
 #+END_SRC
 
-Add these to your custom package, the file yourname.sty, and either use ~Symbola~ or replace it wither another font that you like.
+Add these to your custom package, the file =yourname.sty=, and either use ~Symbola~ or replace it wither another font that you like.
 
 Compile =new.org= again and view its code with ~C-c C-e l L~.
 
