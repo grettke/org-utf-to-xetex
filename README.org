@@ -236,7 +236,7 @@ Hello World
 \end{document}
 #+END_SRC
 
-Play with it in the LaTeX editor included with your distribution until you are comfortable creating a PDF using XeTeX. On macOS the editor that comes with MacTeX is [[https://en.wikipedia.org/wiki/TeXShop][TeXShop]]. Open the PDF.
+Play with it in the LaTeX editor included with your distribution until you are comfortable creating a PDF using XeTeX. On macOS the editor that comes with MacTeX is [[https://en.wikipedia.org/wiki/TeXShop][TeXShop]]. When you are using TeXShop be sure to start it from the command line. Open the PDF.
 
 It should look something like this:
 
