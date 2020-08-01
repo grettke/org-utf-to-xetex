@@ -202,7 +202,7 @@ sudo cp texmf.cnf texmf.cnf-`date '+%Y_%m_%d__%H_%M_%S'`
 ls
 cd ~/src
 rm -rf ./texmf
-git clone glb:grettke/texmf.git
+git clone github:yourname/texmf.git
 cd ~/src/texmf
 # this requires GNU mkdir
 mkdir -p tex/latex/yourname
@@ -524,7 +524,7 @@ The solution is to update the test file with the LaTeX information that XeLaTeX 
 header-includes:
 - \usepackage{polyglossia}
 - \usepackage{listings}
-- \usepackage{grantcrettke}
+- \usepackage{yourname}
 ---
 
 Hi \textEmoticons{🙋}!
