@@ -42,6 +42,7 @@ For *Skilled LaTeX Users*: Please start [[#for-skilled-latex-users][here]].
   - [[#why-does-org-utf-to-xetex-expose-any-latex-to-the-user-at-all][Why Does org-utf-to-xetex Expose ANY LaTeX To The User At All?]]
   - [[#why-not-put-all-of-that-latex-code-in-the-org-mode-configuration][Why Not Put All Of That LaTeX Code In The Org-Mode Configuration?]]
 - [[#for-skilled-latex-users][For Skilled LaTeX Users]]
+  - [[#get-to-the-point-what-does-org-utf-to-xetex-do][Get To The Point: What Does org-utf-to-xetex Do?]]
   - [[#keep-it-simple-why-does-org-utf-to-xetex-exist][Keep It Simple: Why Does org-utf-to-xetex Exist?]]
   - [[#should-you-use-xelatex-or-some-other-latex][Should You Use XeLaTeX Or Some Other LaTeX?]]
   - [[#should-you-use-org-utf-to-xetex-for-cjk-characters][Should You Use org-utf-to-xetex For CJK Characters?]]
@@ -695,6 +696,13 @@ No matter where you put the LaTeX configuration: understanding the configuration
 The purpose of this section is to capture an imagined conversation between me and another Emacs+Org-Mode+LaTeX user who wants to know more about this package.
 
 This package is written primarily for users who have *never* directly used /any/ form of LaTeX before. With that in mind, /this section/ is addressed directly at already skilled LaTeX users. Therefore it is terser and less explanatory than the rest of the document. Links to relevant resources, however, will provide the background necessary to provide the full picture for each section.
+
+** Get To The Point: What Does ~org-utf-to-xetex~ Do?
+:PROPERTIES:
+:CUSTOM_ID: skilled-get-to-the-point
+:END:
+
+It helps you configure ~fontspec~ to create a ~newfontfamily~ then ~DeclareTextFontCommand~ for it.
 
 ** Keep It Simple: Why Does ~org-utf-to-xetex~ Exist?
 :PROPERTIES:
