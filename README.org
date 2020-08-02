@@ -45,6 +45,7 @@ For *Skilled LaTeX Users*: Please start [[#for-skilled-latex-users][here]].
   - [[#keep-it-simple-why-does-org-utf-to-xetex-exist][Keep It Simple: Why Does org-utf-to-xetex Exist?]]
   - [[#should-you-use-xelatex-or-some-other-latex][Should You Use XeLaTeX Or Some Other LaTeX?]]
   - [[#should-you-use-org-utf-to-xetex-for-cjk-characters][Should You Use org-utf-to-xetex For CJK Characters?]]
+  - [[#should-you-use-org-utf-to-xetex-for-primarily-multi-language-documents][Should You Use org-utf-to-xetex For Primarily Multi-Language Documents?]]
   - [[#should-you-use-latex-libraries-that-already-do-the-same-thing-instead][Should You Use LaTeX Libraries That Already Do The Same Thing Instead?]]
   - [[#should-you-switch-to-org-utf-to-xetex-from-an-existing-solution][Should You Switch To org-utf-to-xetex From An Existing Solution?]]
   - [[#did-you-really-need-to-write-yet-another-package-to-solve-this-problem][Did You Really Need To Write Yet Another Package To Solve This *Problem?]]
@@ -748,6 +749,15 @@ Specifically, it supports (copied directly from the link)
 For XeTeX, the [[https://www.ctan.org/pkg/xecjk][xecjk]] package is available for "typesetting CJK documents in the way users have become used to, in the CJK package."
 
 If your mother tongue is one of these languages, either you are already using ~cjk~ in some form or another (via LaTeX or something that compiles down to LaTeX), or you should be using it.
+
+** Should You Use ~org-utf-to-xetex~ For Primarily Multi-Language Documents?
+:PROPERTIES:
+:CUSTOM_ID: skilled-switch-from-multi-lang-p
+:END:
+
+No, probably not.
+
+[[https://www.ctan.org/pkg/polyglossia][polyglossia]] seems to be the best solution available.
 
 ** Should You Use LaTeX Libraries That Already Do The Same Thing Instead?
 :PROPERTIES:
