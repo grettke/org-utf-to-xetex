@@ -6,4 +6,5 @@
 
 * No Issue Created
 
--
+- Go through setup using empty Org configuration.
+- Add function to generate code for selected character instead of copying from the ALL buffer.
