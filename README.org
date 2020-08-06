@@ -855,13 +855,14 @@ When you read this README, it explains it in greater detail, and in context, it 
 :CUSTOM_ID: skilled-performance
 :END:
 
-When you use more than five fonts in a XeTeX compiler: compilation gets slower and slower.
+When you use more than five fonts in a XeTeX compiler: compilation gets slower and slower. This behavior is #1 discussed frequently in [[https://tex.stackexchange.com/][TeX.StackExchange.com]], and I've run into the same thing. However, you are unlikely to run into this issue for two reasons:
 
-This is a known issue frequently discussed with ~ucharclasses~.
+1. You are probably going to use only two or three Unicode blocks. For example, `Emoticons`, `Arrows`, and `Dingbats`. Three blocks won't be an issue.
+2. You are using documents that are /not/-primarily Latin-based (see [[#skilled-use-cjk-p][here]] or [[#skilled-switch-from-multi-lang-p][here]]) so you won't configure many blocks using /this/ approach. Again two or three blocks won't be an issue.
 
-The same behavior seems to be present with ~org-utf-to-xetex~.
+However, if you need to use more than a few blocks, the good news is that your document /will/ compile /but/ it will take a lot longer. That could mean five times longer in my experience.
 
-* Credits
+If you happen /not/ to be using all of the blocks in your package and slowing down your builds, then the solution is simple: create separate packages for each grouping of blocks that you want to include in your document. For example, use one package for `Emoticons` and `Arrows` that you are likely to use in every document. Then create separate packages for the language or two that you are using in your current document. Although this isn't a perfect solution, it is one of the best options since the compiler determines the build time behavior.* Credits
 :PROPERTIES:
 :CUSTOM_ID: credits
 :END:
