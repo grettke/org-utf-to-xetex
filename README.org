@@ -63,7 +63,7 @@ For *Skilled LaTeX Users*: Please start [[#for-skilled-latex-users][here]].
 :CUSTOM_ID: read-me-first
 :END:
 
-You wrote =Have a great day =😄= in your primarily Latin script Org-Mode file. Then you export it to PDF. Instead of seeing a cute smiling face, you see a white box instead: =Have a great day □=. If you are in this situation, then you /might/ be interested in reading on.
+You wrote =Have a great day 😄= in your primarily Latin script Org-Mode file. Then you export it to PDF. Instead of seeing a cute smiling face, you see a white box instead: =Have a great day □=. If you are in this situation, then you /might/ be interested in reading on.
 
 Org-Mode exports to many formats. Each format has different strengths. When Org-Mode exports your document, it needs to leverage the advantages of the destination format by abstracting the difference so that you can specify the /intended/ character in Org-Mode's markup and let Org-Mode choose the right one for your destination format. Org-Mode facilitates this abstraction using it's [[https://orgmode.org/worg/org-symbols.html][Symbols]] mechanism. A great example here is the smiley face.
 
@@ -315,11 +315,11 @@ For every empty white box that you want to be replaced with a real character, yo
 
 Wrap =🙋= in the macro from this package by highlighting it and calling =org-utf-to-xetex-insert-or-wrap-with-macro=. The following images show how your buffer should look with the visualization options configured for:
 
-| Prettified-Mode | Org Hide Macros | Screenshot                 |
-|-----------------+-----------------+----------------------------|
-| True            | True            | [[file:/images/workflow-wrap-pretty-hide.png]]   |
+| Prettified-Mode | Org Hide Macros | Screenshot                                     |
+|-----------------+-----------------+------------------------------------------------|
+| True            | True            | [[file:/images/workflow-wrap-pretty-hide.png]]     |
 | False           | True            | [[file:/images/workflow-nowrap-nopretty-hide.png]] |
-| False           | False           | [[file:/images/workflow-wrap-nopretty-nohide.png]]   |
+| False           | False           | [[file:/images/workflow-wrap-nopretty-nohide.png]] |
 
 Move your cursor to the first line of the document. Install the macro from this package calling the =org-utf-to-xetex-insert-setup-file-line= function. With the cursor on ~#+SETUPFILE~ line that was just inserted and hit ~C-c C-c~ so that Org-Mode will refresh its setup. Now your document can use the macro.
 
