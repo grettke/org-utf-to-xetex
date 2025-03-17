@@ -386,7 +386,9 @@ For example: do not capitalize \"and\"!")
   (and str (= (length str) 1)))
 
 (defun org-utf-to-xetex--char-to-block-def (str)
-  "Return the Unicode block definition containing STR. If STR is not found, return nil."
+  "Return the Unicode block definition containing STR.
+
+If STR is not found, return nil."
   (let ((def nil)
         (maxucschar #x110000))
     (catch 'nilarg
@@ -418,7 +420,10 @@ For example: do not capitalize \"and\"!")
     def))
 
 (defun org-utf-to-xetex--char-to-xetex (str)
-  "Find the block containing STR. Return the font encoded LaTeX string for that block. On no match, or any error, return STR."
+  "Find the block containing STR.
+
+Return the font encoded LaTeX string for that block. On no
+match, or any error, return STR."
   (let ((result))
     (catch 'nilarg
       (when (not (org-utf-to-xetex--valid-char str))
@@ -504,7 +509,9 @@ greater than one character, exiting.")
     (message "Unicode Block Name For '%s': %s" str msg)))
 
 (defun org-utf-to-xetex-get-unicode-block-for-string-char-after ()
-  "In what Unicode block does the character after the cursor live in? Answered here."
+  "In what Unicode block does the character after the cursor live in?
+
+Answered here."
   (interactive)
   (if (char-after)
       (org-utf-to-xetex-get-unicode-block-for-string
