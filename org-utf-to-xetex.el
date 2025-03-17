@@ -4,11 +4,10 @@
 
 ;; Author: Grant Rettke <grant@wisdomandwonder.com>
 ;; Maintainer: Grant Rettke <grant@wisdomandwonder.com>
-;; Homepage: https://github.com/grettke/org-utf-to-xetex
-;; URL: http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.el
 ;; Version: 0.91
-;; Package-Requires: ((emacs "30.1"))
+;; Package-Requires: ((emacs "29.4"))
 ;; Keywords: convenience, extensions, i18n, languages, tex, tools
+;; Homepage: https://github.com/grettke/org-utf-to-xetex
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
