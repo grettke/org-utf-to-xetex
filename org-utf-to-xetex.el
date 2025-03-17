@@ -7,7 +7,7 @@
 ;; Homepage: https://github.com/grettke/org-utf-to-xetex
 ;; URL: http://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.el
 ;; Version: 0.91
-;; Package-Requires: ((emacs "25.1"))
+;; Package-Requires: ((emacs "30.1"))
 ;; Keywords: convenience, extensions, i18n, languages, tex, tools
 
 ;; This program is free software; you can redistribute it and/or modify
