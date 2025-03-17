@@ -476,8 +476,8 @@ greater than one character, exiting.")
 (defun org-utf-to-xetex-prettify ()
   "Set up function `prettify-symbols-mode'."
   (when (boundp 'prettify-symbols-mode)
-    (map-put! prettify-symbols-alist org-utf-to-xetex-macro-name
-              org-utf-to-xetex-macro-pretty-name)
+    (setf (map-elt prettify-symbols-alist org-utf-to-xetex-macro-name)
+          org-utf-to-xetex-macro-pretty-name)
     (prettify-symbols-mode)
     (prettify-symbols-mode))
   (setq org-hide-macro-markers t)
