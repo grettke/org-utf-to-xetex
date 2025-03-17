@@ -328,7 +328,11 @@
     ("Supplementary Private Use Area-A" #xF0000 #xFFFFF)
     ("Supplementary Private Use Area-B" #x100000 #x10FFFF)
     )
-  "Alist of Unicode 11.0 blocks. See charts here URL `https://www.unicode.org/charts/'.")
+  "Alist of Unicode 11.0 blocks. See charts here URL `https://www.unicode.org/charts/'.
+
+The block name values must remain in the same case you found them.
+
+For example: do not capitalize \"and\"!")
 
 (defconst org-utf-to-xetex-setup-file
   "#+SETUPFILE: https://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.setup
