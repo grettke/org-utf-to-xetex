@@ -326,8 +326,7 @@
     ("Tags" #xE0000 #xE007F)
     ("Variation Selectors Supplement" #xE0100 #xE01EF)
     ("Supplementary Private Use Area-A" #xF0000 #xFFFFF)
-    ("Supplementary Private Use Area-B" #x100000 #x10FFFF)
-    )
+    ("Supplementary Private Use Area-B" #x100000 #x10FFFF))
   "Alist of Unicode 11.0 blocks. See charts here URL `https://www.unicode.org/charts/'.
 
 The block name values must remain in the same case you found them.
