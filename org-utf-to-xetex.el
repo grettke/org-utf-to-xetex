@@ -1,6 +1,6 @@
 ;;; org-utf-to-xetex.el --- Org XeTeX Automate Font Specification By Unicode Block -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2018  Grant Rettke
+;; Copyright (C) 2025  Grant Rettke
 
 ;; Author: Grant Rettke <grant@wisdomandwonder.com>
 ;; Maintainer: Grant Rettke <grant@wisdomandwonder.com>
