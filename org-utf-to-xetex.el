@@ -332,13 +332,20 @@ The block name values must remain in the same case you found them.
 
 For example: do not capitalize \"and\"!")
 
+(defconst org-utf-to-xetex-setup-file-remote
+  "https://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.setup"
+  "The remote org-utf-to-xetex export macro.")
+
 ;; Variables
 
-(defvar org-utf-to-xetex-setup-file
-  "#+SETUPFILE: https://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.setup
+(defvar org-utf-to-xetex-setup-file nil
+  "The currently-selected org-utf-to-xetex export macro.
 
-"
-  "The org-utf-to-xetex export macro.")
+Must be set before use by calling one of:
+
+- `org-utf-to-xetex-use-local-macro'
+- `org-utf-to-xetex-use-remote-macro'
+- `org-utf-to-xetex-use-custom-macro'")
 
 (defvar org-utf-to-xetex-macro-name "utf2xtx"
   "The package macro name to be prettified by pretty-symbols.")
@@ -347,19 +354,6 @@ For example: do not capitalize \"and\"!")
   "The pretty character name for the macro.")
 
 ;; Functions
-
-(cl-defun org-utf-to-xetex--package-file (package file)
-  "Get URL for a FILE in PACKAGE folder."
-  (let* ((package-desc (cadr
-                        (assq package
-                              (cdr (assq (intern package) package-alist)))))
-         (package-dir (when package-desc
-                        (package-directory (aref package-desc 0))))
-         (file-path (when package-dir
-                      (expand-file-name file (expand-file-name package dir)))))
-    (if file-path
-        file-path
-      (error "(org-utf-to-xetex--package-file) Couldn't find `%s' in package `%s'" file-path package))))
 
 (cl-defun org-utf-to-xetex--block-to-friendly-name (name)
   "Generate a LaTeX friendly name for block NAME.
@@ -565,20 +559,57 @@ match, or any error, return STR."
       (progn
         (save-excursion
           (goto-char (point-min))
+          (insert "#+SETUPFILE: ")
           (insert org-utf-to-xetex-setup-file)
+          (insert "\n\n")
           (save-buffer))
         (message "Inserted SETUPFILE line."))
     (error
      (message "(org-utf-to-xetex-insert-setup-file-line) Sorry, an error occurred: %s"
               (error-message-string err)))))
 
-(cl-defun org-utf-to-xetex-use-local-setup ()
-  "Configure export macro with local macro."
+(cl-defun org-utf-to-xetex--get-local-macro ()
+  "Locate export macro locallly."
   (interactive)
-  (let* ((pkg 'org-utf-to-xetex)
-         (file "org-utf-to-xetex.setup")
-         (path (org-utf-to-xetex--package-file pkg file)))
-    path))
+  (condition-case-unless-debug err
+      (let* ((package-name "org-utf-to-xetex")
+             (file-name "org-utf-to-xetex.setup")
+             (the-dir (file-name-directory (find-library-name package-name)))
+             (full-path (expand-file-name file-name the-dir)))
+        (unless (and the-dir (file-exists-p full-path))
+          (error "`%s' not found in the `%s' package directory" file-name package-name))
+        full-path)
+    (error (message "(org-utf-to-xetex--get-local-macro) Error accessing setup file `%s'" (error-message-string err)))))
+
+(cl-defun org-utf-to-xetex-use-local-macro ()
+  "Configure export macro to use local macro."
+  (interactive)
+  (condition-case-unless-debug err
+      (progn
+        (setq-default org-utf-to-xetex-setup-file (org-utf-to-xetex--get-local-macro))
+        (message "(org-utf-to-xetex) Using local macro file: `%s'. Be sure to replace/insert and refresh your header comments if necessary."
+                 org-utf-to-xetex-setup-file))
+    (error (message "(org-utf-to-xetex-use-local-macro) Error storing path to setup file `%s'" (error-message-string err)))))
+
+(cl-defun org-utf-to-xetex-use-remote-macro ()
+  "Configure export macro to use remote macro."
+  (interactive)
+  (condition-case-unless-debug err
+      (progn
+        (setq-default org-utf-to-xetex-setup-file org-utf-to-xetex-setup-file-remote)
+        (message "(org-utf-to-xetex) Using remote macro file: `%s'. Be sure to replace/insert and refresh your header comments if necessary."
+                 org-utf-to-xetex-setup-file))
+    (error (message "(org-utf-to-xetex-use-remote-macro) Error storing path to setup file `%s'" (error-message-string err)))))
+
+(cl-defun org-utf-to-xetex-use-custom-macro (file)
+  "Configure export macro to use custom macro."
+  (interactive)
+  (condition-case-unless-debug err
+      (progn
+        (setq-default org-utf-to-xetex-setup-file file)
+        (message "(org-utf-to-xetex) Using custom macro file: `%s'. Be sure to replace/insert and refresh your header comments if necessary."
+                 file))
+    (error (message "(org-utf-to-xetex-use-custom-macro) Error storing path to setup file `%s'" (error-message-string err)))))
 
 (provide 'org-utf-to-xetex)
 
