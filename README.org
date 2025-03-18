@@ -204,16 +204,18 @@ Create your TeX configuration resources. The following are for MacTeX, and you c
 #+begin_src sh
 cd /usr/local/texlive/2019
 ls
+# Safeguard against any future unexpected changes
 sudo cp texmf.cnf texmf.cnf-`date '+%Y_%m_%d__%H_%M_%S'`
 ls
 cd ~/src
 rm -rf ./texmf
 git clone github:yourname/texmf.git
 cd ~/src/texmf
-# this requires GNU mkdir
+# This flag requires GNU mkdir
 mkdir -p tex/latex/yourname
 touch tex/latex/yourname/yourname.sty
-sudo tlmgr conf texmf TEXMFhome ~/src/texmf
+# This updates texmf.cnf
+sudo tlmgr conf texmf TEXMFHOME ~/src/texmf
 sudo mktexlsr
 #+end_src
 
