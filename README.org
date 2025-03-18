@@ -139,6 +139,7 @@ Workflow _With_ This Package:
     - Version
     - 2016: Works
     - 2019: Works
+    - 2021: Works
 - Org-Mode Compatibility
   |   Version | Compatible?                                                                          |
   |-----------+--------------------------------------------------------------------------------------|
@@ -147,11 +148,10 @@ Workflow _With_ This Package:
   | Below 8.x | No: 8.0 introduced the new exporter framework with which you would use this package. |
   |           |                                                                                      |
 - Emacs Compatibility:
-  |    Version | Compatible? |
+  | Version    | Compatible? |
   |------------+-------------|
-  |       26.x | Yes         |
-  |       25.x | Yes         |
-  | Below 25.x | No          |
+  | 30.x       | Yes         |
+  | Below 30.x | Unknown   |
 
 * Installation
 :PROPERTIES:
@@ -472,7 +472,19 @@ The test report should say that all of the rests ran as expected.
 
 For example
 
-=Ran 8 tests, 8 results as expected (2018-06-26 21:16:34-0500)=
+#+begin_src sh
+Running 8 tests (2025-03-18 10:31:16-0500, selector ‘t’)
+   passed  1/8  org-utf-to-xetex--block-to-declaretextfontcommand (0.000165 sec)
+   passed  2/8  org-utf-to-xetex--block-to-friendly-name (0.000282 sec)
+   passed  3/8  org-utf-to-xetex--block-to-newfontfamily (0.000052 sec)
+   passed  4/8  org-utf-to-xetex--block-to-textfontcommand (0.000041 sec)
+   passed  5/8  org-utf-to-xetex--char-to-block-def (0.024838 sec)
+   passed  6/8  org-utf-to-xetex--char-to-xetex (0.002491 sec)
+   passed  7/8  org-utf-to-xetex--valid-char (0.000070 sec)
+   passed  8/8  org-utf-to-xetex-string-to-xetex (0.060578 sec)
+
+Ran 8 tests, 8 results as expected, 0 unexpected (2025-03-18 10:31:16-0500, 0.089171 sec)
+#+end_src
 
 * Read Me Later
 :PROPERTIES:
@@ -831,6 +843,8 @@ That is another benefit: whenever you want to make changes, you can do just abou
 Finally and most importantly, I realized that for me to ever recommend that someone switch to Org-Mode from programs like Microsoft Office or Open Office that there should be a way for them to easily handle Unicode characters in their documents. When they are presented with empty white boxes in their PDFs, it would be a complete disservice to them and completely irresponsible for me to reply, "Well, I don't know. Guess you should learn LaTeX!" That is a completely unrealistic expectation for 99% of people trying to switch to Org-Mode and are inevitably faced with the small yet show-stopping issue if incorrectly rendered characters.
 
 Now I have a solution to that problem that is simple, easy to understand, modify, and maintain: that I understand completely, that any Emacs and Org-Mode user can easily make sense of and utilize and maintain, and doesn't rely on any external packages either Emacs Lisp or LaTeX. Now I can recommend anyone to switch to Org-Mode knowing that they can use any font that they want to use, any time, easily. This is one way to do it, one of many, and for me, it is the easiest.
+
+In 2025 the answer is still "Yes." for the same reasons.
 
 ** How Does ~org-utf-to-xetex~ Work And Why?
 :PROPERTIES:
