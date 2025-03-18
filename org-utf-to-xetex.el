@@ -4,7 +4,7 @@
 
 ;; Author: Grant Rettke <grant@wisdomandwonder.com>
 ;; Maintainer: Grant Rettke <grant@wisdomandwonder.com>
-;; Version: 0.91
+;; Version: 0.92
 ;; Package-Requires: ((emacs "29.4"))
 ;; Keywords: convenience, extensions, i18n, languages, tex, tools
 ;; Homepage: https://github.com/grettke/org-utf-to-xetex
