@@ -332,13 +332,13 @@ The block name values must remain in the same case you found them.
 
 For example: do not capitalize \"and\"!")
 
-(defconst org-utf-to-xetex-setup-file
+;; Variables
+
+(defvar org-utf-to-xetex-setup-file
   "#+SETUPFILE: https://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.setup
 
 "
   "The org-utf-to-xetex export macro.")
-
-;; Variables
 
 (defvar org-utf-to-xetex-macro-name "utf2xtx"
   "The package macro name to be prettified by pretty-symbols.")
@@ -348,181 +348,237 @@ For example: do not capitalize \"and\"!")
 
 ;; Functions
 
-(defun org-utf-to-xetex--block-to-friendly-name (name)
-  "Generate a LaTeX friendly name for block NAME."
-  (let* ((rep "")
-         (name (or name ""))
-         (result name))
-    (setq result (replace-regexp-in-string "\\s-" rep result))
-    (setq result (replace-regexp-in-string "-" rep result))
-    (setq result (replace-regexp-in-string "_" rep result))
-    result))
+(cl-defun org-utf-to-xetex--package-file (package file)
+  "Get URL for a FILE in PACKAGE folder."
+  (let* ((package-desc (cadr
+                        (assq package
+                              (cdr (assq (intern package) package-alist)))))
+         (package-dir (when package-desc
+                        (package-directory (aref package-desc 0))))
+         (file-path (when package-dir
+                      (expand-file-name file (expand-file-name package dir)))))
+    (if file-path
+        file-path
+      (error "(org-utf-to-xetex--package-file) Couldn't find `%s' in package `%s'" file-path package))))
 
-(defun org-utf-to-xetex--block-to-newfontfamily (name &optional font)
-  "Generate a LaTeX newfontfamily command for block NAME using FONT if provided."
-  (let* ((name (org-utf-to-xetex--block-to-friendly-name name))
-         (font (or font "font"))
-         (result (format "\\newfontfamily\\%s{%s}" name font)))
-    result))
+(cl-defun org-utf-to-xetex--block-to-friendly-name (name)
+  "Generate a LaTeX friendly name for block NAME.
 
-(defun org-utf-to-xetex--block-to-textfontcommand (name)
+Converts whitespace, dashes, and underscores to an empty string."
+  (condition-case-unless-debug err
+      (let ((result (or name "")))
+        (setq result (replace-regexp-in-string "[[:space:]-_]" "" result))
+        result)
+    (error
+     (message
+      "(org-utf-to-xetex--block-to-friendly-name) An error occurred: %s"
+      (error-message-string err))
+     nil)))
+
+(cl-defun org-utf-to-xetex--block-to-newfontfamily (name &optional font)
+  "For NAME use FONT maybe generate newfontfamily command."
+  (condition-case-unless-debug err
+      (let* ((friendly (org-utf-to-xetex--block-to-friendly-name name))
+             (font (or font "font"))
+             (cmd (format "\\newfontfamily\\%s{%s}" friendly font)))
+        cmd)
+    (error
+     (message "(org-utf-to-xetex--block-to-newfontfamily) error: %s" (error-message-string err))
+     nil)))
+
+(cl-defun org-utf-to-xetex--block-to-textfontcommand (name)
   "Generate a LaTeX text command name for block NAME."
-  (let* ((name (org-utf-to-xetex--block-to-friendly-name name))
-         (result (format "\\text%s" name)))
-    result))
+  (condition-case-unless-debug err
+      (let* ((friendly (org-utf-to-xetex--block-to-friendly-name name))
+             (cmd (format "\\text%s" friendly)))
+        cmd)
+    (error
+     (message "(org-utf-to-xetex--block-to-textfontcommand) err: %s" (error-message-string err))
+     nil)))
 
-(defun org-utf-to-xetex--block-to-declaretextfontcommand (name)
+(cl-defun org-utf-to-xetex--block-to-declaretextfontcommand (name)
   "Generate a LaTeX DeclareTextFontCommand for block NAME."
-  (let* ((textfontcommand (org-utf-to-xetex--block-to-textfontcommand name))
-         (name (org-utf-to-xetex--block-to-friendly-name name))
-         (result (format "\\DeclareTextFontCommand{%s}{\\%s}"
-                         textfontcommand name)))
-    result))
+  (condition-case-unless-debug err
+      (let* ((text (org-utf-to-xetex--block-to-textfontcommand name))
+             (friendly (org-utf-to-xetex--block-to-friendly-name name)))
+        (format "\\DeclareTextFontCommand{%s}{\\%s}" text friendly))
+    (error
+     (message "(org-utf-to-xetex--block-to-declaretextfontcommand) err: %s" (error-message-string err))
+     nil)))
 
-(defun org-utf-to-xetex--valid-char (str)
+(cl-defun org-utf-to-xetex--valid-char (str)
   "Return non-nil if STR is a single character string."
-  (and str (= (length str) 1)))
+  (condition-case-unless-debug err
+      (and str (= (length str) 1))
+    (error
+     (message "(org-utf-to-xetex--valid-char) err: %s" (error-message-string err))
+     nil)))
 
-(defun org-utf-to-xetex--char-to-block-def (str)
+(cl-defun org-utf-to-xetex--char-to-block-def (str)
   "Return the Unicode block definition containing STR.
 
 If STR is not found, return nil."
-  (let ((def nil)
-        (maxucschar #x110000))
-    (catch 'nilarg
-      (when (not (org-utf-to-xetex--valid-char str))
-        (throw 'nilarg nil))
-      (setq def
-            (catch 'result
-              (dolist (it org-utf-to-xetex-blocks)
-                (let* ((beg (nth 1 it))
-                       (end (nth 2 it))
-                       (codepoint (with-temp-buffer
-                                    (insert str)
-                                    (goto-char (point-min))
-                                    (char-after))))
-                  (cond
-                   ((not codepoint)
-                    (message
-                     "org-utf-to-xetex--char-to-block-def: '%s' has no codepoint" str))
-                   ((not (characterp codepoint))
-                    (message
-                     "org-utf-to-xetex--char-to-block-def: '%s' is not character" str))
-                   ((>= codepoint maxucschar)
-                    (message
-                     "org-utf-to-xetex--char-to-block-def: '%s' (codepoint '%s') exceeds the Unicode codespace" str codepoint))
-                   (t
-                    (when (and (>= codepoint beg)
-                               (<= codepoint end))
-                      (throw 'result it)))))))))
-    def))
+  (condition-case-unless-debug err
+      (let ((maxucschar #x110000))
+        (catch 'nilarg
+          (unless (org-utf-to-xetex--valid-char str)
+            (throw 'nilarg nil))
+          (catch 'result
+            (dolist (it org-utf-to-xetex-blocks)
+              (let* ((beg (nth 1 it))
+                     (end (nth 2 it))
+                     (cp (with-temp-buffer
+                           (insert str)
+                           (goto-char (point-min))
+                           (char-after))))
+                (cond
+                 ((not cp)
+                  (message "No cp for %s" str))
+                 ((not (characterp cp))
+                  (message "Not char: %s" str))
+                 ((>= cp maxucschar)
+                  (message "Cp too high: %s" str))
+                 ((and (>= cp beg) (<= cp end))
+                  (throw 'result it)))))
+            nil)))
+    (error (message "(org-utf-to-xetex--char-to-block-def) err: %s" (error-message-string err))
+           nil)))
 
-(defun org-utf-to-xetex--char-to-xetex (str)
+(cl-defun org-utf-to-xetex--char-to-xetex (str)
   "Find the block containing STR.
 
 Return the font encoded LaTeX string for that block. On no
 match, or any error, return STR."
-  (let ((result))
-    (catch 'nilarg
-      (when (not (org-utf-to-xetex--valid-char str))
-        (message "org-utf-to-xetex--char-to-xetex CHAR is either nil, empty, or
-greater than one character, exiting.")
-        (throw 'nilarg str)))
-    (setq result
-          (catch 'result
-            (let* ((def (org-utf-to-xetex--char-to-block-def str))
-                   (_ (when (not def) (throw 'result str)))
-                   (block (nth 0 def))
-                   (cmd (org-utf-to-xetex--block-to-textfontcommand block))
-                   (string (format "%s{%s}" cmd str)))
-              string)))
-    result))
+  (condition-case-unless-debug err
+      (let ((result (catch 'nilarg
+                      (unless (org-utf-to-xetex--valid-char str)
+                        (message "Char err: bad char")
+                        (throw 'nilarg str))
+                      (catch 'result
+                        (let* ((def (org-utf-to-xetex--char-to-block-def str))
+                               (block (and def (nth 0 def))))
+                          (unless def (throw 'result str))
+                          (let ((cmd (org-utf-to-xetex--block-to-textfontcommand block)))
+                            (format "%s{%s}" cmd str)))))))
+        result)
+    (error (message "(org-utf-to-xetex--char-to-xetex) err: %s" (error-message-string err))
+           str)))
 
 ;; Features
 
-(defun org-utf-to-xetex-command-for-every-block ()
+(cl-defun org-utf-to-xetex-command-for-every-block ()
   "List configuration commands for every block."
   (interactive)
-  (let* ((name "*ORG-UTF-TO-XETEX*")
-         (buf (get-buffer-create name))
-         (blocks (length org-utf-to-xetex-blocks)))
-    (switch-to-buffer buf)
-    (dolist (block org-utf-to-xetex-blocks)
-      (let ((name (org-utf-to-xetex--block-to-friendly-name (nth 0 block))))
-        (insert "% ")
-        (insert (org-utf-to-xetex--block-to-newfontfamily name))
-        (insert "\n")
-        (insert "% ")
-        (insert (org-utf-to-xetex--block-to-declaretextfontcommand name))
-        (insert "\n")))
-    (help-mode)
-    (setq buffer-read-only t)
-    (goto-char (point-min))
-    (let ((lines (count-lines (point-min) (point-max))))
-      (when (not (equal lines (* 2 blocks)))
-        (display-warning
-         :error
-         (format "org-utf-to-xetex-command-for-every-block expected to create %s commands, but only created %s. Please report this." blocks
-                 lines))))))
+  (condition-case-unless-debug err
+      (let* ((name "*ORG-UTF-TO-XETEX*")
+             (buf (get-buffer-create name))
+             (blocks (length org-utf-to-xetex-blocks)))
+        (switch-to-buffer buf)
+        (dolist (block org-utf-to-xetex-blocks)
+          (let ((friendly (org-utf-to-xetex--block-to-friendly-name (nth 0 block))))
+            (insert "% ")
+            (insert (org-utf-to-xetex--block-to-newfontfamily friendly))
+            (insert "\n")
+            (insert "% ")
+            (insert (org-utf-to-xetex--block-to-declaretextfontcommand friendly))
+            (insert "\n")))
+        (help-mode)
+        (setq buffer-read-only t)
+        (goto-char (point-min))
+        (let ((lines (count-lines (point-min) (point-max))))
+          (when (not (equal lines (* 2 blocks)))
+            (display-warning :error (format "Exp'd %s cmds, got %s." blocks lines)))))
+    (error (message "(org-utf-to-xetex-command-for-every-block) err: %s" (error-message-string err)))))
 
-(defun org-utf-to-xetex-string-to-xetex (str)
+(cl-defun org-utf-to-xetex-string-to-xetex (str)
   "Return LaTeX string with correct font environment for STR."
-  (let* ((string str)
-         (codepoints (string-to-list string))
-         (strings (mapcar #'string codepoints))
-         (result (mapconcat #'org-utf-to-xetex--char-to-xetex strings "")))
-    result))
+  (condition-case-unless-debug err
+      (let* ((codepoints (string-to-list str))
+             (strings (mapcar #'string codepoints))
+             (result (mapconcat #'org-utf-to-xetex--char-to-xetex strings "")))
+        result)
+    (error (message "(org-utf-to-xetex-string-to-xetex) err: %s" (error-message-string err))
+           str)))
 
-(defun org-utf-to-xetex-prettify ()
+(cl-defun org-utf-to-xetex-prettify ()
   "Set up function `prettify-symbols-mode'."
-  (when (boundp 'prettify-symbols-mode)
-    (setf (map-elt prettify-symbols-alist org-utf-to-xetex-macro-name)
-          org-utf-to-xetex-macro-pretty-name)
-    (prettify-symbols-mode)
-    (prettify-symbols-mode))
-  (setq org-hide-macro-markers t)
-  (font-lock-mode)
-  (font-lock-mode))
+  (condition-case-unless-debug err
+      (progn
+        (when (boundp 'prettify-symbols-mode)
+          (setf (map-elt prettify-symbols-alist org-utf-to-xetex-macro-name)
+                org-utf-to-xetex-macro-pretty-name)
+          (prettify-symbols-mode))
+        (setq org-hide-macro-markers t)
+        (font-lock-mode))
+    (error
+     (message "(org-utf-to-xetex-prettify) err: %s" (error-message-string err))
+     nil)))
 
-(defun org-utf-to-xetex-insert-or-wrap-with-macro ()
+(cl-defun org-utf-to-xetex-insert-or-wrap-with-macro ()
   "Insert the macro maybe around a region."
   (interactive)
-  (let* ((bounds (and (use-region-p) (list (region-beginning) (region-end))))
-         (left (concat "{{{" org-utf-to-xetex-macro-name "("))
-         (right ")}}}")
-         (backup (length right))
-         (body (if bounds (buffer-substring-no-properties (cl-first bounds)
-                                                          (cl-second bounds))
-                 ""))
-         (string (concat left body right)))
-    (when bounds (delete-region (cl-first bounds) (cl-second bounds)))
-    (insert string)
-    (backward-char backup)))
+  (condition-case-unless-debug err
+      (let* ((bounds (when (use-region-p)
+                       (list (region-beginning) (region-end))))
+             (left (concat "{{{" org-utf-to-xetex-macro-name "("))
+             (right ")}}}")
+             (backup (length right))
+             (body (if bounds (buffer-substring-no-properties (car bounds)
+                                                              (cadr bounds))
+                     ""))
+             (string (concat left body right)))
+        (when bounds (delete-region (car bounds) (cadr bounds)))
+        (insert string)
+        (backward-char backup))
+    (error (message "(org-utf-to-xetex-insert-or-wrap-with-macro) err: %s" (error-message-string err))
+           nil)))
 
-(defun org-utf-to-xetex-get-unicode-block-for-string (str)
+(cl-defun org-utf-to-xetex-get-unicode-block-for-string (str)
   "In what Unicode block does STR live in? Answered here."
-  (let* ((block (org-utf-to-xetex--char-to-block-def str))
-         (msg (if block (cl-first block)
-                "This package doesn't handle this block. If it isn't one of the ignored Latin blocks then please report it. ")))
-    (message "Unicode Block Name For '%s': %s" str msg)))
+  (interactive "sEnter string: ")
+  (condition-case-unless-debug err
+      (let* ((block (org-utf-to-xetex--char-to-block-def str))
+             (msg (if block (cl-first block)
+                    "This package doesn't handle this block. If it isn't one of the ignored Latin blocks then please report it.")))
+        (message "Unicode Block Name For '%s': %s" str msg))
+    (error
+     (message "(org-utf-to-xetex-get-unicode-block-for-string) Sorry, an error occurred: %s"
+              (error-message-string err)))))
 
-(defun org-utf-to-xetex-get-unicode-block-for-string-char-after ()
-  "In what Unicode block does the character after the cursor live in?
-
-Answered here."
+(cl-defun org-utf-to-xetex-get-unicode-block-for-string-char-after ()
+  "In what Unicode block does the character after the cursor live in?"
   (interactive)
-  (if (char-after)
-      (org-utf-to-xetex-get-unicode-block-for-string
-       (format "%c" (char-after)))
-    (message "First place the cursor on a char to inspect it.")))
+  (condition-case-unless-debug err
+      (if (char-after)
+          (org-utf-to-xetex-get-unicode-block-for-string
+           (format "%c" (char-after)))
+        (user-error "First place the cursor on a char to inspect it."))
+    (error
+     (message "(org-utf-to-xetex-get-unicode-block-for-string-char-after) Sorry, an error occurred: %s"
+              (error-message-string err)))))
 
-(defun org-utf-to-xetex-insert-setup-file-line ()
+
+(cl-defun org-utf-to-xetex-insert-setup-file-line ()
   "Insert the org-utf-to-xetex export macro SETUPFILE line."
   (interactive)
-  (save-excursion
-    (goto-char (point-min))
-    (insert org-utf-to-xetex-setup-file)
-    (save-buffer)))
+  (condition-case-unless-debug err
+      (progn
+        (save-excursion
+          (goto-char (point-min))
+          (insert org-utf-to-xetex-setup-file)
+          (save-buffer))
+        (message "Inserted SETUPFILE line."))
+    (error
+     (message "(org-utf-to-xetex-insert-setup-file-line) Sorry, an error occurred: %s"
+              (error-message-string err)))))
+
+(cl-defun org-utf-to-xetex-use-local-setup ()
+  "Configure export macro with local macro."
+  (interactive)
+  (let* ((pkg 'org-utf-to-xetex)
+         (file "org-utf-to-xetex.setup")
+         (path (org-utf-to-xetex--package-file pkg file)))
+    path))
 
 (provide 'org-utf-to-xetex)
 
