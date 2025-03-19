@@ -1,5 +1,7 @@
 #+SETUPFILE: https://raw.githubusercontent.com/grettke/org-utf-to-xetex/master/org-utf-to-xetex.setup
 
+/Font: Noto Emoji/
+
 #+ATTR_LATEX: :mode table :environment longtable :caption Emoticons Block
 | Character | Name                                       | Codepoint |
 |-----------+--------------------------------------------+-----------|
