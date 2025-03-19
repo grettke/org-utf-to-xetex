@@ -1,6 +1,6 @@
 ;;; org-utf-to-xetex-test.el --- Tests for org-utf-to-xetex.  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2018  Grant Rettke
+;; Copyright (C) 2025 Grant Rettke
 
 ;; Author: Grant Rettke <gcr@wisdomandwonder.com>
 
