@@ -373,7 +373,11 @@
     ("Variation Selectors Supplement" #xE0100 #xE01EF)
     ("Supplementary Private Use Area-A" #xF0000 #xFFFFF)
     ("Supplementary Private Use Area-B" #x100000 #x10FFFF))
-  "Alist of Unicode 16.0 blocks. See charts here URL `https://www.fileformat.info/info/unicode/block/index.htm'.
+  "Alist of Unicode 16.0 blocks.
+
+See charts here
+
+URL `https://www.fileformat.info/info/unicode/block/index.htm'.
 
 The block name values must remain in the same case you found them.
 
@@ -593,7 +597,7 @@ match, or any error, return STR."
       (if (char-after)
           (org-utf-to-xetex-get-unicode-block-for-string
            (format "%c" (char-after)))
-        (user-error "First place the cursor on a char to inspect it."))
+        (user-error "First place the cursor on a char to inspect it"))
     (error
      (message "(org-utf-to-xetex-get-unicode-block-for-string-char-after) Sorry, an error occurred: %s"
               (error-message-string err)))))
@@ -652,7 +656,7 @@ nothing you need to configure here. It \"just works\"."
     (error (message "(org-utf-to-xetex-use-remote-macro) Error storing path to setup file `%s'" (error-message-string err)))))
 
 (cl-defun org-utf-to-xetex-use-custom-macro (file)
-  "Configure export macro to use custom macro."
+  "Configure export macro to use custom FILE."
   (interactive)
   (condition-case-unless-debug err
       (progn
