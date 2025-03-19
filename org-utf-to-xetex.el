@@ -582,7 +582,10 @@ match, or any error, return STR."
     (error (message "(org-utf-to-xetex--get-local-macro) Error accessing setup file `%s'" (error-message-string err)))))
 
 (cl-defun org-utf-to-xetex-use-local-macro ()
-  "Configure export macro to use local macro."
+  "Configure export macro to use local macro.
+
+This comes with the package distribution. There is
+nothing you need to configure here. It \"just works\"."
   (interactive)
   (condition-case-unless-debug err
       (progn
