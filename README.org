@@ -327,9 +327,21 @@ Wrap =🙋= in the macro from this package by highlighting it and calling =org-u
 | False           | True            | [[file:/images/workflow-nowrap-nopretty-hide.png]] |
 | False           | False           | [[file:/images/workflow-wrap-nopretty-nohide.png]] |
 
-Move your cursor to the first line of the document. Install the macro from this package calling the =org-utf-to-xetex-insert-setup-file-line= function. With the cursor on ~#+SETUPFILE~ line that was just inserted and hit ~C-c C-c~ so that Org-Mode will refresh its setup. Now your document can use the macro.
+Move your cursor to the first line of the document.
+
+You should have already configured your desired macro by adding one of the following to your init file:
+
+- ~(org-utf-to-xetex-use-local-macro)~
+- ~(org-utf-to-xetex-use-remote-macro)~
+- ~(org-utf-to-xetex-use-custom-macro "file/path/here")~
+
+Install the macro from this package calling the =org-utf-to-xetex-insert-setup-file-line= function. Based upon your macro choice the appropriate load statement will be inserted.
 
 [[file:/images/workflow-macro-install.png]]
+
+[[file:/images/workflow-macro-install-local.png]]
+
+With the cursor on ~#+SETUPFILE~ line that was just inserted and hit ~C-c C-c~ so that Org-Mode will refresh its setup. Now your document can use the macro.
 
 Look back at the test document and PDF it created. Each one of those characters that are rendered as an empty square box needs to have a font configured for its Unicode block. In order to configure the Unicode block, you need to know the block name. Identify the Unicode block for the character =🙋= by placing the cursor in front of it and calling =org-utf-to-xetex-get-unicode-block-for-string-char-after=.
 
