@@ -335,12 +335,19 @@ You should have already configured your desired macro by adding one of the follo
 - ~(org-utf-to-xetex-use-local-macro)~
 - ~(org-utf-to-xetex-use-remote-macro)~
 - ~(org-utf-to-xetex-use-custom-macro "file/path/here")~
+  - When you have a custom macro you want to use, this is how to do it. For example if you want to limit the macro to different ~'latex~ exporters intermittently then this is a good place to do it.
 
-Install the macro from this package calling the =org-utf-to-xetex-insert-setup-file-line= function. Based upon your macro choice the appropriate load statement will be inserted.
+Install the macro from this package calling the =org-utf-to-xetex-insert-setup-file-line= function. Based upon your macro choice the appropriate load statement will be inserted:
 
-[[file:/images/workflow-macro-install.png]]
+
+[[file:/images/workflow-macro-install-melpa.png]]
+
 
 [[file:/images/workflow-macro-install-local.png]]
+
+
+[[file:/images/workflow-macro-install-remote.png]]
+
 
 With the cursor on ~#+SETUPFILE~ line that was just inserted and hit ~C-c C-c~ so that Org-Mode will refresh its setup. Now your document can use the macro.
 
