@@ -145,6 +145,7 @@
   (should (fboundp 'org-utf-to-xetex-insert-setup-file-line))
   (should (fboundp 'org-utf-to-xetex--get-local-macro))
   (should (fboundp 'org-utf-to-xetex-use-local-macro))
+  (should (fboundp 'org-utf-to-xetex-use-remote-macron))
   (should (fboundp 'org-utf-to-xetex-use-custom-macro))
   ) ;; intentional line break
 

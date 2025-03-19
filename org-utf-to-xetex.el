@@ -645,6 +645,15 @@ nothing you need to configure here. It \"just works\"."
                  org-utf-to-xetex-setup-file))
     (error (message "(org-utf-to-xetex-use-local-macro) Error storing path to setup file `%s'" (error-message-string err)))))
 
+(cl-defun org-utf-to-xetex-use-remote-macro ()
+  "Configure export macro to use remote macro."
+  (interactive)
+  (condition-case-unless-debug err
+      (progn
+        (setq-default org-utf-to-xetex-setup-file org-utf-to-xetex-setup-file-remote)
+        (message "(org-utf-to-xetex) Using remote macro file: `%s'. Be sure to replace/insert and refresh your header comments if necessary."
+                 org-utf-to-xetex-setup-file))
+    (error (message "(org-utf-to-xetex-use-remote-macro) Error storing path to setup file `%s'" (error-message-string err)))))
 
 (cl-defun org-utf-to-xetex-use-custom-macro (file)
   "Configure export macro to use custom FILE."
