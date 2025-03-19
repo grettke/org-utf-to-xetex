@@ -648,7 +648,6 @@ nothing you need to configure here. It \"just works\"."
 
 (cl-defun org-utf-to-xetex-use-custom-macro (file)
   "Configure export macro to use custom FILE."
-  (interactive)
   (condition-case-unless-debug err
       (progn
         (setq-default org-utf-to-xetex-setup-file file)
