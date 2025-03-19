@@ -170,6 +170,7 @@ Add the following to your init file in order to:
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/src/org-utf-to-xetex")
 (require 'org-utf-to-xetex)
+;; 99% of you will use the macro included with this package
 (org-utf-to-xetex-use-local-macro)
 ;; or remotely (org-utf-to-xetex-use-remote-macro)
 ;; or (org-utf-to-xetex-use-custom-macro "~/tmp/tmp.setup")
