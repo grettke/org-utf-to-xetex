@@ -129,25 +129,59 @@
            "A \\textCJKUnifiedIdeographs{我}-\\textMiscellaneousTechnical{⍋}+\\textMiscellaneousSymbols{☀}APPLE\\textEmoticons{🙋}ZEBRA"
            (org-utf-to-xetex-string-to-xetex "A 我-⍋+☀APPLE🙋ZEBRA"))))
 
-(ert-deftest org-utf-to-xetex-test-existence-of-expected-functions ()
-  (should (fboundp 'org-utf-to-xetex--block-to-newfontfamily))
-  (should (fboundp 'org-utf-to-xetex--block-to-textfontcommand))
-  (should (fboundp 'org-utf-to-xetex--block-to-declaretextfontcommand))
-  (should (fboundp 'org-utf-to-xetex--valid-char))
-  (should (fboundp 'org-utf-to-xetex--char-to-block-def))
-  (should (fboundp 'org-utf-to-xetex--char-to-xetex))
-  (should (fboundp 'org-utf-to-xetex-command-for-every-block))
-  (should (fboundp 'org-utf-to-xetex-string-to-xetex))
-  (should (fboundp 'org-utf-to-xetex-prettify))
-  (should (fboundp 'org-utf-to-xetex-insert-or-wrap-with-macro))
-  (should (fboundp 'org-utf-to-xetex-get-unicode-block-for-string))
-  (should (fboundp 'org-utf-to-xetex-get-unicode-block-for-string-char-after))
-  (should (fboundp 'org-utf-to-xetex-insert-setup-file-line))
-  (should (fboundp 'org-utf-to-xetex--get-local-macro))
-  (should (fboundp 'org-utf-to-xetex-use-local-macro))
-  (should (fboundp 'org-utf-to-xetex-use-remote-macron))
-  (should (fboundp 'org-utf-to-xetex-use-custom-macro))
-  ) ;; intentional line break
+(ert-deftest org-utf-to-xetex-test-existence-1 ()
+  (should (fboundp 'org-utf-to-xetex--block-to-newfontfamily)))
+
+(ert-deftest org-utf-to-xetex-test-existence-2 ()
+  (should (fboundp 'org-utf-to-xetex--block-to-textfontcommand)))
+
+(ert-deftest org-utf-to-xetex-test-existence-3 ()
+  (should (fboundp 'org-utf-to-xetex--block-to-declaretextfontcommand)))
+
+(ert-deftest org-utf-to-xetex-test-existence-4 ()
+  (should (fboundp 'org-utf-to-xetex--valid-char)))
+
+(ert-deftest org-utf-to-xetex-test-existence-5 ()
+  (should (fboundp 'org-utf-to-xetex--char-to-block-def)))
+
+(ert-deftest org-utf-to-xetex-test-existence-6 ()
+  (should (fboundp 'org-utf-to-xetex--char-to-xetex)))
+
+(ert-deftest org-utf-to-xetex-test-existence-7 ()
+  (should (fboundp 'org-utf-to-xetex-command-for-every-block)))
+
+(ert-deftest org-utf-to-xetex-test-existence-8 ()
+  (should (fboundp 'org-utf-to-xetex-string-to-xetex)))
+
+(ert-deftest org-utf-to-xetex-test-existence-9 ()
+  (should (fboundp 'org-utf-to-xetex-prettify)))
+
+(ert-deftest org-utf-to-xetex-test-existence-10 ()
+  (should (fboundp 'org-utf-to-xetex-insert-or-wrap-with-macro)))
+
+(ert-deftest org-utf-to-xetex-test-existence-11 ()
+  (should (fboundp 'org-utf-to-xetex-get-unicode-block-for-string)))
+
+(ert-deftest org-utf-to-xetex-test-existence-12 ()
+  (should (fboundp 'org-utf-to-xetex-get-unicode-block-for-string-char-after)))
+
+(ert-deftest org-utf-to-xetex-test-existence-13 ()
+  (should (fboundp 'org-utf-to-xetex-insert-setup-file-line)))
+
+(ert-deftest org-utf-to-xetex-test-existence-14 ()
+  (should (fboundp 'org-utf-to-xetex--get-local-macro)))
+
+(ert-deftest org-utf-to-xetex-test-existence-15 ()
+  (should (fboundp 'org-utf-to-xetex-use-local-macro)))
+
+(ert-deftest org-utf-to-xetex-test-existence-16 ()
+  (should (fboundp 'org-utf-to-xetex-use-remote-macro)))
+
+(ert-deftest org-utf-to-xetex-test-existence-17 ()
+  (should (fboundp 'org-utf-to-xetex-use-custom-macro)))
+
+(ert-deftest org-utf-to-xetex-test-existence-18 ()
+  (should-not (fboundp 'foo-bar-baz)))
 
 (provide 'org-utf-to-xetex-test)
 ;;; org-utf-to-xetex-test.el ends here
