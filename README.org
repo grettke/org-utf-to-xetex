@@ -439,7 +439,11 @@ Here is how to run the tests:
 - Go to your command line.
 - Verify that Emacs is in your path. You can do that by running the command ~emacs --version~. You should get a message that looks like this:
   [[file:/images/emacs-in-path.png]]
-- Run:
+- Use a Script to Run It
+  #+begin_src sh
+./test.sh
+  #+end_src
+- Copy and Paste to Run:
   #+BEGIN_SRC sh
 emacs -batch \
       -l ert \
@@ -453,17 +457,35 @@ The test report should say that all of the rests ran as expected.
 For example
 
 #+begin_src sh
-Running 8 tests (2025-03-18 10:31:16-0500, selector ‘t’)
-   passed  1/8  org-utf-to-xetex--block-to-declaretextfontcommand (0.000165 sec)
-   passed  2/8  org-utf-to-xetex--block-to-friendly-name (0.000282 sec)
-   passed  3/8  org-utf-to-xetex--block-to-newfontfamily (0.000052 sec)
-   passed  4/8  org-utf-to-xetex--block-to-textfontcommand (0.000041 sec)
-   passed  5/8  org-utf-to-xetex--char-to-block-def (0.024838 sec)
-   passed  6/8  org-utf-to-xetex--char-to-xetex (0.002491 sec)
-   passed  7/8  org-utf-to-xetex--valid-char (0.000070 sec)
-   passed  8/8  org-utf-to-xetex-string-to-xetex (0.060578 sec)
+Running 26 tests (2025-03-19 19:01:17-0500, selector ‘t’)
+   passed   1/26  org-utf-to-xetex--block-to-declaretextfontcommand (0.000155 sec)
+   passed   2/26  org-utf-to-xetex--block-to-friendly-name (0.000267 sec)
+   passed   3/26  org-utf-to-xetex--block-to-newfontfamily (0.000051 sec)
+   passed   4/26  org-utf-to-xetex--block-to-textfontcommand (0.000037 sec)
+   passed   5/26  org-utf-to-xetex--char-to-block-def (0.025022 sec)
+   passed   6/26  org-utf-to-xetex--char-to-xetex (0.002741 sec)
+   passed   7/26  org-utf-to-xetex--valid-char (0.000051 sec)
+   passed   8/26  org-utf-to-xetex-string-to-xetex (0.064695 sec)
+   passed   9/26  org-utf-to-xetex-test-existence-1 (0.000049 sec)
+   passed  10/26  org-utf-to-xetex-test-existence-10 (0.000042 sec)
+   passed  11/26  org-utf-to-xetex-test-existence-11 (0.000036 sec)
+   passed  12/26  org-utf-to-xetex-test-existence-12 (0.000034 sec)
+   passed  13/26  org-utf-to-xetex-test-existence-13 (0.000032 sec)
+   passed  14/26  org-utf-to-xetex-test-existence-14 (0.000032 sec)
+   passed  15/26  org-utf-to-xetex-test-existence-15 (0.000031 sec)
+   passed  16/26  org-utf-to-xetex-test-existence-16 (0.000032 sec)
+   passed  17/26  org-utf-to-xetex-test-existence-17 (0.000031 sec)
+   passed  18/26  org-utf-to-xetex-test-existence-18 (0.000032 sec)
+   passed  19/26  org-utf-to-xetex-test-existence-2 (0.000031 sec)
+   passed  20/26  org-utf-to-xetex-test-existence-3 (0.000031 sec)
+   passed  21/26  org-utf-to-xetex-test-existence-4 (0.000031 sec)
+   passed  22/26  org-utf-to-xetex-test-existence-5 (0.000032 sec)
+   passed  23/26  org-utf-to-xetex-test-existence-6 (0.000031 sec)
+   passed  24/26  org-utf-to-xetex-test-existence-7 (0.000031 sec)
+   passed  25/26  org-utf-to-xetex-test-existence-8 (0.000031 sec)
+   passed  26/26  org-utf-to-xetex-test-existence-9 (0.000032 sec)
 
-Ran 8 tests, 8 results as expected, 0 unexpected (2025-03-18 10:31:16-0500, 0.089171 sec)
+Ran 26 tests, 26 results as expected, 0 unexpected (2025-03-19 19:01:17-0500, 0.095039 sec)
 #+end_src
 
 * Read Me Later
