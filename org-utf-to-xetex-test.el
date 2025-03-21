@@ -129,31 +129,35 @@
            "A \\textCJKUnifiedIdeographs{我}-\\textMiscellaneousTechnical{⍋}+\\textMiscellaneousSymbols{☀}APPLE\\textEmoticons{🙋}ZEBRA"
            (org-utf-to-xetex-string-to-xetex "A 我-⍋+☀APPLE🙋ZEBRA"))))
 
-(ert-deftest org-utf-to-xetex-test-existence-1 ()
+;;
+;; Confirm that API is adhered to: functional test exist above here
+;;
+
+(ert-deftest org-utf-to-xetex-test-existence-01 ()
   (should (fboundp 'org-utf-to-xetex--block-to-newfontfamily)))
 
-(ert-deftest org-utf-to-xetex-test-existence-2 ()
+(ert-deftest org-utf-to-xetex-test-existence-02 ()
   (should (fboundp 'org-utf-to-xetex--block-to-textfontcommand)))
 
-(ert-deftest org-utf-to-xetex-test-existence-3 ()
+(ert-deftest org-utf-to-xetex-test-existence-03 ()
   (should (fboundp 'org-utf-to-xetex--block-to-declaretextfontcommand)))
 
-(ert-deftest org-utf-to-xetex-test-existence-4 ()
+(ert-deftest org-utf-to-xetex-test-existence-04 ()
   (should (fboundp 'org-utf-to-xetex--valid-char)))
 
-(ert-deftest org-utf-to-xetex-test-existence-5 ()
+(ert-deftest org-utf-to-xetex-test-existence-05 ()
   (should (fboundp 'org-utf-to-xetex--char-to-block-def)))
 
-(ert-deftest org-utf-to-xetex-test-existence-6 ()
+(ert-deftest org-utf-to-xetex-test-existence-06 ()
   (should (fboundp 'org-utf-to-xetex--char-to-xetex)))
 
-(ert-deftest org-utf-to-xetex-test-existence-7 ()
+(ert-deftest org-utf-to-xetex-test-existence-07 ()
   (should (fboundp 'org-utf-to-xetex-command-for-every-block)))
 
-(ert-deftest org-utf-to-xetex-test-existence-8 ()
+(ert-deftest org-utf-to-xetex-test-existence-08 ()
   (should (fboundp 'org-utf-to-xetex-string-to-xetex)))
 
-(ert-deftest org-utf-to-xetex-test-existence-9 ()
+(ert-deftest org-utf-to-xetex-test-existence-09 ()
   (should (fboundp 'org-utf-to-xetex-prettify)))
 
 (ert-deftest org-utf-to-xetex-test-existence-10 ()
